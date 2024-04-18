@@ -1,13 +1,12 @@
 <script setup>
 // 带侧边栏的页面
 import { RouterView } from 'vue-router'
+import SidebarMenu from '@/components/app/SidebarMenu.vue';
 </script>
 
 <template>
   <div class='AdminPage'>
-    <aside class='aside'>
-
-    </aside>
+    <SidebarMenu></SidebarMenu>
     <main class='main'>
       <RouterView></RouterView>
     </main>
@@ -21,10 +20,7 @@ import { RouterView } from 'vue-router'
   display: flex;
   flex-direction: row;
 }
-.AdminPage .aside{
-  background-color: #0a7c7c;
-  width: 180px;
-}
+
 .AdminPage .main{
   flex-grow: 1;
 }

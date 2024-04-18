@@ -1,26 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import {routes} from './routes.js';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      redirect: '/home',
-    },
-    {
-      path: '/home',
-      name: 'home',
-      component: ()=>import(/* webpackChunkName:'home' */'../pages/home.vue')
-    },
-    {
-      path: '/:pathMatch(.*)',
-      name: '404',
-      component: () => import(/* webpackChunkName:'404' */ '@/pages/404.vue'),
-      meta: {
-        title: 'Vite - 404',
-      },
-    },
-  ]
+  routes
+})
+
+router.beforeEach(async(to, from) => {
+  if(to && to.meta?.title){
+    document.title = to.meta.title
+  }
+  return true
 })
 
 export default router
