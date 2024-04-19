@@ -22,3 +22,6 @@ onMounted(()=>{
 <style scoped>
 
 </style>
+<style>
+@import "@/styles/element-plus.css"
+</style>
