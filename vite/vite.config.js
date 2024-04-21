@@ -19,6 +19,9 @@ export default ({mode})=>{
       assetsDir:'static',
       sourcemap: true,
     },
+    server:{
+      proxy: getProxy(),
+    },
     plugins: [
       vue(),
       vueJsx(),
@@ -38,4 +41,20 @@ export default ({mode})=>{
       include: ["element-plus"],
     },
   })
+}
+
+function getProxy() {
+  const proxyServers = [
+    "manage-srv",
+  ];
+  const proxy = {};
+  proxyServers.forEach(function (api) {
+    proxy[`/${api}`] = {
+      target: 'https://xxx.sit.com',
+      changeOrigin: true,
+      pathRewrite: {},
+      secure: false,
+    };
+  });
+  return proxy;
 }
