@@ -18,6 +18,7 @@ const route = useRoute();
 const routerTitle = computed(() => props.title || route.meta.title || '');
 const loading = ref(true);
 const loadingMessage = ref('');
+const errorTitle = ref('加载错误');
 const errorMessage = ref('');
 
 const loadData = () => {
@@ -51,7 +52,7 @@ const onClickRetry = () => {
       <slot name="header"><span>{{ routerTitle }}</span></slot>
     </header>
     <div class='content' v-loading='loading' :element-loading-text="loadingMessage">
-      <el-result v-if='!loading && errorMessage' icon="warning" :title="errorMessage">
+      <el-result v-if='!loading && errorMessage' icon="warning" :title='errorTitle'  :sub-title="errorMessage">
         <template #extra>
           <el-button type="primary" @click='onClickRetry'>重新操作</el-button>
         </template>

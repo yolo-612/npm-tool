@@ -14,7 +14,8 @@ import { sleep } from '@/utils/index.js';
 
 const asyncData = async ()=>{
   await sleep(1000)
-  return Promise.reject(new Error('网络错误'))
+  // return Promise.reject(new Error('网络错误'))
+  // throw new Error('网络错误11')
 }
 
 </script>
