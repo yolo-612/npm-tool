@@ -6,7 +6,16 @@ import { useRoute } from 'vue-router';
 import { invokeAsyncFunction } from '@/utils';
 
 const props = defineProps({
-  title: String,
+  title: {
+    // 标题
+    type:String,
+    default:undefined,
+  },
+  showTitle:{
+    // 是否显示title
+    type:Boolean,
+    default:true,
+  },
   asyncData: {
     // 为空时，不显示loading
     type: Function,
@@ -48,7 +57,7 @@ const onClickRetry = () => {
 
 <template>
   <div class='ContentPage'>
-    <header class='header'>
+    <header class='header' v-if='showTitle'>
       <slot name="header"><span>{{ routerTitle }}</span></slot>
     </header>
     <div class='content' v-loading='loading' :element-loading-text="loadingMessage">
