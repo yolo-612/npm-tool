@@ -8,7 +8,7 @@ const router = createRouter({
 
 router.beforeEach(async(to, from) => {
   if(to && to.meta?.title){
-    document.title = to.meta.title
+    document.title = to.meta.title + " - YOLO"
   }
   return true
 })

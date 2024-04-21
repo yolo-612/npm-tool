@@ -1,11 +1,10 @@
 <script setup>
 
+import ContentPage from '@/layouts/ContentPage.vue';
 </script>
 
 <template>
-  <div>
-    操作页面
-  </div>
+  <ContentPage></ContentPage>
 </template>
 
 <style scoped>

@@ -15,13 +15,22 @@ import SidebarMenu from '@/components/app/SidebarMenu.vue';
 
 <style scoped>
 .AdminPage{
+  position: relative;
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: row;
+  background-color: #F3F2F2;
 }
 
 .AdminPage .main{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   flex-grow: 1;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: auto;
 }
 </style>

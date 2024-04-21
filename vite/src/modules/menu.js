@@ -1,3 +1,4 @@
+
 let menus = []
 let defaultActive = ''
 
@@ -5,12 +6,13 @@ const getMenuRouter = (routes)=>{
   if(!routes || routes.length===0){
     return []
   }
-  return routes.filter(route=>route.meta?.menu).map(route=>{
-    const { meta:{menu} } = route
+  return routes.filter(route=>route.meta?.menu?.show).map(route=>{
+    const { meta } = route
+    const { menu } = meta
     return {
       path: route.path,
-      title: menu.title,
-      icon:menu.icon,
+      title: menu.title || meta.title,
+      icon: menu.icon,
       children:getMenuRouter(route.children)
     }
   })

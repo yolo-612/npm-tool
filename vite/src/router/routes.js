@@ -10,10 +10,10 @@ const routesList = [
     component: ()=>import(/* webpackChunkName:'home' */'@/pages/home.vue'),
     meta: {
       title: '首页',// 页面tab显示的名称
-      // 有menu对象就会在菜单显示
       menu:{
-        title:'首页',// 菜单显示的名称
-        icon: 'Menu',// 菜单icon
+        show:true,// 是否在菜单显示，true才会在菜单显示
+        title:'',// 菜单显示的名称,如果为空会复用meta.title
+        icon:'Menu',// 菜单icon
       },
     },
   },

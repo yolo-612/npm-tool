@@ -1,0 +1,85 @@
+<script setup>
+import {
+  computed, defineProps, onMounted, ref,
+} from 'vue';
+import { useRoute } from 'vue-router';
+import { invokeAsyncFunction } from '@/utils';
+
+const props = defineProps({
+  title: String,
+  asyncData: {
+    // 为空时，不显示loading
+    type: Function,
+    default: null,
+  },
+});
+
+const route = useRoute();
+const routerTitle = computed(() => props.title || route.meta.title || '');
+const loading = ref(true);
+const loadingMessage = ref('');
+const errorMessage = ref('');
+
+const loadData = () => {
+  loading.value = true;
+  errorMessage.value = '';
+  invokeAsyncFunction(props.asyncData).catch((err) => {
+    errorMessage.value = err.message;
+    console.error(err);
+  }).finally(() => {
+    loading.value = false;
+  });
+};
+
+onMounted(() => {
+  if (props.asyncData) {
+    loadData();
+  } else {
+    loading.value = false;
+  }
+});
+
+const onClickRetry = () => {
+  loadData();
+};
+
+</script>
+
+<template>
+  <div class='ContentPage'>
+    <header class='header'>
+      <slot name="header"><span>{{ routerTitle }}</span></slot>
+    </header>
+    <div class='content' v-loading='loading' :element-loading-text="loadingMessage">
+      <el-result v-if='!loading && errorMessage' icon="warning" :title="errorMessage">
+        <template #extra>
+          <el-button type="primary" @click='onClickRetry'>重新操作</el-button>
+        </template>
+      </el-result>
+      <slot v-else></slot>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.ContentPage{
+  background-color: #FFFFFF;
+  padding: 10px 20px;
+  flex-shrink: 0;
+  flex-grow: 1;
+  border-radius: 5px;
+}
+.ContentPage .header{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 56px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: left;
+}
+.ContentPage .content{
+
+}
+</style>
