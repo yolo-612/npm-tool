@@ -8,6 +8,7 @@ export default [
       menu:{
         show:true,// 是否在菜单显示，true才会在菜单显示
         icon:'operation',// 菜单icon
+        permission: [/^operation/],// 权限标识，用于菜单隐藏和授权
       },
     },
   },

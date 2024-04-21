@@ -1,4 +1,6 @@
 import {reactive} from "vue";
+// import http from '@fpkg/http';
+import { getUserInfo } from "@/apis/api.js";
 
 class User{
   userInfo = reactive({
@@ -26,7 +28,28 @@ class User{
 
     return this._initPromise
   }
+  /**
+   * @return {Promise<void>}
+   * @private
+   */
+  async _getUserInfo() {
+    // const {success,obj} = await http.request(getUserInfo())
+    // if(success){
+    //   Object.assign(this.userInfo,obj)
+    // }
+  }
+
+  /**
+   * todo 获取角色权限
+   * @return {Promise<void>}
+   * @private
+   */
+  async _getPermissionRules(){
+
+  }
 }
+
+
 
 const user = new User()
 
