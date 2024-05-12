@@ -1,9 +1,14 @@
 <script setup>
-import { reactive, inject } from 'vue';
+import { ref, reactive, inject } from 'vue';
 import SidebarMenuItem from '@/components/app/SidebarMenuItem.vue';
-import {getMenusInfo} from '@/modules/menu.js';
+import { useMenuStore } from '@/stores';
+import { useRoute } from 'vue-router';
 
-const menuInfo = reactive(getMenusInfo())
+const menuStore = useMenuStore()
+
+const route = useRoute()
+const defaultActive = ref(route.meta.activeMenu || route.path)
+
 const handleOpen = (key, keyPath) => {
   console.log(key, keyPath);
 };
@@ -28,13 +33,13 @@ const onCollapseChange = ()=>{
   <aside class='SidebarMenu'>
     <el-menu
       class='SidebarMenu-menu'
-      :default-active="menuInfo.defaultActive"
+      :default-active="defaultActive"
       :collapse='!asideMenuOpen'
       :router='true'
       @open='handleOpen'
       @close='handleClose'
     >
-      <SidebarMenuItem  v-for='(item) in menuInfo.menus' v-bind='item'></SidebarMenuItem>
+      <SidebarMenuItem  v-for='(item) in menuStore.menuTree' v-bind='item'></SidebarMenuItem>
     </el-menu>
 
     <div class='icon-box' @click='onCollapseChange'>
@@ -64,5 +69,26 @@ const onCollapseChange = ()=>{
     transform: translateX(-50%);
     cursor: pointer;
   }
+}
+
+.el-menu{
+  --menu-height: 40px;
+  --menu-active-color: #409eff;
+  --menu-item-border-radius: 4px;
+  border-right: none;
+}
+.el-menu-item{
+  height: var(--menu-height);
+  margin: 4px;
+}
+.el-menu-item:hover{
+  border-radius: var(--menu-item-border-radius);
+}
+.el-menu-item.is-active{
+  background-color: var(--menu-active-color);
+  border-radius: var(--menu-item-border-radius);
+}
+.el-menu-item.is-active *{
+  color: #fff
 }
 </style>

@@ -9,3 +9,4 @@
 //   app.use(ElMenu);
 //   app.use(ElMenuItem);
 // }
+import "@/styles/element-plus.css" 

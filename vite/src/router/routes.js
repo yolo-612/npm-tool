@@ -1,4 +1,6 @@
-import operation from './operation'
+import { NOT_FOUND_ROUTE, RELOAD_ROUTE, DEFAULT_LAYOUT } from '@/router/base.js';
+
+import operation from './modules/operation'
 const routesList = [
   {
     path: '/',
@@ -7,25 +9,30 @@ const routesList = [
   {
     path: '/home',
     name: 'home',
-    component: ()=>import(/* webpackChunkName:'home' */'@/pages/home.vue'),
+    component: DEFAULT_LAYOUT,
+    redirect: '/home/index',
     meta: {
       title: '首页',// 页面tab显示的名称
-      menu:{
-        show:true,// 是否在菜单显示，true才会在菜单显示
-        title:'',// 菜单显示的名称,如果为空会复用meta.title
-        icon:'Menu',// 菜单icon
-      },
+      icon:'Menu', // 菜单icon
+      permission: ['*'],
     },
+    children: [
+      {
+        path: '/home/index',
+        name: 'workplace',
+        component: ()=>import('@/pages/home.vue'),
+        meta: {
+          title: '首页',// 页面tab显示的名称
+          permission: ['*'],
+          activeMenu: '/home',
+          hideInMenu: true,
+        },
+      }
+    ]
   },
-  ...operation,
-  {
-    path: '/:pathMatch(.*)',
-    name: '404',
-    component: () => import(/* webpackChunkName:'404' */ '@/pages/404.vue'),
-    meta: {
-      title: '404',
-    },
-  },
+  operation,
+  RELOAD_ROUTE,
+  NOT_FOUND_ROUTE
 ]
 
 export const routes = routesList

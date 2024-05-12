@@ -1,17 +1,9 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import '@/styles/reset.css'
-
 import App from './App.vue'
 import router from './router'
 import { appUser } from '@/modules/user.js';
-import { initMenus } from '@/modules/menu.js';
-import { routes } from '@/router/routes.js';
-
-// 尽早初始化用户信息
-appUser.init().catch(err=>{
-  console.error(err)
-})
 
 const app = createApp(App)
 const pinia = createPinia()
@@ -26,12 +18,8 @@ for (const path in modules) {
 
 const render = async ()=>{
   await appUser.init()
-  initMenus(routes)
   app.use(router)
   app.mount('#app')
-
-  console.log("router",router);
-
 }
 
 render().catch(err=>{

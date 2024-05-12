@@ -38,12 +38,12 @@ class User{
    */
   async _getUserInfo() {
     // const {success,obj} = await http.request(getUserInfo())
-    invokeAsyncFunction(Promise.resolve({
+    Promise.resolve({
       success: true,
       obj: {
         username: 'yolo',
       }
-    })).then((res)=>{
+    }).then((res)=>{
       const { success, obj } = res
       if(success){
         this.userInfo.userId = obj.username

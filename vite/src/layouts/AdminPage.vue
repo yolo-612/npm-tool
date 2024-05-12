@@ -60,7 +60,7 @@ provide('toggleAsideMenu', () => {
   flex-direction: column;
   position: relative;
   padding-top: 50px;
-  padding-left: 48px;
+  padding-left: 64px;
   box-sizing: border-box;
   overflow-y: auto;
   min-height: 100vh;

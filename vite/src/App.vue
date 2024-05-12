@@ -1,21 +1,9 @@
 <script setup>
-import AdminPage from '@/layouts/AdminPage.vue';
-import { onMounted, ref } from 'vue';
-
-const init = async ()=>{
-
-}
-
-onMounted(()=>{
-  init()
-})
-
-
 </script>
 
 <template>
   <div id='app'>
-    <AdminPage></AdminPage>
+    <RouterView></RouterView>
   </div>
 </template>
 
@@ -23,5 +11,4 @@ onMounted(()=>{
 
 </style>
 <style>
-@import "@/styles/element-plus.css"
 </style>
