@@ -20,11 +20,15 @@ class User{
     if (this._initPromise && !refresh) {
       return this._initPromise
     }
-    this._initPromise = new Promise((resolve, reject)=>{
-      setTimeout(()=>{
-        resolve()
-      },1000)
-    })
+    this._initPromise = (async ()=>{
+      try {
+        await this._getUserInfo();
+      } catch (e) {
+        console.error(e);
+      }
+
+      this.userInfo.isInited = true
+    })()
 
     return this._initPromise
   }
@@ -34,9 +38,22 @@ class User{
    */
   async _getUserInfo() {
     // const {success,obj} = await http.request(getUserInfo())
-    // if(success){
-    //   Object.assign(this.userInfo,obj)
-    // }
+    invokeAsyncFunction(Promise.resolve({
+      success: true,
+      obj: {
+        username: 'yolo',
+      }
+    })).then((res)=>{
+      const { success, obj } = res
+      if(success){
+        this.userInfo.userId = obj.username
+        this.userInfo.isLogin = true
+      }else{
+        this.userInfo.isLogin = false
+      }
+    }).catch((err)=>{
+      console.log(err)
+    })
   }
 
   /**
