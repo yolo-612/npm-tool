@@ -1,6 +1,9 @@
 <script setup>
+import { useUserStore } from '@/stores';
 
+const userStore = useUserStore();
 
+// 注册退出登录
 const handleCommand = async (command) => {
 };
 
@@ -23,7 +26,7 @@ const switchRole = (roleCode) => {
         </p>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item icon='User'>xxxx</el-dropdown-item>
+            <el-dropdown-item icon='User'>{{ userStore.empCode }}</el-dropdown-item>
             <el-dropdown-item command='logout' divided icon='Logout'>退出登录</el-dropdown-item>
           </el-dropdown-menu>
         </template>
