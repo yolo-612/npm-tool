@@ -1,7 +1,7 @@
 <template>
   <ContentPage title='首页' :async-data='asyncData'>
-    <p>首页内容</p>
-    <p>首页内容</p>
+    <p v-permission='["create"]'>测试v-permission指令</p>
+    <p v-permission='["operation_review"]'>首页内容</p>
     <p>首页内容</p>
   </ContentPage>
 </template>

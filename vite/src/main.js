@@ -4,6 +4,7 @@ import '@/styles/reset.css'
 import App from './App.vue'
 import router from './router'
 import { useUserStore } from "@/stores"
+import directive from '@/directive';
 
 const app = createApp(App)
 const pinia = createPinia()
@@ -24,6 +25,7 @@ userStore.initUser()
 const render = async ()=>{
   app.use(router)
   app.mount('#app')
+  app.use(directive)
 }
 
 render().catch(err=>{
