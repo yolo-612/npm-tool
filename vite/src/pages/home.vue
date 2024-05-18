@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-
+import http from "@yolo/http"
 import ContentPage from '@/layouts/ContentPage.vue';
 import { sleep } from '@/utils/index.js';
 
@@ -17,6 +17,8 @@ const asyncData = async ()=>{
   // return Promise.reject(new Error('网络错误'))
   // throw new Error('网络错误11')
 }
+
+console.log(http, '===>')
 
 </script>
 

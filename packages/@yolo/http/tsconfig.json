@@ -1,0 +1,10 @@
+{
+  "include": ["./src", "src/types"],
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "ES2015",
+    "outDir": "dist",
+    "skipLibCheck": true,
+    "moduleResolution": "node"
+  }
+}
