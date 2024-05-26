@@ -12,5 +12,9 @@
     "nprogress": "^0.2.0"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "",
+  "workspaces": [
+    "packages/@yolo/http",
+    "packages/@yolo/storage"
+  ]
 }
