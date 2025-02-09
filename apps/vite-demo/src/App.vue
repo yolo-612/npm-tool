@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 import { add } from '@yolo/ui-utils'
-import { PgButton } from '@yolo/pg-components'
+import { PgButton, PgTag } from '@yolo/pg-components'
 
 
 console.log(add(1,2))
@@ -9,6 +9,7 @@ console.log(add(1,2))
 
 <template>
   <pg-button>1221</pg-button>
+  <pg-tag>tag</pg-tag>
   <div>
     <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
