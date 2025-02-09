@@ -1,10 +1,14 @@
 <script setup>
+import { useUserStore } from '@/stores';
 
+const userStore = useUserStore();
 
+// 注册退出登录
 const handleCommand = async (command) => {
 };
 
 const switchRole = (roleCode) => {
+  userStore.switchRole(roleCode)
 };
 
 </script>
@@ -23,7 +27,7 @@ const switchRole = (roleCode) => {
         </p>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item icon='User'>xxxx</el-dropdown-item>
+            <el-dropdown-item icon='User'>{{ userStore.empCode }}</el-dropdown-item>
             <el-dropdown-item command='logout' divided icon='Logout'>退出登录</el-dropdown-item>
           </el-dropdown-menu>
         </template>
@@ -32,16 +36,16 @@ const switchRole = (roleCode) => {
       <!-- 角色    -->
       <el-dropdown @command='handleCommand'>
         <p class='header-title'>
-          <el-tag class='ml-2' type='info'>xxx</el-tag>
+          <el-tag class='ml-2' type='info'>{{ userStore.roleName }}</el-tag>
         </p>
         <template #dropdown>
           <el-dropdown-menu>
-            <!-- <el-dropdown-item 
-              v-for='item in userStore.baspRoleData'
+            <el-dropdown-item 
+              v-for='item in userStore.RoleData'
               @click='switchRole(item.roleCode)'
             >
               <p>{{ item.roleName }}</p>
-            </el-dropdown-item> -->
+            </el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>

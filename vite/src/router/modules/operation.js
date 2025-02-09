@@ -18,7 +18,7 @@ export default {
       component: ()=>import(/* webpackChunkName:'operation' */'@/pages/operation/index.vue'),
       meta: {
         title: '运营位', // 页面tab显示的名称
-        permission: [/^operation_/], // 权限标识，用于菜单隐藏和页面权限判断,默认没有这个字段时都有权限，有这个字段再根据权限判断
+        permission: [/^operation12_/], // 权限标识，用于菜单隐藏和页面权限判断,默认没有这个字段时都有权限，有这个字段再根据权限判断
         activeMenu: '/operation',
         hideInMenu: true,
       }

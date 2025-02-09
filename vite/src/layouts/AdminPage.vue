@@ -1,10 +1,13 @@
 <script setup>
 // 带侧边栏的页面
 import { ref,provide } from 'vue';
-
+import usePermission from "@/hook/usePermission";
 import { RouterView } from 'vue-router'
 import SidebarMenu from '@/components/app/SidebarMenu.vue';
 import AppHeader from '@/components/app/AppHeader.vue';
+import NotPermission from '@/components/app/NotPermission.vue';
+
+const {checkPermission} = usePermission()
 
 const asideMenuOpen = ref(true);
 
@@ -22,7 +25,10 @@ provide('toggleAsideMenu', () => {
         <SidebarMenu :asideMenuOpen='asideMenuOpen'></SidebarMenu>
       </div>
       <main class='main-content' :class='{asideMenuOpen}'>
-        <RouterView></RouterView>
+        <RouterView v-slot="{ Component, route }">
+          <component :is="Component" v-if="checkPermission(route.meta.permission ?? [])"/>
+          <NotPermission v-else/>
+        </RouterView>
       </main>
     </div>
   </div>

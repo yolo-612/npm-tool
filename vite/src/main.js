@@ -3,7 +3,8 @@ import { createPinia } from 'pinia'
 import '@/styles/reset.css'
 import App from './App.vue'
 import router from './router'
-import { appUser } from '@/modules/user.js';
+import { useUserStore } from "@/stores"
+import directive from '@/directive';
 
 const app = createApp(App)
 const pinia = createPinia()
@@ -16,10 +17,15 @@ for (const path in modules) {
   modules[path] && modules[path].default && modules[path].default({router,app,pinia});
 }
 
+const userStore = useUserStore()
+// 尽早初始化用户信息
+// @ts-ignore
+userStore.initUser()
+
 const render = async ()=>{
-  await appUser.init()
   app.use(router)
   app.mount('#app')
+  app.use(directive)
 }
 
 render().catch(err=>{
