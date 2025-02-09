@@ -8,13 +8,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "nprogress": "^0.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {},
-  "description": "",
-  "workspaces": [
-    "packages/@yolo/http",
-    "packages/@yolo/storage"
-  ]
+  "description": ""
 }
