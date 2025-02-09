@@ -1,7 +1,7 @@
 import PgButton from './src/index.vue'
 
-const ButtonInstall = () => {
-  install: (app) => {
+const ButtonInstall = {
+  install(app) {
     app.component('pg-button', PgButton);
   }
 }
