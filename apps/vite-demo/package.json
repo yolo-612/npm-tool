@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@yolo/pg-components": "workspace:^",
     "@yolo/ui-utils": "workspace:^",
     "vue": "^3.5.13"
   },
