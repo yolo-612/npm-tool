@@ -17,7 +17,5 @@ project/2025/0209：
 
 
 2025-0209：
-  阻塞问题：
-  (1)、在pg-component组件库中 /button/index.js导出了 plugin的 install方法，
-  在vite-demo使用的时候  app.use(ButtonInstall) 也没有报错，
-  但是在页面vue中直接用<pg-button>1221</pg-button>没有效果
+  思考问题：
+  (1)、为什么pg-components/components下面的vue文件，能直接通过index.js文件导入导出 直接通过npm包的方式在另一个vue项目中直接使用

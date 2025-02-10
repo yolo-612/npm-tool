@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 import { add } from '@yolo/ui-utils'
-import { PgButton, PgTag } from '@yolo/pg-components'
-
 
 console.log(add(1,2))
 </script>

@@ -10,9 +10,9 @@ importers:
 
   apps/vite-demo:
     dependencies:
-      '@yolo/pg-components':
+      '@yolo/pg-kit':
         specifier: workspace:^
-        version: link:../../packages/ui/pg-components/components
+        version: link:../../packages/ui/pg-components/ui
       '@yolo/ui-utils':
         specifier: workspace:^
         version: link:../../packages/ui/utils
@@ -57,6 +57,22 @@ importers:
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.7.3)
+
+  packages/ui/pg-components/ui:
+    dependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^5.2.1
+        version: 5.2.1(vite@6.1.0(less@4.2.2))(vue@3.5.13(typescript@5.7.3))
+      '@yolo/pg-components':
+        specifier: workspace:^
+        version: link:../components
+    devDependencies:
+      typescript:
+        specifier: ~5.7.2
+        version: 5.7.3
+      vite:
+        specifier: ^6.1.0
+        version: 6.1.0(less@4.2.2)
 
   packages/ui/utils: {}
 
