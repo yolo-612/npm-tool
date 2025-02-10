@@ -1,7 +1,8 @@
+import type { App, Plugin } from 'vue'
 import PgTag from './src/index.vue'
 
-const TagInstall = {
-  install(app) {
+const TagInstall: Plugin = {
+  install(app: App) {
     app.component('pg-tag', PgTag)
   }
 }

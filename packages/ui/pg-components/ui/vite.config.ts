@@ -1,5 +1,8 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { presetUno, presetAttributify, presetIcons } from 'unocss'
+import Unocss from 'unocss/vite'
+import { safelist } from './config/uno'
 
 export default defineConfig({
   build: {
@@ -16,5 +19,9 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    Unocss({
+      safelist,
+      presets: [presetUno(), presetAttributify(), presetIcons()]
+    })
   ]
 })
