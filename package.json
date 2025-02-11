@@ -1,14 +1,14 @@
 {
-  "name": "npm-tool",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "前端monorepo项目集合",
   "keywords": [],
-  "author": "",
+  "author": "yolo",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {},
-  "description": ""
+  "packageManager": "pnpm@9.3.0",
+  "scripts": {
+    "build": "turbo build"
+  },
+  "devDependencies": {
+    "turbo": "^2.4.1"
+  }
 }
