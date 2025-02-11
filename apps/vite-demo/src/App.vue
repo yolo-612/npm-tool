@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+// import { add } from '@yolo/ui-utils'
+
+// console.log(add(1,2))
 </script>
 
 <template>
+  <pg-button type="primary">1221</pg-button>
+  <pg-tag>tag</pg-tag>
   <div>
     <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
