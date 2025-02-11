@@ -1,5 +1,5 @@
 packages:
-  - packages/** # ui库、工具库等相关库
+  - packages/ui/** # ui库、工具库等相关库
   - docs # 组件库文档
   - apps/* # 应用
   - vite # 管理平台实现demo
