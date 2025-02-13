@@ -6,6 +6,7 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
+  <el-button>牙膏</el-button>
   <pg-button type="primary">1221</pg-button>
   <pg-tag>tag</pg-tag>
   <div>
