@@ -5,6 +5,11 @@ main分支：不提交|归档
 
   feature/2025/V0209-user：用户管理后台模块
 
+（
+分支统一合并到release上，由release统一合并到master，
+不从master合并到各个开发分支，开发分支开发前拉最新的release分支
+）  
+
 少点强迫症：差不多就可以，先实现再优化
 
 project/2025/0209： 
