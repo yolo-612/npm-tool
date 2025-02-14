@@ -1,10 +1,11 @@
+import * as path from 'path';
 import { defineConfig } from 'vite'
 
 export default defineConfig({
   build: {
     lib: {
-      entry: './index.ts',
-      name: 'element-plus',
+      entry: path.resolve(__dirname, 'index.ts'),
+      name: '@yolo/element-plus',
       fileName: (format) => `element.${format}.js`
     },
     rollupOptions: {

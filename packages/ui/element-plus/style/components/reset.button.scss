@@ -1,0 +1,255 @@
+@use "../vars.scss";
+
+.#{$namespace}-button {
+  --#{$namespace}-button-hover-text-color: var(--sdesign-color-brand-5);
+  --#{$namespace}-button-hover-bg-color: var(--sdesign-color-brand-1);
+  --#{$namespace}-button-hover-border-color: var(--sdesign-color-brand-5);
+  --#{$namespace}-button-active-text-color: var(--sdesign-color-brand-7);
+  --#{$namespace}-button-active-bg-color: var(--sdesign-color-brand-2);
+  --#{$namespace}-button-active-border-color: var(--sdesign-color-brand-7);
+
+  &:active {
+    color: var(--#{$namespace}-button-active-text-color);
+    background-color: var(--#{$namespace}-button-active-bg-color);
+    border-color: var(--#{$namespace}-button-active-border-color);
+  }
+  &:hover {
+    color: var(--#{$namespace}-button-hover-text-color);
+    background-color: var(--#{$namespace}-button-hover-bg-color);
+    border-color: var(--#{$namespace}-button-hover-border-color);
+  }
+  &--mini {
+    --el-button-size: 24px;
+    height: var(--el-button-size);
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: calc(var(--el-border-radius-base) - 1px);
+    &.is-circle {
+      width: var(--el-button-size);
+      padding: 4px;
+    }
+  }
+  &--default,
+  &--large,
+  &--small,
+  &--mini {
+    &:not(.is-disabled) {
+      &:active {
+        color: var(--#{$namespace}-button-active-text-color) !important;
+        background-color: var(--#{$namespace}-button-active-bg-color) !important;
+        border-color: var(--#{$namespace}-button-active-border-color) !important;
+        &.is-text {
+          background-color: var(--#{$namespace}-button-active-bg-color) !important;
+        }
+      }
+      &:hover {
+        color: var(--#{$namespace}-button-hover-text-color);
+        background-color: var(--#{$namespace}-button-hover-bg-color);
+        border-color: var(--#{$namespace}-button-hover-border-color);
+      }
+    }
+  }
+  &.is-disabled {
+    border-color: transparent;
+    color: var(--sdesign-font-color-5);
+    &:hover {
+      border-color: transparent;
+      color: var(--sdesign-font-color-5);
+    }
+  }
+  &.is-ghost {
+    --#{$namespace}-button-bg-color: var(--sdesign-color-white);
+    --#{$namespace}-button-text-color: var(--sdesign-color-white);
+    --#{$namespace}-button-hover-text-color: var(--sdesign-color-brand-5);
+    --#{$namespace}-button-active-text-color: var(--sdesign-color-brand-7);
+    background: transparent;
+  }
+  &.is-text.is-has-bg {
+    &:not(.is-disabled) {
+      background-color: var(--sdesign-color-fill-3);
+      &:hover {
+        background-color: var(--sdesign-color-brand-1);
+        color: var(--sdesign-color-brand-5);
+      }
+      &:active {
+        background-color: var(--sdesign-color-brand-2) !important;
+        color: var(--sdesign-color-brand-7);
+      }
+    }
+    &.is-disabled {
+      color: var(--sdesign-color-grey-4);
+      background-color: var(--sdesign-color-grey-2) !important;
+    }
+  }
+  &.is-text {
+    &:not(.is-disabled) {
+      &:hover {
+        background-color: var(--#{$namespace}-button-hover-bg-color) !important;
+      }
+    }
+    &.is-disabled {
+      color: var(--sdesign-color-grey-4);
+    }
+  }
+  &.is-link {
+    &:not(.is-disabled) {
+      &:hover {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        color: var(--sdesign-color-brand-5);
+      }
+      &:active {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        color: var(--sdesign-color-brand-7);
+      }
+    }
+    &.is-disabled {
+      color: var(--sdesign-color-grey-4);
+    }
+  }
+  @each $type,
+    $color-name in ("primary": "brand", "success": "green", "info": "grey", "warning": "orange", "danger": "red")
+  {
+    &--#{$type},
+    &--#{$type}.is-circle {
+      --#{$namespace}-button-hover-text-color: var(--sdesign-color-white);
+      --#{$namespace}-button-hover-bg-color: var(--sdesign-color-#{$color-name}-5);
+      --#{$namespace}-button-active-text-color: var(--sdesign-color-white);
+      --#{$namespace}-button-active-bg-color: var(--sdesign-color-#{$color-name}-7);
+      --#{$namespace}-button-hover-border-color: var(--sdesign-color-#{$color-name}-5);
+      --#{$namespace}-button-active-border-color: var(--sdesign-color-#{$color-name}-7);
+      --#{$namespace}-button-border-color: var(--sdesign-color-#{$color-name}-6);
+      &.is-disabled {
+        color: var(--sdesign-color-white);
+        &:hover {
+          color: var(--sdesign-color-white);
+        }
+      }
+      &.is-ghost {
+        --#{$namespace}-button-text-color: var(--sdesign-color-#{$color-name}-6);
+        --#{$namespace}-button-hover-text-color: var(--sdesign-color-#{$color-name}-5);
+        --#{$namespace}-button-hover-bg-color: var(
+          --sdesign-color-#{$color-name}-1
+        ); // FIXME 理论上应为对应色的hover色？
+        --#{$namespace}-button-active-text-color: var(--sdesign-color-#{$color-name}-7);
+        --#{$namespace}-button-active-bg-color: var(--sdesign-color-#{$color-name}-2);
+        --#{$namespace}-button-hover-border-color: var(--sdesign-color-#{$color-name}-5);
+        --#{$namespace}-button-active-border-color: var(--sdesign-color-#{$color-name}-7);
+        --#{$namespace}-button-border-color: var(--sdesign-color-#{$color-name}-6);
+        &:hover {
+          background-color: var(--#{$namespace}-button-hover-bg-color);
+        }
+        &:active {
+          background-color: var(--#{$namespace}-button-active-bg-color);
+        }
+      }
+      &:hover {
+        background-color: var(--#{$namespace}-button-hover-bg-color);
+        border-color: var(--#{$namespace}-button-hover-border-color);
+      }
+      &:active {
+        background-color: var(--#{$namespace}-button-active-bg-color);
+        border-color: var(--#{$namespace}-button-active-border-color);
+      }
+    }
+    &--#{$type}.is-plain {
+      --#{$namespace}-button-bg-color: var(--sdesign-color-white);
+      --#{$namespace}-button-hover-text-color: var(--sdesign-color-#{$color-name}-5);
+      --#{$namespace}-button-hover-bg-color: var(--sdesign-color-#{$color-name}-1); // FIXME 理论上应为对应色的hover色？
+      --#{$namespace}-button-active-text-color: var(--sdesign-color-#{$color-name}-7);
+      --#{$namespace}-button-active-bg-color: var(--sdesign-color-#{$color-name}-2);
+      --#{$namespace}-button-hover-border-color: var(--sdesign-color-#{$color-name}-5);
+      --#{$namespace}-button-active-border-color: var(--sdesign-color-#{$color-name}-7);
+      --#{$namespace}-button-border-color: var(--sdesign-color-#{$color-name}-6);
+      &.is-disabled {
+        border-color: transparent;
+        color: var(--sdesign-color-#{$color-name}-3);
+        background-color: var(--sdesign-color-white);
+        &:hover {
+          border-color: transparent;
+          color: var(--sdesign-color-#{$color-name}-3);
+          background-color: var(--sdesign-color-white);
+        }
+      }
+      &:hover {
+        background-color: var(--#{$namespace}-button-hover-bg-color);
+      }
+      &:active {
+        background-color: var(--#{$namespace}-button-active-bg-color);
+        color: var(--#{$namespace}-button-active-text-color);
+      }
+    }
+    &--#{$type}.is-link {
+      &:not(.is-disabled) {
+        &:hover {
+          background-color: transparent;
+          border-color: transparent;
+          color: var(--sdesign-color-#{$color-name}-5) !important;
+        }
+        &:active {
+          background-color: transparent;
+          border-color: transparent;
+          color: var(--sdesign-color-#{$color-name}-7) !important;
+        }
+      }
+      &.is-disabled {
+        color: var(--sdesign-color-#{$color-name}-3);
+        &:hover {
+          color: var(--sdesign-color-#{$color-name}-3);
+        }
+      }
+    }
+    &--#{$type}.is-text {
+      --#{$namespace}-button-active-bg-color: var(--sdesign-color-#{$color-name}-2);
+      --#{$namespace}-button-active-text-color: var(--sdesign-color-#{$color-name}-7);
+      &:not(.is-disabled) {
+        &:hover {
+          background-color: var(--sdesign-color-#{$color-name}-1) !important;
+          color: var(--sdesign-color-#{$color-name}-5);
+        }
+        &:active {
+          background-color: var(--sdesign-color-#{$color-name}-2) !important;
+        }
+      }
+      &.is-disabled {
+        color: var(--sdesign-color-#{$color-name}-3);
+        &:hover {
+          color: var(--sdesign-color-#{$color-name}-3);
+        }
+      }
+    }
+    &--#{$type}.is-dashed {
+      background-color: transparent;
+      color: var(--sdesign-color-#{$color-name}-6);
+      &:hover {
+        background-color: var(--sdesign-color-#{$color-name}-1) !important;
+        color: var(--sdesign-color-#{$color-name}-5);
+      }
+      &:active {
+        background-color: var(--sdesign-color-#{$color-name}-2) !important;
+        color: var(--sdesign-color-#{$color-name}-7) !important;
+      }
+    }
+    &--#{$type}.is-text.is-has-bg {
+      &:not(.is-disabled) {
+        background-color: var(--sdesign-color-fill-3);
+        &:hover {
+          background-color: var(--sdesign-color-#{$color-name}-1);
+          color: var(--sdesign-color-#{$color-name}-5);
+        }
+        &:active {
+          background-color: var(--sdesign-color-#{$color-name}-2) !important;
+          color: var(--sdesign-color-#{$color-name}-7);
+        }
+      }
+      &.is-disabled {
+        color: var(--sdesign-color-grey-4);
+        background-color: var(--sdesign-color-grey-2) !important;
+      }
+    }
+  }
+  &.is-dashed {
+    border-style: dashed;
+  }
+}

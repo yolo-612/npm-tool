@@ -1,10 +1,15 @@
 import ElementPlus  from 'element-plus';
-import type { App, Plugin } from 'vue';
+import type { App } from 'vue';
+import './style/index.scss'
 
-const install: Plugin = {
-  install(app: App) {
-    app.use(ElementPlus)
-  }
+const install = function(app: App, opt: any) {
+  app.use(ElementPlus)
+  console.log(opt)
 }
 
-export default install
+
+export default {
+  name: 'PC Web Element-Plus组件库',
+  version: '1.0.0',
+  install
+};
