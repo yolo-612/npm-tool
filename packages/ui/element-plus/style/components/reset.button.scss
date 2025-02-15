@@ -1,4 +1,4 @@
-@use "../vars.scss";
+@use "/vars.scss" as *;
 
 .#{$namespace}-button {
   --#{$namespace}-button-hover-text-color: var(--sdesign-color-brand-5);
