@@ -7,6 +7,12 @@ const install = function(app: App, opt: any) {
   console.log(opt)
 }
 
+export {
+  ElMessageBox,
+  ElMessage,
+  ElNotification,
+  ElLoading
+} from 'element-plus';
 
 export default {
   name: 'PC Web Element-Plus组件库',
