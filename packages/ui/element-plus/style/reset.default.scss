@@ -1,6 +1,6 @@
 @use "sass:map";
+@use "./vars.scss" as *;
 
-$namespace: "el" !default;
 @forward "element-plus/theme-chalk/src/mixins/config.scss" with (
     $namespace: #{$namespace}
 );

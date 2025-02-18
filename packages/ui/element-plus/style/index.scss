@@ -3,4 +3,4 @@
 @use "./reset.default.scss";
 
 // Basic
-@use "./components/reset.button.scss";
+@use "./components/reset.button.scss" as resetButton;
