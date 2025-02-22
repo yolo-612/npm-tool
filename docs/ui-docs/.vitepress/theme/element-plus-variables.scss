@@ -1,0 +1,13 @@
+@import "@yolo/element-plus/style/index.scss";
+
+.el-form--inline {
+    .el-form-item {
+        & > .el-input,
+        .el-cascader,
+        .el-select,
+        .el-date-editor,
+        .el-autocomplete {
+            width: 240px;
+        }
+    }
+}
