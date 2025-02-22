@@ -19,7 +19,7 @@ SFDesign 可以在支持 [ES2018](https://caniuse.com/?feats=mdn-javascript_buil
 
 SFDesign 目前还处于快速开发迭代中。
 
-> @sdesign/theme:^1.2.0、@sdesign/element-plus:^1.2.30、@sdesign/element-plus:^1.3.7、@sdesign/element-plus:^1.4.4、@sdesign/andtv3:^1.1.10<br>
+> @sdesign/theme:^1.2.0、@yolo/element-plus:^1.2.30、@yolo/element-plus:^1.3.7、@yolo/element-plus:^1.4.4、@sdesign/andtv3:^1.1.10<br>
 > https://artifactory.sf-express.com/ui/packages?name=@sdesign&type=packages
 
 ## 使用包管理器
@@ -45,7 +45,7 @@ $ yarn add @sdesign/theme
 ```shell
 # 基于element-plus的实现
 # PnPM
-$ pnpm install @sdesign/element-plus --save
+$ pnpm install @yolo/element-plus --save
 ```
 
 ```shell
@@ -55,7 +55,7 @@ $ pnpm install @sdesign/antdv3 --save
 ```
 
 ## 相关依赖
-@sdesign/element-plus
+@yolo/element-plus
 ```json
 "peerDependencies": {
     "@sdesign/icons-vue": ">=1.0.0",

@@ -6,6 +6,8 @@ import SDesignElementPlus from '@yolo/element-plus';
 import './element-plus-variables.scss';
 
 import { globals } from '../vitepress';
+import { registerComponents } from './register-components';
+
 import 'vitepress-theme-demoblock/dist/theme/styles/index.css';
 import 'prismjs/themes/prism.css';
 
@@ -25,6 +27,7 @@ export default {
   },
 
   enhanceApp: ({ app }: any) => {
+    registerComponents(app);
     globals.forEach(([name, Comp]) => {
       app.use(SDesignElementPlus);
       app.component(name, Comp);

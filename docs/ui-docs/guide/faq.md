@@ -26,7 +26,7 @@ export default defineConfig({
 <br/>
 针对element-plus最新版本，会开发1.3.x版本以作支持。
 
-## 3、在引入@sdesign/element-plus后，使用项目未加任何样式，可能组件样式会有问题<br/>
+## 3、在引入@yolo/element-plus后，使用项目未加任何样式，可能组件样式会有问题<br/>
 
 #### 解决方法：
 组件库中内置了common.scss，文件里有一些预设的样式，减少接入成本，其中内容包含：

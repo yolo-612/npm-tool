@@ -22,16 +22,16 @@ import '@sdesign/theme/index.css'
 * 创建一个scss文件_element-plus-variables.scss
 ```scss
 $namespace: 'sf'; // 命名空间（修改的话才加上）
-@import "@sdesign/element-plus/style/index.scss";
+@import "@yolo/element-plus/style/index.scss";
 ```
 * 入口文件引入
 ```typescript
-import SDesignElementPlus from '@sdesign/element-plus';
+import SDesignElementPlus from '@yolo/element-plus';
 import './_element-plus-variables.scss';
 // 使用自定义指令
-import { Directives } from '@sdesign/element-plus'; // 使用自定义指令
+import { Directives } from '@yolo/element-plus'; // 使用自定义指令
 // 继承并扩展了element-plus多语言文件
-import { Utils } from '@sdesign/element-plus';
+import { Utils } from '@yolo/element-plus';
 
 // 命名空间、多语言（修改的话才加上）
 app.use(SDesignElementPlus, { namespace: 'sf', i18n: Utils.en });

@@ -11,7 +11,7 @@ const deps = [
   'body-scroll-lock',
   'mitt',
   '@sdesign/theme',
-  '@sdesign/element-plus'
+  '@yolo/element-plus'
 ];
 
 /**

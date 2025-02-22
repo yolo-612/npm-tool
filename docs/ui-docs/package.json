@@ -2,7 +2,6 @@
   "name": "docs",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "vitepress dev .",
@@ -18,7 +17,10 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
+    "markdown-it-container": "^4.0.0",
+    "minimist": "^1.2.8",
     "prismjs": "^1.29.0",
+    "sass": "^1.85.0",
     "vitepress": "^1.6.3",
     "vitepress-theme-demoblock": "^3.0.7"
   }

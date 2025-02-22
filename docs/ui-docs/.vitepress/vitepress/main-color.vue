@@ -52,7 +52,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import clipboardCopy from 'clipboard-copy';
-import { ElMessage } from '@sdesign/element-plus';
+import { ElMessage } from '@yolo/element-plus';
 
 export default defineComponent({
   setup() {

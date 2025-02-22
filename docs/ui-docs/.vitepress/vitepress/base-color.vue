@@ -32,7 +32,7 @@
 </template>
 <script lang="ts" setup>
 import clipboardCopy from 'clipboard-copy';
-import { ElMessage } from '@sdesign/element-plus';
+import { ElMessage } from '@yolo/element-plus';
 
 const baseTokens = [
   'red',
