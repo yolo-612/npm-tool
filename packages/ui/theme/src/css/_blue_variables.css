@@ -1,0 +1,224 @@
+/**
+ * SDesign Theme
+ * Build Version 1.2.0
+ */
+
+:root {
+  /* Blue Brand Color */
+  --sdesign-color-brand-1: #ebf1ff;
+  --sdesign-color-brand-2: #d6e2ff;
+  --sdesign-color-brand-3: #adc3ff;
+  --sdesign-color-brand-4: #85a1ff;
+  --sdesign-color-brand-5: #5c7cff;
+  --sdesign-color-brand-6: #3355ff;
+  --sdesign-color-brand-7: #2b42d9;
+  --sdesign-color-brand-8: #2432b3;
+  --sdesign-color-brand-9: #1c248c;
+  --sdesign-color-brand-10: #141766;
+  /* Base Color */
+  --sdesign-color-purple-1: #f0ebff;
+  --sdesign-color-purple-2: #e2d6ff;
+  --sdesign-color-purple-3: #c7adff;
+  --sdesign-color-purple-4: #af85ff;
+  --sdesign-color-purple-5: #9a5cff;
+  --sdesign-color-purple-6: #8833ff;
+  --sdesign-color-purple-7: #792bd9;
+  --sdesign-color-purple-8: #6924b3;
+  --sdesign-color-purple-9: #561c8c;
+  --sdesign-color-purple-10: #411466;
+  --sdesign-color-blue-1: #ebf7ff;
+  --sdesign-color-blue-2: #d6edff;
+  --sdesign-color-blue-3: #add8ff;
+  --sdesign-color-blue-4: #85c0ff;
+  --sdesign-color-blue-5: #5ca5ff;
+  --sdesign-color-blue-6: #3388ff;
+  --sdesign-color-blue-7: #2b6ed9;
+  --sdesign-color-blue-8: #2456b3;
+  --sdesign-color-blue-9: #1c408c;
+  --sdesign-color-blue-10: #142c66;
+  --sdesign-color-pink-1: #fae6f4;
+  --sdesign-color-pink-2: #fad2ed;
+  --sdesign-color-pink-3: #faaade;
+  --sdesign-color-pink-4: #fa82cc;
+  --sdesign-color-pink-5: #fa5ab7;
+  --sdesign-color-pink-6: #fa32a0;
+  --sdesign-color-pink-7: #d42a82;
+  --sdesign-color-pink-8: #ad2366;
+  --sdesign-color-pink-9: #871b4c;
+  --sdesign-color-pink-10: #611334;
+  --sdesign-color-green-1: #ebfff8;
+  --sdesign-color-green-2: #d6fff1;
+  --sdesign-color-green-3: #a5f2db;
+  --sdesign-color-green-4: #77e6c8;
+  --sdesign-color-green-5: #4ed9b8;
+  --sdesign-color-green-6: #29ccab;
+  --sdesign-color-green-7: #21a690;
+  --sdesign-color-green-8: #1a8072;
+  --sdesign-color-green-9: #125952;
+  --sdesign-color-green-10: #0a3330;
+  --sdesign-color-red-1: #ffebee;
+  --sdesign-color-red-2: #ffd6dc;
+  --sdesign-color-red-3: #ffadb6;
+  --sdesign-color-red-4: #ff858d;
+  --sdesign-color-red-5: #ff5c61;
+  --sdesign-color-red-6: #f23030;
+  --sdesign-color-red-7: #cc2e29;
+  --sdesign-color-red-8: #a62a21;
+  --sdesign-color-red-9: #802419;
+  --sdesign-color-red-10: #591b12;
+  --sdesign-color-orange-1: #fff9eb;
+  --sdesign-color-orange-2: #fff1d6;
+  --sdesign-color-orange-3: #ffe1ad;
+  --sdesign-color-orange-4: #ffce85;
+  --sdesign-color-orange-5: #ffb85c;
+  --sdesign-color-orange-6: #ffa133;
+  --sdesign-color-orange-7: #d9822b;
+  --sdesign-color-orange-8: #b36624;
+  --sdesign-color-orange-9: #8c4d1c;
+  --sdesign-color-orange-10: #663514;
+  --sdesign-color-yellow-1: #fffeeb;
+  --sdesign-color-yellow-2: #fffbd6;
+  --sdesign-color-yellow-3: #fff4ad;
+  --sdesign-color-yellow-4: #ffeb85;
+  --sdesign-color-yellow-5: #ffde5c;
+  --sdesign-color-yellow-6: #ffcf33;
+  --sdesign-color-yellow-7: #d9aa2b;
+  --sdesign-color-yellow-8: #b38823;
+  --sdesign-color-yellow-9: #8c671c;
+  --sdesign-color-yellow-10: #664814;
+  --sdesign-color-grey-1: #fafafa;
+  --sdesign-color-grey-2: #f5f5f5;
+  --sdesign-color-grey-3: #e0e0e0;
+  --sdesign-color-grey-4: #cccccc;
+  --sdesign-color-grey-5: #b8b8b8;
+  --sdesign-color-grey-6: #a3a3a3;
+  --sdesign-color-grey-7: #8f8f8f;
+  --sdesign-color-grey-8: #7a7a7a;
+  --sdesign-color-grey-9: #666666;
+  --sdesign-color-grey-10: #4d4d4d;
+  --sdesign-color-grey-11: #333333;
+  --sdesign-color-grey-12: #1a1a1a;
+  --sdesign-color-neutral-1: #f5f5fa;
+  --sdesign-color-neutral-2: #e1e3ed;
+  --sdesign-color-neutral-3: #d1d4e0;
+  --sdesign-color-neutral-4: #b3b7c8;
+  --sdesign-color-neutral-5: #a3a7b8;
+  --sdesign-color-neutral-6: #9397a8;
+  --sdesign-color-neutral-7: #848899;
+  --sdesign-color-neutral-8: #75798a;
+  --sdesign-color-neutral-9: #616576;
+  --sdesign-color-neutral-10: #4d5162;
+  --sdesign-color-neutral-11: #3a3e4f;
+  --sdesign-color-neutral-12: #272b3c;
+  --sdesign-color-white: #ffffff;
+  --sdesign-color-black: #000000;
+  /* Bg Color */
+  --sdesign-color-bg-1: var(--sdesign-color-white);
+  --sdesign-color-bg-2: var(--sdesign-color-grey-1);
+  --sdesign-color-bg-3: var(--sdesign-color-neutral-1);
+  --sdesign-color-bg-4: var(--sdesign-color-grey-2);
+  /* Border Color */
+  --sdesign-color-border-none: rgba(0, 0, 0, 0);
+  --sdesign-color-border-default: var(--sdesign-color-grey-3);
+  --sdesign-color-border-hover: var(--sdesign-color-grey-3);
+  --sdesign-color-border-active: var(--sdesign-color-blue-6);
+  --sdesign-color-border-active-brand: var(--sdesign-color-brand-6);
+  --sdesign-color-border-wrong: var(--sdesign-color-red-6);
+  /* Disable Color */
+  --sdesign-color-disable-font: var(--sdesign-color-neutral-6);
+  --sdesign-color-disable-border: var(--sdesign-color-grey-3);
+  --sdesign-color-disable-fill: var(--sdesign-color-neutral-2);
+  --sdesign-color-disable-btn-primary: var(--sdesign-color-neutral-3);
+  --sdesign-color-disable-btn-secondary: var(--sdesign-color-neutral-2);
+  /* Fill Color */
+  --sdesign-color-fill-1: rgba(0, 0, 0, 0);
+  --sdesign-color-fill-2: var(--sdesign-color-grey-1);
+  --sdesign-color-fill-3: var(--sdesign-color-grey-2);
+  --sdesign-color-fill-4: var(--sdesign-color-grey-3);
+  --sdesign-color-fill-5: var(--sdesign-color-grey-2);
+  --sdesign-color-fill-6: var(--sdesign-color-grey-1);
+  --sdesign-color-fill-danger: var(--sdesign-color-red-1);
+  --sdesign-color-fill-hover: var(--sdesign-color-brand-1);
+  /* Link Color */
+  --sdesign-color-link-brand-default: var(--sdesign-color-brand-6);
+  --sdesign-color-link-brand-hover: var(--sdesign-color-brand-5);
+  --sdesign-color-link-brand-active: var(--sdesign-color-brand-7);
+  --sdesign-color-link-brand-disable: var(--sdesign-color-brand-3);
+  --sdesign-color-link-default: var(--sdesign-color-blue-6);
+  --sdesign-color-link-hover: var(--sdesign-color-blue-5);
+  --sdesign-color-link-active: var(--sdesign-color-blue-7);
+  --sdesign-color-link-disable: var(--sdesign-color-blue-3);
+  /* Status Color */
+  --sdesign-color-status-danger: var(--sdesign-color-red-6);
+  --sdesign-color-status-danger-light: var(--sdesign-color-red-2);
+  --sdesign-color-status-danger-dark: var(--sdesign-color-red-8);
+  --sdesign-color-status-warning: var(--sdesign-color-orange-6);
+  --sdesign-color-status-warning-light: var(--sdesign-color-orange-2);
+  --sdesign-color-status-warning-dark: var(--sdesign-color-orange-8);
+  --sdesign-color-status-process: var(--sdesign-color-blue-6);
+  --sdesign-color-status-process-light: var(--sdesign-color-blue-2);
+  --sdesign-color-status-process-dark: var(--sdesign-color-blue-8);
+  --sdesign-color-status-success: var(--sdesign-color-green-6);
+  --sdesign-color-status-success-light: var(--sdesign-color-green-2);
+  --sdesign-color-status-success-dark: var(--sdesign-color-green-8);
+  /* Font Color */
+  --sdesign-font-color-1: var(--sdesign-color-grey-12);
+  --sdesign-font-color-2: var(--sdesign-color-grey-9);
+  --sdesign-font-color-3: var(--sdesign-color-grey-7);
+  --sdesign-font-color-4: var(--sdesign-color-grey-6);
+  --sdesign-font-color-5: var(--sdesign-color-grey-4);
+  /* Font Size */
+  --sdesign-font-size-extra-giant: 46px;
+  --sdesign-font-size-extra-huge: 38px;
+  --sdesign-font-size-extra-large: 24px;
+  --sdesign-font-size-extra-small: 12px;
+  --sdesign-font-size-huge: 30px;
+  --sdesign-font-size-large: 20px;
+  --sdesign-font-size-medium: 16px;
+  --sdesign-font-size-regular: 14px;
+  --sdesign-font-size-small: 13px;
+  /* Font Line Height */
+  --sdesign-font-line-height-extra-giant: calc(var(--sdesign-font-size-extra-giant) + 8px);
+  --sdesign-font-line-height-extra-huge: calc(var(--sdesign-font-size-extra-huge) + 8px);
+  --sdesign-font-line-height-extra-large: calc(var(--sdesign-font-size-extra-large) + 8px);
+  --sdesign-font-line-height-extra-small: calc(var(--sdesign-font-size-extra-small) + 8px);
+  --sdesign-font-line-height-huge: calc(var(--sdesign-font-size-huge) + 8px);
+  --sdesign-font-line-height-large: calc(var(--sdesign-font-size-large) + 8px);
+  --sdesign-font-line-height-medium: calc(var(--sdesign-font-size-medium) + 8px);
+  --sdesign-font-line-height-regular: calc(var(--sdesign-font-size-regular) + 8px);
+  --sdesign-font-line-height-small: calc(var(--sdesign-font-size-small) + 8px);
+  /* Font Weight */
+  --sdesign-font-weight-regular: 400;
+  --sdesign-font-weight-medium: 500;
+  --sdesign-font-weight-bold: 600;
+  /* Radius */
+  --sdesign-radius-none: 0px;
+  --sdesign-radius-small: 2px;
+  --sdesign-radius-medium: 4px;
+  --sdesign-radius-large: 8px;
+  --sdesign-radius-extra-large: 16px;
+  --sdesign-radius-full: 9999px;
+  /* Shadow */
+  --sdesign-shadow-1: 0px 0px 0px rgba(0, 0, 0, 0);
+  --sdesign-shadow-2: 0px 3px 14px rgba(39, 43, 60, 0.08);
+  --sdesign-shadow-2-up: 0px -3px 14px rgba(39, 43, 60, 0.08);
+  --sdesign-shadow-2-left: -3px 0px 14px rgba(39, 43, 60, 0.08);
+  --sdesign-shadow-2-right: 3px 0px 14px rgba(39, 43, 60, 0.08);
+  --sdesign-shadow-3: 0px 8px 18px rgba(39, 43, 60, 0.06);
+  --sdesign-shadow-3-up: 0px -8px 18px rgba(39, 43, 60, 0.06);
+  --sdesign-shadow-3-left: -8px 0px 18px rgba(39, 43, 60, 0.06);
+  --sdesign-shadow-3-right: 8px 0px 18px rgba(39, 43, 60, 0.06);
+  --sdesign-shadow-4: 0px 10px 30px rgba(39, 43, 60, 0.16);
+  --sdesign-shadow-active: 0px 0px 3px rgba(51, 85, 255, 0.5);
+  /* Spacing */
+  --sdesign-spacing-basic: 4px;
+  --sdesign-spacing-none: 0;
+  --sdesign-spacing-extra-small: calc(var(--sdesign-spacing-basic) * 0.5);
+  --sdesign-spacing-extra-large: calc(var(--sdesign-spacing-basic) * 5);
+  --sdesign-spacing-extra-huge: calc(var(--sdesign-spacing-basic) * 8);
+  --sdesign-spacing-small: calc(var(--sdesign-spacing-basic) * 1);
+  --sdesign-spacing-regular: calc(var(--sdesign-spacing-basic) * 2);
+  --sdesign-spacing-medium: calc(var(--sdesign-spacing-basic) * 3);
+  --sdesign-spacing-large: calc(var(--sdesign-spacing-basic) * 4);
+  --sdesign-spacing-huge: calc(var(--sdesign-spacing-basic) * 6);
+}

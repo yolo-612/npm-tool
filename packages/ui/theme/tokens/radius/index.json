@@ -1,0 +1,28 @@
+{
+    "radius": {
+        "*": {
+            "value": "Radius",
+            "is_comment": true
+        },
+        "none": {
+            "value": "0px"
+        },
+        "small": {
+            "value": "2px"
+        },
+        "medium": {
+            "value": "4px"
+        },
+        "large": {
+            "value": "8px"
+        },
+        "extra": {
+            "large": {
+                "value": "16px"
+            }
+        },
+        "full": {
+            "value": "9999px"
+        }
+    }
+}

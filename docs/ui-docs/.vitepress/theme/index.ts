@@ -1,5 +1,7 @@
 import { VPTheme } from '@vue/theme';
 import { h } from 'vue';
+import '@yolo/theme/src/css/brand/_blue.css';
+import '@yolo/theme/src/css/brand/_red.css';
 import './override.css';
 
 import SDesignElementPlus from '@yolo/element-plus';

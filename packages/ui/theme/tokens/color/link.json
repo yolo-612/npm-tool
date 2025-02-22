@@ -1,0 +1,36 @@
+{
+    "color": {
+        "link": {
+            "*": {
+                "value": "Link Color",
+                "is_comment": true
+            },
+            "brand": {
+                "default": {
+                    "value": "{color.brand.6.value}"
+                },
+                "hover": {
+                    "value": "{color.brand.5.value}"
+                },
+                "active": {
+                    "value": "{color.brand.7.value}"
+                },
+                "disable": {
+                    "value": "{color.brand.3.value}"
+                }
+            },
+            "default": {
+                "value": "{color.blue.6.value}"
+            },
+            "hover": {
+                "value": "{color.blue.5.value}"
+            },
+            "active": {
+                "value": "{color.blue.7.value}"
+            },
+            "disable": {
+                "value": "{color.blue.3.value}"
+            }
+        }
+    }
+}

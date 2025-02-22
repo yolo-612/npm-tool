@@ -1,0 +1,45 @@
+{
+    "shadow": {
+        "0": {
+            "value": "Shadow",
+            "is_comment": true
+        },
+        "1": {
+            "value": "0px 0px 0px rgba(0, 0, 0, 0)"
+        },
+        "2": {
+            "_": {
+                "value": "0px 3px 14px rgba(39, 43, 60, 0.08)"
+            },
+            "up": {
+                "value": "0px -3px 14px rgba(39, 43, 60, 0.08)"
+            },
+            "left": {
+                "value": "-3px 0px 14px rgba(39, 43, 60, 0.08)"
+            },
+            "right": {
+                "value": "3px 0px 14px rgba(39, 43, 60, 0.08)"
+            }
+        },
+        "3": {
+            "_": {
+                "value": "0px 8px 18px rgba(39, 43, 60, 0.06)"
+            },
+            "up": {
+                "value": "0px -8px 18px rgba(39, 43, 60, 0.06)"
+            },
+            "left": {
+                "value": "-8px 0px 18px rgba(39, 43, 60, 0.06)"
+            },
+            "right": {
+                "value": "8px 0px 18px rgba(39, 43, 60, 0.06)"
+            }
+        },
+        "4": {
+            "value": "0px 10px 30px rgba(39, 43, 60, 0.16)"
+        },
+        "active": {
+            "value": "0px 0px 3px rgba(51, 85, 255, 0.5)"
+        }
+    }
+}

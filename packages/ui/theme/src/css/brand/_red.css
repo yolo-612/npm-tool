@@ -1,0 +1,18 @@
+/**
+ * SDesign Theme
+ * Build Version 1.2.0
+ */
+
+html[data-theme="red"] {
+  /* Red Brand Color */
+  --sdesign-color-brand-1: #fef6f6;
+  --sdesign-color-brand-2: #fbe4e5;
+  --sdesign-color-brand-3: #f6c1c2;
+  --sdesign-color-brand-4: #e65156;
+  --sdesign-color-brand-5: #e0252b;
+  --sdesign-color-brand-6: #ce1d22;
+  --sdesign-color-brand-7: #b71a1e;
+  --sdesign-color-brand-8: #8a1417;
+  --sdesign-color-brand-9: #5e0d10;
+  --sdesign-color-brand-10: #480b0d;
+}

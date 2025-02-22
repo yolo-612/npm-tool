@@ -1,0 +1,39 @@
+{
+    "font": {
+        "line-height": {
+            "*": {
+                "value": "Font Line Height",
+                "is_comment": true
+            },
+            "extra": {
+                "giant": {
+                    "value": "calc({font.size.extra.giant.value} + 8px)"
+                },
+                "huge": {
+                    "value": "calc({font.size.extra.huge.value} + 8px)"
+                },
+                "large": {
+                    "value": "calc({font.size.extra.large.value} + 8px)"
+                },
+                "small": {
+                    "value": "calc({font.size.extra.small.value} + 8px)"
+                }
+            },
+            "huge": {
+                "value": "calc({font.size.huge.value} + 8px)"
+            },
+            "large": {
+                "value": "calc({font.size.large.value} + 8px)"
+            },
+            "medium": {
+                "value": "calc({font.size.medium.value} + 8px)"
+            },
+            "regular": {
+                "value": "calc({font.size.regular.value} + 8px)"
+            },
+            "small": {
+                "value": "calc({font.size.small.value} + 8px)"
+            }
+        }
+    }
+}

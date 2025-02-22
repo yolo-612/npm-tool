@@ -1,0 +1,40 @@
+{
+    "color": {
+        "brand": {
+            "0": {
+                "value": "Blue Brand Color",
+                "is_comment": true
+            },
+            "1": {
+                "value": "#EBF1FF"
+            },
+            "2": {
+                "value": "#D6E2FF"
+            },
+            "3": {
+                "value": "#ADC3FF"
+            },
+            "4": {
+                "value": "#85A1FF"
+            },
+            "5": {
+                "value": "#5C7CFF"
+            },
+            "6": {
+                "value": "#3355FF"
+            },
+            "7": {
+                "value": "#2B42D9"
+            },
+            "8": {
+                "value": "#2432B3"
+            },
+            "9": {
+                "value": "#1C248C"
+            },
+            "10": {
+                "value": "#141766"
+            }
+        }
+    }
+}

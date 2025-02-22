@@ -19,7 +19,7 @@ SFDesign 可以在支持 [ES2018](https://caniuse.com/?feats=mdn-javascript_buil
 
 SFDesign 目前还处于快速开发迭代中。
 
-> @sdesign/theme:^1.2.0、@yolo/element-plus:^1.2.30、@yolo/element-plus:^1.3.7、@yolo/element-plus:^1.4.4、@sdesign/andtv3:^1.1.10<br>
+> @yolo/theme:^1.2.0、@yolo/element-plus:^1.2.30、@yolo/element-plus:^1.3.7、@yolo/element-plus:^1.4.4、@sdesign/andtv3:^1.1.10<br>
 > https://artifactory.sf-express.com/ui/packages?name=@sdesign&type=packages
 
 ## 使用包管理器
@@ -33,13 +33,13 @@ SFDesign 目前还处于快速开发迭代中。
 
 # 主题安装
 # PnPM
-$ pnpm install @sdesign/theme --save
+$ pnpm install @yolo/theme --save
 
 # NPM
-$ npm install @sdesign/theme --save
+$ npm install @yolo/theme --save
 
 # Yarn
-$ yarn add @sdesign/theme
+$ yarn add @yolo/theme
 ```
 
 ```shell
