@@ -1,0 +1,20 @@
+.vt-doc table {
+    border-collapse: collapse;
+    overflow-x: auto;
+    font-size: 14px;
+}
+
+.vt-doc tr {
+    border-top: 1px solid var(--vt-c-divider);
+    transition: background-color 0.5s;
+}
+
+/* .vt-doc tr:nth-child(2n) {
+    background-color: var(--vt-c-bg-soft);
+} */
+
+.vt-doc th,
+.vt-doc td {
+    border: 1px solid var(--vt-c-divider);
+    padding: 0.6em 1em;
+}
