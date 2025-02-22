@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress'
-import commonjs from 'vite-plugin-commonjs';
 
 import path from 'path'
 const build = false;
@@ -239,7 +238,6 @@ export default defineConfig({
     appearance: true
   },
   vite: {
-    plugins: [commonjs()],
     resolve: {
       alias: {
         '@vue/theme': path.join(__dirname, './src'),
