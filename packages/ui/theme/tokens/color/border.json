@@ -1,0 +1,30 @@
+{
+    "color": {
+        "border": {
+            "*": {
+                "value": "Border Color",
+                "is_comment": true
+            },
+            "none": {
+                "value": "transparent"
+            },
+            "default": {
+                "value": "{color.grey.3.value}"
+            },
+            "hover": {
+                "value": "{color.grey.3.value}"
+            },
+            "active": {
+                "_": {
+                    "value": "{color.blue.6.value}"
+                },
+                "brand": {
+                    "value": "{color.brand.6.value}"
+                }
+            },
+            "wrong": {
+                "value": "{color.red.6.value}"
+            }
+        }
+    }
+}

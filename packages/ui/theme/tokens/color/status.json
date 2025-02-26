@@ -1,0 +1,54 @@
+{
+    "color": {
+        "status": {
+            "*": {
+                "value": "Status Color",
+                "is_comment": true
+            },
+            "danger": {
+                "_": {
+                    "value": "{color.red.6.value}"
+                },
+                "light": {
+                    "value": "{color.red.2.value}"
+                },
+                "dark": {
+                    "value": "{color.red.8.value}"
+                }
+            },
+            "warning": {
+                "_": {
+                    "value": "{color.orange.6.value}"
+                },
+                "light": {
+                    "value": "{color.orange.2.value}"
+                },
+                "dark": {
+                    "value": "{color.orange.8.value}"
+                }
+            },
+            "process": {
+                "_": {
+                    "value": "{color.blue.6.value}"
+                },
+                "light": {
+                    "value": "{color.blue.2.value}"
+                },
+                "dark": {
+                    "value": "{color.blue.8.value}"
+                }
+            },
+            "success": {
+                "_": {
+                    "value": "{color.green.6.value}"
+                },
+                "light": {
+                    "value": "{color.green.2.value}"
+                },
+                "dark": {
+                    "value": "{color.green.8.value}"
+                }
+            }
+        }
+    }
+}

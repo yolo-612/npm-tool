@@ -1,0 +1,32 @@
+{
+  "name": "@yolo/theme",
+  "version": "1.2.0",
+  "main": "index.css",
+  "keywords": [
+    "yolo",
+    "yolo theme"
+  ],
+  "description": "yolo theme",
+  "scripts": {
+    "build:blue": "style-dictionary build --config ./build/blue.config.js",
+    "build:red": "style-dictionary build --config ./build/red.config.js",
+    "build": "pnpm run clean && pnpm run build:blue && pnpm run build:red",
+    "clean": "rm -rf ./src/css ./src/less ./src/scss"
+  },
+  "author": "yolo",
+  "license": "ISC",
+  "files": [
+    "index.css",
+    "tokens",
+    "src"
+  ],
+  "publishConfig": {
+    "registry": "https://artifactory.sf-express.com/artifactory/api/npm/npm-sf-local/"
+  },
+  "devDependencies": {
+    "less": "^4.1.2",
+    "sass": "^1.49.9",
+    "style-dictionary": "^3.0.0",
+    "chroma-js": "^2.0.3"
+  }
+}

@@ -10,7 +10,7 @@ const deps = [
   '@vue/theme',
   'body-scroll-lock',
   'mitt',
-  '@sdesign/theme',
+  '@yolo/theme',
   '@yolo/element-plus'
 ];
 

@@ -1,0 +1,40 @@
+{
+    "spacing": {
+        "*": {
+            "value": "Spacing",
+            "is_comment": true
+        },
+        "basic": {
+            "value": "4px"
+        },
+        "none": {
+            "value": "0"
+        },
+        "extra": {
+            "small": {
+                "value": "calc({spacing.basic.value} * 0.5)"
+            },
+            "large": {
+                "value": "calc({spacing.basic.value} * 5)"
+            },
+            "huge": {
+                "value": "calc({spacing.basic.value} * 8)"
+            }
+        },
+        "small": {
+            "value": "calc({spacing.basic.value} * 1)"
+        },
+        "regular": {
+            "value": "calc({spacing.basic.value} * 2)"
+        },
+        "medium": {
+            "value": "calc({spacing.basic.value} * 3)"
+        },
+        "large": {
+            "value": "calc({spacing.basic.value} * 4)"
+        },
+        "huge": {
+            "value": "calc({spacing.basic.value} * 6)"
+        }
+    }
+}

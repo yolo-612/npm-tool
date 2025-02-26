@@ -1,0 +1,27 @@
+{
+    "color": {
+        "disable": {
+            "*": {
+                "value": "Disable Color",
+                "is_comment": true
+            },
+            "font": {
+                "value": "{color.neutral.6.value}"
+            },
+            "border": {
+                "value": "{color.grey.3.value}"
+            },
+            "fill": {
+                "value": "{color.neutral.2.value}"
+            },
+            "btn": {
+                "primary": {
+                    "value": "{color.neutral.3.value}"
+                },
+                "secondary": {
+                    "value": "{color.neutral.2.value}"
+                }
+            }
+        }
+    }
+}

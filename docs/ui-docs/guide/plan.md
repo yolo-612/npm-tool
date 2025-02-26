@@ -11,10 +11,10 @@ title: 开发计划
 
 ## 目前已有功能
 
-* 组件功能和文档已经完成，并发布了npm包（@sdesign/theme、@yolo/element-plus、@sdesign/antdv3）
+* 组件功能和文档已经完成，并发布了npm包（@yolo/theme、@yolo/element-plus、@sdesign/antdv3）
 * 基础组件相对比较完整，并有部分业务组件
 * 支持文档（代码+实现）的方式查看组件的使用方法
-* 维护了主题包@sdesign/theme，可被引入到其他项目中使用
+* 维护了主题包@yolo/theme，可被引入到其他项目中使用
 * 适配UED新规范
 
 ## 未来功能规划

@@ -11,11 +11,11 @@ title: 快速开始
 #### 主题
 ```typescript
 // 蓝色主题(默认)
-import '@sdesign/theme/src/css/brand/_blue.css'
+import '@yolo/theme/src/css/brand/_blue.css'
 // 红色主题
-import '@sdesign/theme/src/css/brand/_red.css'
+import '@yolo/theme/src/css/brand/_red.css'
 // 规范(默认)
-import '@sdesign/theme/index.css'
+import '@yolo/theme/index.css'
 ```
 
 #### 基于Element-Plus的实现

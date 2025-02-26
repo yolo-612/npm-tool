@@ -1,0 +1,19 @@
+{
+    "font": {
+        "weight": {
+            "*": {
+                "value": "Font Weight",
+                "is_comment": true
+            },
+            "regular": {
+                "value": 400
+            },
+            "medium": {
+                "value": 500
+            },
+            "bold": {
+                "value": 600
+            }
+        }
+    }
+}
