@@ -1,0 +1,22 @@
+.sdesign-fill-0 {
+    background: transparent;
+}
+
+.sdesign-fill-danger-0 {
+    background: transparent;
+}
+
+.sdesign-border-none {
+    border: none;
+}
+
+.sdesign-border-line {
+    border-left-width: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 1px;
+}
+
+.sdesign-border-all {
+    border-width: 1px;
+}

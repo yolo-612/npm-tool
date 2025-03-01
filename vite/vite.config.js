@@ -8,6 +8,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 // 不能直接通过在main.js中直接导入css文件
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import { VueRouterAutoImports } from 'unplugin-vue-router'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
@@ -26,9 +27,25 @@ export default ({mode})=>{
       vue(),
       vueJsx(),
       AutoImport({
+        imports: [
+          'vue',
+          'pinia',
+          VueRouterAutoImports,
+        ],
+        dts: './src/types/auto-imports.d.ts',
+        dirs: [],
+        eslintrc: {
+          enabled: true,
+        },
         resolvers: [ElementPlusResolver()],
       }),
       Components({
+        dirs: [
+          'src/components',
+          'src/layouts',
+        ],
+        include: [/\.vue$/, /\.vue\?vue/, /\.tsx$/],
+        dts: './src/types/components.d.ts',
         resolvers: [ElementPlusResolver()],
       }),
     ],

@@ -1,0 +1,244 @@
+/**
+ * Colors Base
+ *
+ * These are the pure base color presets. Most of the time, you should not be
+ * using these colors directly in the theme but rather use "Colors Theme"
+ * instead because those are "Theme (light or dark)" dependant.
+ * -------------------------------------------------------------------------- */
+
+:root {
+    --vt-c-white: #ffffff;
+    --vt-c-black: #000000;
+
+    --vt-c-gray: #8e8e93;
+
+    --vt-c-text-light-1: rgba(60, 60, 67);
+    --vt-c-text-light-2: rgba(60, 60, 67, 0.75);
+    --vt-c-text-light-3: rgba(60, 60, 67, 0.33);
+
+    --vt-c-text-dark-1: rgba(255, 255, 245, 0.86);
+    --vt-c-text-dark-2: rgba(235, 235, 245, 0.6);
+    --vt-c-text-dark-3: rgba(235, 235, 245, 0.38);
+
+    --vt-c-green: #10b981;
+    --vt-c-green-light: #34d399;
+    --vt-c-green-lighter: #6ee7b7;
+    --vt-c-green-dark: #059669;
+    --vt-c-green-darker: #047857;
+    --vt-c-green-dimm-1: rgba(16, 185, 129, 0.05);
+    --vt-c-green-dimm-2: rgba(16, 185, 129, 0.2);
+    --vt-c-green-dimm-3: rgba(16, 185, 129, 0.5);
+
+    --vt-c-yellow: #d97706;
+    --vt-c-yellow-light: #f59e0b;
+    --vt-c-yellow-lighter: #fbbf24;
+    --vt-c-yellow-dark: #b45309;
+    --vt-c-yellow-darker: #92400e;
+    --vt-c-yellow-dimm-1: rgba(234, 179, 8, 0.05);
+    --vt-c-yellow-dimm-2: rgba(234, 179, 8, 0.2);
+    --vt-c-yellow-dimm-3: rgba(234, 179, 8, 0.5);
+
+    --vt-c-red: #f43f5e;
+    --vt-c-red-light: #fb7185;
+    --vt-c-red-lighter: #fda4af;
+    --vt-c-red-dark: #e11d48;
+    --vt-c-red-darker: #be123c;
+    --vt-c-red-dimm-1: rgba(244, 63, 94, 0.05);
+    --vt-c-red-dimm-2: rgba(244, 63, 94, 0.2);
+    --vt-c-red-dimm-3: rgba(244, 63, 94, 0.5);
+
+    --vt-c-sponsor: #db2777;
+}
+
+/**
+   * Colors Theme
+   * -------------------------------------------------------------------------- */
+
+:root {
+    --vt-c-bg: #ffffff;
+
+    --vt-c-bg-elv: #ffffff;
+    --vt-c-bg-elv-up: #ffffff;
+    --vt-c-bg-elv-down: #f6f6f7;
+    --vt-c-bg-elv-mute: #f6f6f7;
+
+    --vt-c-bg-soft: #f6f6f7;
+    --vt-c-bg-soft-up: #f9f9fa;
+    --vt-c-bg-soft-down: #e3e3e5;
+    --vt-c-bg-soft-mute: #e3e3e5;
+
+    --vt-c-bg-alt: #f6f6f7;
+
+    --vt-c-border: rgba(60, 60, 67, 0.29);
+    --vt-c-divider: rgba(60, 60, 67, 0.12);
+    --vt-c-gutter: rgba(60, 60, 67, 0.12);
+
+    --vt-c-neutral: var(--vt-c-black);
+    --vt-c-neutral-inverse: var(--vt-c-white);
+
+    --vt-c-text-1: var(--vt-c-text-light-1);
+    --vt-c-text-2: var(--vt-c-text-light-2);
+    --vt-c-text-3: var(--vt-c-text-light-3);
+
+    --vt-c-text-inverse-1: var(--vt-c-text-dark-1);
+    --vt-c-text-inverse-2: var(--vt-c-text-dark-2);
+    --vt-c-text-inverse-3: var(--vt-c-text-dark-3);
+
+    --vt-c-text-code: #476582;
+
+    --vt-c-brand: var(--vt-c-green);
+    --vt-c-brand-light: var(--vt-c-green-light);
+    --vt-c-brand-lighter: var(--vt-c-green-lighter);
+    --vt-c-brand-dark: var(--vt-c-green-dark);
+    --vt-c-brand-darker: var(--vt-c-green-darker);
+
+    --vt-c-mute: #f6f6f7;
+    --vt-c-mute-light: #f9f9fc;
+    --vt-c-mute-lighter: #ffffff;
+    --vt-c-mute-dark: #e3e3e5;
+    --vt-c-mute-darker: #d7d7d9;
+}
+
+.dark {
+    --vt-c-bg: #1e1e20;
+
+    --vt-c-bg-elv: #252529;
+    --vt-c-bg-elv-up: #313136;
+    --vt-c-bg-elv-down: #1e1e20;
+    --vt-c-bg-elv-mute: #313136;
+
+    --vt-c-bg-soft: #252529;
+    --vt-c-bg-soft-up: #313136;
+    --vt-c-bg-soft-down: #1e1e20;
+    --vt-c-bg-soft-mute: #313136;
+
+    --vt-c-bg-alt: #161618;
+
+    --vt-c-border: rgba(82, 82, 89, 0.68);
+    --vt-c-divider: rgba(82, 82, 89, 0.32);
+    --vt-c-gutter: #000000;
+
+    --vt-c-neutral: var(--vt-c-white);
+    --vt-c-neutral-inverse: var(--vt-c-black);
+
+    --vt-c-text-1: var(--vt-c-text-dark-1);
+    --vt-c-text-2: var(--vt-c-text-dark-2);
+    --vt-c-text-3: var(--vt-c-text-dark-3);
+
+    --vt-c-text-inverse-1: var(--vt-c-text-light-1);
+    --vt-c-text-inverse-2: var(--vt-c-text-light-2);
+    --vt-c-text-inverse-3: var(--vt-c-text-light-3);
+
+    --vt-c-text-code: #c9def1;
+
+    --vt-c-mute: #313136;
+    --vt-c-mute-light: #3a3a3c;
+    --vt-c-mute-lighter: #505053;
+    --vt-c-mute-dark: #2c2c30;
+    --vt-c-mute-darker: #252529;
+}
+
+/**
+   * Typography
+   * -------------------------------------------------------------------------- */
+
+:root {
+    --vt-font-family-base: "Chinese Quotes", "Inter var", ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "Noto Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --vt-font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono",
+        "Courier New", monospace;
+}
+
+/**
+   * Shadows
+   * -------------------------------------------------------------------------- */
+
+:root {
+    --vt-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --vt-shadow-2: 0 3px 12px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.07);
+    --vt-shadow-3: 0 12px 32px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+    --vt-shadow-4: 0 14px 44px rgba(0, 0, 0, 0.12), 0 3px 9px rgba(0, 0, 0, 0.12);
+    --vt-shadow-5: 0 18px 56px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.16);
+}
+
+/**
+   * Z-indexes
+   * -------------------------------------------------------------------------- */
+
+:root {
+    --vt-z-index-local-nav: 10;
+    --vt-z-index-nav: 20;
+    --vt-z-index-layout-top: 30;
+    --vt-z-index-backdrop: 40;
+    --vt-z-index-sidebar: 50;
+    --vt-z-index-footer: 60;
+}
+
+/**
+   * Icons
+   * -------------------------------------------------------------------------- */
+
+:root {
+    --vt-icon-copy: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2'/%3E%3C/svg%3E");
+    --vt-icon-copied: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 9 2 2 4-4'/%3E%3C/svg%3E");
+}
+
+/**
+   * Layouts
+   * -------------------------------------------------------------------------- */
+
+:root {
+    --vt-layout-max-width: 1440px;
+}
+
+/**
+   * Component: Header Anchor
+   * -------------------------------------------------------------------------- */
+
+:root {
+    --vt-header-anchor-symbol: "#";
+}
+
+/**
+   * Component: Code
+   * -------------------------------------------------------------------------- */
+
+:root {
+    --vt-code-line-height: 1.7;
+    --vt-code-font-size: 0.875em;
+
+    --vt-code-block-color: var(--vt-c-text-dark-1);
+    --vt-code-block-bg: #292b30;
+    --vt-code-block-bg-light: #1e1e20;
+    --vt-code-block-divider-color: #000000;
+
+    --vt-code-line-highlight-color: rgba(0, 0, 0, 0.5);
+    --vt-code-line-number-color: var(--vt-c-text-dark-3);
+
+    --vt-code-line-diff-add-color: var(--vt-c-green-dimm-2);
+    --vt-code-line-diff-add-symbol-color: var(--vt-c-green);
+
+    --vt-code-line-diff-remove-color: var(--vt-c-red-dimm-2);
+    --vt-code-line-diff-remove-symbol-color: var(--vt-c-red);
+
+    --vt-code-line-warning-color: var(--vt-c-yellow-dimm-2);
+    --vt-code-line-error-color: var(--vt-c-red-dimm-2);
+
+    --vt-code-copy-code-border-color: transparent;
+    --vt-code-copy-code-bg: var(--vt-code-block-bg-light);
+    --vt-code-copy-code-hover-border-color: var(--vt-c-divider);
+    --vt-code-copy-code-hover-bg: var(--vt-code-block-bg-light);
+    --vt-code-copy-code-active-text: var(--vt-c-text-dark-2);
+
+    --vt-code-tab-divider: var(--vt-code-block-divider-color);
+    --vt-code-tab-text-color: var(--vt-c-text-dark-2);
+    --vt-code-tab-bg: var(--vt-code-block-bg);
+    --vt-code-tab-hover-text-color: var(--vt-c-text-dark-1);
+    --vt-code-tab-active-text-color: var(--vt-c-text-dark-1);
+    --vt-code-tab-active-bar-color: var(--vt-c-brand);
+}
+
+.dark {
+    --vt-code-block-bg: #161618;
+}

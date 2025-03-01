@@ -1,0 +1,37 @@
+:root {
+    --vt-c-brand: var(--sdesign-color-brand-6);
+    --vt-c-brand-light: var(--sdesign-color-brand-1);
+    --vt-c-brand-dark: var(--sdesign-color-brand-8);
+    --c-brand: var(--sdesign-color-brand-6);
+    --c-brand-light: var(--sdesign-color-brand-2);
+    --vp-sidebar-width-small: 280px;
+    --code-bg-color: var(--sdesign-color-grey-2);
+}
+
+.ml-2 {
+    margin-left: 0.5rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.source .el-input, .source .el-cascader, .source .el-select, .source .el-date-editor, .source .el-autocomplete{
+    width: 240px;
+}
+
+.source .el-date-editor.el-date-editor--datetimerange, .source .el-date-editor.el-date-editor--daterange, .source .el-date-editor.el-date-editor--monthrange{
+    width: 420px;
+}
+
+.source .el-input.el-input-group{
+    width: 100%;
+}
+
+.source .el-transfer-panel__body .el-input{
+    width: 100%;
+}
+
+.demo-icon-title .el-select{
+    width: 240px;
+}

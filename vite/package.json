@@ -13,17 +13,24 @@
     "@yolo/http": "workspace:^1.0.0",
     "@yolo/storage": "workspace:^1.0.0",
     "element-plus": "^2.7.0",
+    "lodash-es": "^4.17.21",
+    "mitt": "^3.0.1",
     "nprogress": "^0.2.0",
     "pinia": "^2.1.7",
+    "sass": "^1.85.1",
     "vue": "^3.4.21",
+    "vue-draggable-plus": "^0.6.0",
     "vue-router": "^4.3.1"
   },
   "devDependencies": {
+    "@tsconfig/node18": "^18.2.4",
+    "@types/nprogress": "^0.2.3",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "less": "^4.2.0",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-components": "^0.26.0",
+    "unplugin-vue-router": "^0.11.2",
     "vite": "^5.2.0"
   }
 }

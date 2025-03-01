@@ -1,0 +1,39 @@
+{
+    "font": {
+        "size": {
+            "*": {
+                "value": "Font Size",
+                "is_comment": true
+            },
+            "extra": {
+                "giant": {
+                    "value": "46px"
+                },
+                "huge": {
+                    "value": "38px"
+                },
+                "large": {
+                    "value": "24px"
+                },
+                "small": {
+                    "value": "12px"
+                }
+            },
+            "huge": {
+                "value": "30px"
+            },
+            "large": {
+                "value": "20px"
+            },
+            "medium": {
+                "value": "16px"
+            },
+            "regular": {
+                "value": "14px"
+            },
+            "small": {
+                "value": "13px"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "color": {
+        "bg": {
+            "0": {
+                "value": "Bg Color",
+                "is_comment": true
+            },
+            "1": {
+                "value": "{color.white.value}"
+            },
+            "2": {
+                "value": "{color.grey.1.value}"
+            },
+            "3": {
+                "value": "{color.neutral.1.value}"
+            },
+            "4": {
+                "value": "{color.grey.2.value}"
+            }
+        }
+    }
+}

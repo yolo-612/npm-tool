@@ -1,0 +1,34 @@
+{
+    "color": {
+        "fill": {
+            "0": {
+                "value": "Fill Color",
+                "is_comment": true
+            },
+            "1": {
+                "value": "transparent"
+            },
+            "2": {
+                "value": "{color.grey.1.value}"
+            },
+            "3": {
+                "value": "{color.grey.2.value}"
+            },
+            "4": {
+                "value": "{color.grey.3.value}"
+            },
+            "5": {
+                "value": "{color.grey.2.value}"
+            },
+            "6": {
+                "value": "{color.grey.1.value}"
+            },
+            "danger": {
+                "value": "{color.red.1.value}"
+            },
+            "hover": {
+                "value": "{color.brand.1.value}"
+            }
+        }
+    }
+}

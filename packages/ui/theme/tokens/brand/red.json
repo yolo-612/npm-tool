@@ -1,0 +1,40 @@
+{
+    "color": {
+        "brand": {
+            "0": {
+                "value": "Red Brand Color",
+                "is_comment": true
+            },
+            "1": {
+                "value": "#FEF6F6"
+            },
+            "2": {
+                "value": "#FBE4E5"
+            },
+            "3": {
+                "value": "#F6C1C2"
+            },
+            "4": {
+                "value": "#E65156"
+            },
+            "5": {
+                "value": "#E0252B"
+            },
+            "6": {
+                "value": "#CE1D22"
+            },
+            "7": {
+                "value": "#B71A1E"
+            },
+            "8": {
+                "value": "#8A1417"
+            },
+            "9": {
+                "value": "#5E0D10"
+            },
+            "10": {
+                "value": "#480b0d"
+            }
+        }
+    }
+}
