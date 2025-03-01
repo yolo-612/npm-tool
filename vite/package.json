@@ -26,6 +26,7 @@
     "less": "^4.2.0",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-components": "^0.26.0",
+    "unplugin-vue-router": "^0.11.2",
     "vite": "^5.2.0"
   }
 }
