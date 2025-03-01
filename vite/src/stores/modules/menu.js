@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import { routes } from '@/router/routes';
+import { constantRoutes } from '@/router/routes';
 import usePermission from '@/hook/usePermission';
 
 
@@ -29,8 +29,7 @@ const useMenuStore = defineStore('menu', () => {
     return list
   }
 
-  menuTree.value = getMenuRouter(routes)
-
+  menuTree.value = getMenuRouter(constantRoutes)
   return {
     menuTree,
   }

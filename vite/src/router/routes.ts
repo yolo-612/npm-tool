@@ -1,4 +1,4 @@
-import { NOT_FOUND_ROUTE, RELOAD_ROUTE, DEFAULT_LAYOUT } from '@/router/base.js';
+import { NOT_FOUND_ROUTE, RELOAD_ROUTE, DEFAULT_LAYOUT } from '@/router/base';
 
 import operation from './modules/operation'
 const routesList = [
@@ -35,4 +35,20 @@ const routesList = [
   NOT_FOUND_ROUTE
 ]
 
-export const routes = routesList
+
+/**
+ * 静态路由
+ */
+const constantRoutes = routesList;
+
+/**
+ * 文件系统路由
+ */
+// const fileSystemRoutes = setupLayouts(routes);
+const fileSystemRoutes = [];
+
+export {
+  constantRoutes,
+  fileSystemRoutes,
+};
+

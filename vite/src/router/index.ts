@@ -1,13 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import {routes} from './routes.js';
 import NProgress from 'nprogress';
+
+import { setRouteEmitter } from '@/utils/route-listener';
+import globalSettings from '@/settings';
+import { constantRoutes } from './routes';
 
 const router = createRouter({
   history: createWebHistory('/'),
-  routes
+  routes: constantRoutes,
 })
 
 router.beforeEach(async(to, from) => {
+  setRouteEmitter(to);
+  NProgress.start();
   if(to && to.meta?.title){
     document.title = to.meta.title + " - YOLO"
   }
