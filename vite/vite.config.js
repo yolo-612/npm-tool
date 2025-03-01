@@ -32,7 +32,7 @@ export default ({mode})=>{
           'pinia',
           VueRouterAutoImports,
         ],
-        dts: './src/types/auto-imports.d.ts',
+        dts: './types/auto-imports.d.ts',
         dirs: [],
         eslintrc: {
           enabled: true,
@@ -45,7 +45,7 @@ export default ({mode})=>{
           'src/layouts',
         ],
         include: [/\.vue$/, /\.vue\?vue/, /\.tsx$/],
-        dts: './src/types/components.d.ts',
+        dts: './types/components.d.ts',
         resolvers: [ElementPlusResolver()],
       }),
     ],

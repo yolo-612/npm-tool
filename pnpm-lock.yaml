@@ -239,6 +239,9 @@ importers:
         specifier: ^4.3.1
         version: 4.5.0(vue@3.5.13(typescript@5.7.3))
     devDependencies:
+      '@tsconfig/node18':
+        specifier: ^18.2.4
+        version: 18.2.4
       '@vitejs/plugin-vue':
         specifier: ^5.0.4
         version: 5.2.1(vite@5.4.14(@types/node@22.13.5)(less@4.2.2)(sass@1.85.0))(vue@3.5.13(typescript@5.7.3))
@@ -1275,6 +1278,9 @@ packages:
 
   '@sxzz/popperjs-es@2.11.7':
     resolution: {integrity: sha512-Ccy0NlLkzr0Ex2FKvh2X+OyERHXJ88XJ1MXtsI9y9fGexlaXaVTPzBCRBwIxFkORuOb+uBqeu+RqnpgYTEZRUQ==}
+
+  '@tsconfig/node18@18.2.4':
+    resolution: {integrity: sha512-5xxU8vVs9/FNcvm3gE07fPbn9tl6tqGGWA9tSlwsUEkBxtRnTsNmwrV8gasZ9F/EobaSv9+nu8AxUKccw77JpQ==}
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
@@ -4406,6 +4412,8 @@ snapshots:
   '@sindresorhus/merge-streams@2.3.0': {}
 
   '@sxzz/popperjs-es@2.11.7': {}
+
+  '@tsconfig/node18@18.2.4': {}
 
   '@types/debug@4.1.12':
     dependencies:

@@ -7,24 +7,27 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    AppHeader: typeof import('./src/components/app/AppHeader.vue')['default']
+    AdminPage: typeof import('./../src/layouts/AdminPage.vue')['default']
+    AppHeader: typeof import('./../src/components/app/AppHeader.vue')['default']
+    ContentPage: typeof import('./../src/layouts/ContentPage.vue')['default']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElDropdown: typeof import('element-plus/es')['ElDropdown']
     ElDropdownItem: typeof import('element-plus/es')['ElDropdownItem']
     ElDropdownMenu: typeof import('element-plus/es')['ElDropdownMenu']
     ElIcon: typeof import('element-plus/es')['ElIcon']
-    ElInput: typeof import('element-plus/es')['ElInput']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElResult: typeof import('element-plus/es')['ElResult']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     ElTag: typeof import('element-plus/es')['ElTag']
-    NotPermission: typeof import('./src/components/app/NotPermission.vue')['default']
+    NotPermission: typeof import('./../src/components/app/NotPermission.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SidebarMenu: typeof import('./src/components/app/SidebarMenu.vue')['default']
-    SidebarMenuItem: typeof import('./src/components/app/SidebarMenuItem.vue')['default']
+    SidebarMenu: typeof import('./../src/components/app/SidebarMenu.vue')['default']
+    SidebarMenuItem: typeof import('./../src/components/app/SidebarMenuItem.vue')['default']
+    TabBar: typeof import('./../src/components/app/TabBar/TabBar.vue')['default']
+    TabBarItem: typeof import('./../src/components/app/TabBar/TabBarItem.vue')['default']
   }
   export interface ComponentCustomProperties {
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']
