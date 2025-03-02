@@ -1,47 +1,58 @@
-import { NOT_FOUND_ROUTE, RELOAD_ROUTE, DEFAULT_LAYOUT } from '@/router/base';
+import type { RouteRecordRaw } from 'vue-router';
 
-import operation from './modules/operation'
-import multilevel_menu_example from './modules/multilevel_menu_example'
-const routesList = [
-  {
-    path: '/',
-    redirect: '/home',
-  },
-  {
-    path: '/home',
-    name: 'home',
-    component: DEFAULT_LAYOUT,
-    redirect: '/home/index',
-    meta: {
-      title: '首页',// 页面tab显示的名称
-      icon:'Menu', // 菜单icon
-      permission: ['*'],
-    },
-    children: [
-      {
-        path: '/home/index',
-        name: 'workplace',
-        component: ()=>import('@/pages/home.vue'),
-        meta: {
-          title: '首页',// 页面tab显示的名称
-          permission: ['*'],
-          activeMenu: '/home',
-          hideInMenu: true,
-        },
-      }
-    ]
-  },
-  operation,
-  multilevel_menu_example,
-  RELOAD_ROUTE,
-  NOT_FOUND_ROUTE
-]
+import { NOT_FOUND_ROUTE, RELOAD_ROUTE, INDEX_ROUTE } from '@/router/base';
+import forEachDeep from '@/utils/function/forEachDeep';
+
+/**
+ * 遍历路由，添加面包屑相关参数
+ * @param routesList
+ */
+function handleRoutes(routesList: RouteRecordRaw[]) {
+  forEachDeep<RouteRecordRaw>(routesList, (route, parent) => {
+    if (!route.meta) {
+      route.meta = {};
+    }
+    // 如果当前路由path不是以'/'开头，需要拼接父路由path
+    route.path = route.path.charAt(0) === '/' || route.meta?.isLink ? route.path : `${parent?.path || ''}${route.path ? '/' : ''}${route.path}`;
+
+    // 添加父路由引用，方便遍历
+    route.meta.__parent__ = parent;
+    // TODO: 面包屑
+    // route.meta._breadcrumbList = getBreadcrumbList(route);
+    return false
+  });
+
+  return routesList;
+}
+
+/**
+ * 从模块中获取路由
+ */
+function getRoutesFromModules() {
+  const modules = import.meta.glob('./modules/*.ts', { eager: true });
+
+  function formatModules(_modules: any, result: RouteRecordRaw[]) {
+    Object.keys(_modules).forEach((key) => {
+      const defaultModule = _modules[key].default;
+      if (!defaultModule) return;
+      const moduleList = Array.isArray(defaultModule) ? [...defaultModule] : [defaultModule];
+      result.push(...moduleList);
+    });
+    return result;
+  }
+
+  const appRoutes: RouteRecordRaw[] = formatModules(modules, []);
+
+  const routesList: RouteRecordRaw[] = [INDEX_ROUTE, ...appRoutes, RELOAD_ROUTE, NOT_FOUND_ROUTE];
+
+  return routesList;
+}
 
 
 /**
  * 静态路由
  */
-const constantRoutes = routesList;
+const constantRoutes =  handleRoutes(getRoutesFromModules());
 
 /**
  * 文件系统路由

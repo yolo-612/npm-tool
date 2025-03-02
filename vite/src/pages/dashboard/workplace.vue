@@ -19,15 +19,8 @@ const asyncData = async ()=>{
   // throw new Error('网络错误11')
 }
 
-console.log(http, '===>')
-console.log(storage.setItemSync('aa2', 12, {
-  type: 'session'
-}))
-console.log(storage.getItemSync('aa2'), '122get')
-
-
 </script>
 
-<style lang='less'>
+<style lang='scss' scoped>
 
 </style>
