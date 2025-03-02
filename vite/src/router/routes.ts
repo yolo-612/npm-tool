@@ -1,6 +1,7 @@
 import { NOT_FOUND_ROUTE, RELOAD_ROUTE, DEFAULT_LAYOUT } from '@/router/base';
 
 import operation from './modules/operation'
+import multilevel_menu_example from './modules/multilevel_menu_example'
 const routesList = [
   {
     path: '/',
@@ -31,6 +32,7 @@ const routesList = [
     ]
   },
   operation,
+  multilevel_menu_example,
   RELOAD_ROUTE,
   NOT_FOUND_ROUTE
 ]
