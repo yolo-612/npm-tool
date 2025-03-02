@@ -20,8 +20,7 @@ export interface Settings {
      * @默认值 `'routes'` 根据前端路由生成（仅支持路由模式为手动编写）
      * @可选值 `'frontend'` 后端
      * @可选值 `'backend'` 后端
-     * @可选值 `'basp'` 后端百源生成
      */
-    baseOn?:'routes' | 'frontend' | 'backend' | 'basp';
+    baseOn?:'routes' | 'frontend' | 'backend';
   },
 }

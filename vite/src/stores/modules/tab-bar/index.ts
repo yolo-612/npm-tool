@@ -1,4 +1,5 @@
 
+// TODO：pinia持久化
 import type { RouteLocationNormalized } from 'vue-router';
 import type { TabProps } from './types';
 
@@ -18,10 +19,10 @@ const formatTag = (route: RouteLocationNormalized) : TabProps => {
 };
 
 // 默认固定tab
-const DEFAULT_ROUTE = {
+const DEFAULT_ROUTE: TabProps = {
   title: '工作台',
   name: 'workplace',
-  fullPath: '/home/index',
+  fullPath: '/dashboard/workplace',
 };
 
 const BAN_LIST = [INDEX_ROUTE.name, NOT_FOUND_ROUTE.name, RELOAD_ROUTE.name];

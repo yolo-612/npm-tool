@@ -3,11 +3,11 @@ import NProgress from 'nprogress';
 
 import { setRouteEmitter } from '@/utils/route-listener';
 import globalSettings from '@/settings';
-import { constantRoutes } from './routes';
+import { constantRoutes, fileSystemRoutes } from './routes';
 
 const router = createRouter({
   history: createWebHistory('/'),
-  routes: constantRoutes,
+  routes: globalSettings.routeBaseOn === 'frontend' ? constantRoutes : fileSystemRoutes,
 })
 
 router.beforeEach(async(to, from) => {
