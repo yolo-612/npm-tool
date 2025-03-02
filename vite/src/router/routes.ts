@@ -1,4 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router';
+import { setupLayouts } from 'virtual:generated-layouts';
+import { routes } from 'vue-router/auto-routes'
 
 import { NOT_FOUND_ROUTE, RELOAD_ROUTE, INDEX_ROUTE } from '@/router/base';
 import forEachDeep from '@/utils/function/forEachDeep';
@@ -57,8 +59,8 @@ const constantRoutes =  handleRoutes(getRoutesFromModules());
 /**
  * 文件系统路由
  */
-// const fileSystemRoutes = setupLayouts(routes);
-const fileSystemRoutes = [];
+const fileSystemRoutes = setupLayouts(routes);
+console.log('fileSystemRoutes===>', fileSystemRoutes)
 
 export {
   constantRoutes,

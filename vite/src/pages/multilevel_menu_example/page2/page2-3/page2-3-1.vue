@@ -1,8 +1,15 @@
+<route>
+{
+  meta: {
+    title: "导航2-3-1",
+  }
+}
+</route>
 <script setup lang="ts">
 </script>
+
 <template>
   <div>
-    导航2-3-1
+    <PageMain title="导航2-3-1"></PageMain>
   </div>
 </template>
-

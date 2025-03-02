@@ -11,6 +11,47 @@ import Components from 'unplugin-vue-components/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
+import VueRouter from 'unplugin-vue-router/vite'
+import Layouts from 'vite-plugin-vue-layouts';
+
+/**
+ * 文件系统路由插件
+ * */
+function createPages() {
+  return VueRouter({
+    routesFolder: [
+      {
+        src: 'src/pages',
+      },
+    ],
+    // what files should be considered as a pages
+    extensions: ['.vue'],
+    // where to generate the types
+    dts: './src/types/typed-router.d.ts',
+    // list of glob files to exclude from the routes generation
+    // e.g. ['**/__*'] will exclude all files and folders starting with `__`
+    // e.g. ['**/__*/**/*'] will exclude all files within folders starting with `__`
+    // e.g. ['**/*.component.vue'] will exclude components ending with `.component.vue`
+    exclude: ['**/components/*.vue'],
+    // Customizes the default langage for `<route>` blocks
+    // json5 is just a more permissive version of json
+    routeBlockLang: 'json5',
+    // Change the import mode of page components. Can be 'async', 'sync', or a function with the following signature:
+    // (filepath: string) => 'async' | 'sync'
+    importMode: 'async',
+    // routeStyle:'nuxt',
+  });
+}
+
+/**
+ * 默认布局插件
+ */
+function createLayouts() {
+  return Layouts({
+    defaultLayout: 'default',
+  });
+}
+
 // https://vitejs.dev/config/
 export default ({mode})=>{
   const env = loadEnv(mode, process.cwd());
@@ -24,6 +65,8 @@ export default ({mode})=>{
       proxy: getProxy(),
     },
     plugins: [
+      createPages(),
+      createLayouts(),
       vue(),
       vueJsx(),
       AutoImport({
