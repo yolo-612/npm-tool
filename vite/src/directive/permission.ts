@@ -1,3 +1,4 @@
+import type { DirectiveBinding } from 'vue';
 import usePermission from '@/hook/usePermission';
 
 /**
@@ -6,12 +7,12 @@ import usePermission from '@/hook/usePermission';
  */
 export default {
   // 在元素被插入到 DOM 前调用
-  mounted(el, binding) {
+  mounted(el: HTMLElement, binding: DirectiveBinding) {
     // value 获取用户使用自定义指令绑定的内容
-    const { value } = binding
+    const { value } = binding;
 
-    if(!usePermission().checkPermission(value) && el.parentNode){
+    if (!usePermission().checkPermission(value) && el.parentNode) {
       el.parentNode.removeChild(el);
     }
   },
-}
+};
