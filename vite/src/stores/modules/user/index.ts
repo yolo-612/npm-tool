@@ -48,13 +48,13 @@ const useUserStore = defineStore('user', () => {
 
   /**
    * 获取角色信息
-   * @return {Promise<void>}
+   * @return {Promise<RoleItem[]>}
    * @private
    */
-  const _getRolesData = async ()=>{
-    const { success,obj } = await Promise.resolve(mockRoleInfo)
+  const _getRolesData = async ():Promise<RoleItem[]>=>{
+    const { success, obj } : any = await Promise.resolve(mockRoleInfo)
     if(!success || !obj) return []
-    return obj 
+    return obj
   }  
   /**
    * 获取用户信息
@@ -73,30 +73,46 @@ const useUserStore = defineStore('user', () => {
   }
 
   /**
-   * 获取权限信息
+   * 根据传入的roleItem的code 获取权限信息
    * @return {Promise<void>}
    * @private
    */
-  const _getRolePermissionData = async ()=>{
-    const RoleData = await _getRolesData()
-    
-    await Promise.all(RoleData.map((role: RoleItem)=>{
-      return (async ()=>{
-        const { success, obj } = await Promise.resolve(mockPermissionInfo);
-        const permissions: string[] = [];
+  const _getPermissionData = async (roleItem: RoleItem):Promise<string[]>=>{
+    // console.log(roleItem, '根据role的code获取相关的权限')
+    const { success, obj } = await Promise.resolve(mockPermissionInfo);
+    const permissions: string[] = [];
 
-        if(!success || !obj) return
-        forEachDeepModules(obj, ({ moduleCode })=>{
-          if(!permissions.includes(moduleCode)){
-            permissions.push(moduleCode)
-          }
-        })
-        role.permissions = permissions
-      })()
-    }))
+    if(!success || !obj) return []
+    forEachDeepModules(obj, ({ moduleCode })=>{
+      if(!permissions.includes(moduleCode)){
+        permissions.push(moduleCode)
+      }
+    })
 
-    return { RoleData }
+    return permissions
   }
+
+  /**
+   * 获取角色权限数据
+   */
+  const _getRolePermissionData = async ():Promise<RoleItem[]> => {
+    const roleData = await _getRolesData();
+    if (roleData.length === 0) {
+      return roleData;
+    }
+
+    // 根据角色获取百源权限
+    await Promise.all(
+      roleData
+        .map((roleItem) => {
+          return (async () => {
+            roleItem.permissions = await _getPermissionData(roleItem);
+          })();
+        }),
+    );
+
+    return roleData;
+  };
 
   /**
    * 初始化，多次调用只会执行一次，永远会resolve，不会reject
@@ -108,12 +124,11 @@ const useUserStore = defineStore('user', () => {
       await _getUserInfo();
       if(userInfo.isLogin){
         // 有登录态时获取权限
-        const { RoleData } = await _getRolePermissionData();
-        console.log(RoleData, '===>角色+权限')
-        userInfo.RoleData = RoleData
-        if(RoleData.length>0){
+        userInfo.RoleData = await _getRolePermissionData();
+        console.log(userInfo.RoleData, '===>角色+权限')
+        if(userInfo.RoleData.length>0){
           // 设置默认角色
-          switchRole(RoleData[0].roleCode)
+          switchRole(userInfo.RoleData[0].roleCode)
         }
       }
     } catch (e) {
