@@ -53,7 +53,7 @@ function createLayouts() {
 }
 
 // https://vitejs.dev/config/
-export default ({mode})=>{
+export default ({mode}: any)=>{
   const env = loadEnv(mode, process.cwd());
   return defineConfig({
     base: env.VITE_PUBLIC_PATH,
