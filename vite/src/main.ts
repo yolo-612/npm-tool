@@ -4,7 +4,7 @@ import '@/styles/reset.css'
 import App from './App.vue'
 import router from './router'
 import { useUserStore } from "@/stores"
-import directive from '@/directive';
+import directive from '@/directive/index'
 
 const app = createApp(App)
 const pinia = createPinia()
