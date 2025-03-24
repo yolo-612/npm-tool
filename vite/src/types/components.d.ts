@@ -7,7 +7,6 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    AdminPage: typeof import('../layouts/default.vue')['default']
     AppHeader: typeof import('./../components/app/AppHeader.vue')['default']
     ContentPage: typeof import('./../layouts/ContentPage.vue')['default']
     Default: typeof import('./../layouts/default.vue')['default']
@@ -23,7 +22,6 @@ declare module 'vue' {
     ElResult: typeof import('element-plus/es')['ElResult']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     ElTag: typeof import('element-plus/es')['ElTag']
-    Layout: typeof import('../layouts/default.vue')['default']
     NotPermission: typeof import('./../components/app/NotPermission.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
