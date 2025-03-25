@@ -12,7 +12,7 @@ app.use(pinia)
 
 
 // 加载插件，插件统一写在/plugins目录下面
-const modules = import.meta.glob('./plugins/*.js',{ eager: true })
+const modules = import.meta.glob('./plugins/*.ts',{ eager: true })
 for (const path in modules) {
   modules[path] && modules[path].default && modules[path].default({router,app,pinia});
 }

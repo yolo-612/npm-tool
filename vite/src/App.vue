@@ -4,6 +4,7 @@
 <template>
   <div id='app'>
     <RouterView></RouterView>
+    <AppSettings/>
   </div>
 </template>
 
