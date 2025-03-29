@@ -1,15 +1,11 @@
 <template>
-  <ContentPage title='首页' :async-data='asyncData'>
-    <p v-permission='["create"]'>测试v-permission指令</p>
-    <p v-permission='["operation_review"]'>首页内容</p>
+  <PageMain title='首页' :async-data='asyncData'>
     <p>首页内容</p>
-  </ContentPage>
+  </PageMain>
 </template>
 
 <script setup>
-import http from "@yolo/http"
-import * as storage from '@yolo/storage';
-import ContentPage from '@/layouts/ContentPage.vue';
+import PageMain from '@/components/app/PageMain.vue';
 import { sleep } from '@/utils/index.js';
 
 
@@ -22,5 +18,4 @@ const asyncData = async ()=>{
 </script>
 
 <style lang='scss' scoped>
-
 </style>
