@@ -22,5 +22,13 @@ export interface Settings {
      * @可选值 `'backend'` 后端
      */
     baseOn?:'routes' | 'frontend' | 'backend';
+    /**
+     * 导航栏模式
+     * @默认值 `'side'` 侧边栏模式
+     * @可选值 `'head'` 顶部模式（无侧边栏模式）
+     * @可选值 `'head-side'` 顶部模式+侧边栏模式（一级菜单在顶部，二级菜单在侧边栏）
+     */
+    menuMode?: 'side' | 'head' | 'head-side'
   },
+  stretch: number | boolean // 页宽
 }
