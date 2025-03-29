@@ -20,10 +20,10 @@ const onCollapseChange = ()=>{
     <el-menu
       class='SidebarMenu-menu'
       :default-active="defaultActive"
-      :collapse='!menuStore.asideMenuOpen'
+      :collapse="!menuStore.asideMenuOpen"
       router
     >
-      <SidebarMenuItem  v-for='item in menuStore.menuTree' :key="item.path" v-bind='item'></SidebarMenuItem>
+      <SidebarMenuItem  v-for="item in menuStore.menuTree" :key="item.path" v-bind='item'></SidebarMenuItem>
     </el-menu>
 
     <div class='icon-box' @click='onCollapseChange'>
@@ -71,22 +71,4 @@ const onCollapseChange = ()=>{
   }
 }
 
-.el-menu{
-  --menu-active-color: #409eff;
-  --menu-item-border-radius: 4px;
-  --el-menu-item-height: 40px;
-  --el-menu-sub-item-height: 40px;
-  border-right: none;
-  .el-menu-item{
-    margin: 4px;
-  }
-  .el-sub-menu{
-    margin: 4px;
-    .el-sub-menu__title{
-      // TODO: 未生效
-      border-radius: 4px;
-    }
-  }
-  // TODO：二级导航 三级导航未生效
-}
 </style>
