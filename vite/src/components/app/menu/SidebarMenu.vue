@@ -21,6 +21,7 @@ const onCollapseChange = ()=>{
       class='SidebarMenu-menu'
       :default-active="defaultActive"
       :collapse="!menuStore.asideMenuOpen"
+      :style="{ width: menuStore.asideMenuOpen ? menuStore.sideMenuWidthDefault: 'auto' }"
       router
     >
       <SidebarMenuItem  v-for="item in menuStore.menuTree" :key="item.path" v-bind='item'></SidebarMenuItem>
@@ -33,12 +34,6 @@ const onCollapseChange = ()=>{
 
   </aside>
 </template>
-
-<style>
-.SidebarMenu-menu:not(.el-menu--collapse) {
-  width: 180px;
-}
-</style>
 
 <style scoped lang="scss">
 .SidebarMenu {
