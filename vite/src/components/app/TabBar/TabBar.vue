@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import type { RouteLocationNormalized } from 'vue-router';
 import { VueDraggable } from 'vue-draggable-plus';
-import { useTabBarStore } from '@/stores';
+import { useMenuStore, useTabBarStore } from '@/stores';
 import { listenerRouteChange, removeRouteListener } from '@/utils/route-listener';
 
 const tabBarStore = useTabBarStore();
-
-const asideMenuOpen = inject('asideMenuOpen');
-const topHeaderHeight = inject<string>('topHeaderHeight');
+const menuStore = useMenuStore();
 
 const handler = (route: RouteLocationNormalized) => {
   tabBarStore.updateTabList(route);
@@ -25,7 +23,13 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="tab-bar-container">
-    <div class="tab-bar-box" :class="{ asideMenuOpen }" :style="{top:topHeaderHeight}">
+    <div 
+      class="tab-bar-box"
+      :style="{
+        top:menuStore.topHeaderHeight,
+        left:menuStore.sideMenuWidth,
+      }"
+    >
       <VueDraggable
         v-model="tabBarStore.tagList"
         class="tab-bar-scroll"
@@ -69,9 +73,6 @@ onBeforeUnmount(() => {
       z-index: 20;
       background-color: #fff;
       transition: all 0.3s cubic-bezier(0.34, 0.69, 0.1, 1);
-      &.asideMenuOpen {
-        left: 180px;
-      }
 
       .tab-bar-scroll {
         overflow-x: auto;

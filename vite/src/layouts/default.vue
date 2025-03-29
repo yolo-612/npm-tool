@@ -1,40 +1,34 @@
 <script setup>
 // 带侧边栏的页面
 import usePermission from "@/hook/usePermission";
-import { useSettingsStore, useTabBarStore } from '@/stores';
+import { useMenuStore, useSettingsStore, useTabBarStore } from '@/stores';
 
 const {checkPermission} = usePermission()
 const tabBarStore = useTabBarStore();
 const settingStore = useSettingsStore();
+const menuStore = useMenuStore();
 
-const asideMenuOpen = ref(true);
-
-const topHeaderHeight = computed(() => {
-  return settingStore.settings.hiddenTopHeader ? '0px' : '48px';
+const stretch = computed(() => {
+  return settingsStore.settings.stretch;
 });
-const leftMenuWidth = ref('180px');
-
-provide('topHeaderHeight', topHeaderHeight);
-provide('leftMenuWidth', leftMenuWidth);
-
-provide('toggleAsideMenu', () => {
-  asideMenuOpen.value = !asideMenuOpen.value;
-  leftMenuWidth.value = asideMenuOpen.value ? '180px' : '48px';
+const getMainWidth = computed(() => {
+  return typeof stretch.value === 'number' ? stretch.value + 'px' : stretch.value ? '1440px' : '100%';
 });
-
-provide('asideMenuOpen', asideMenuOpen);
 </script>
 
 <template>
   <div class='AdminPage'>
-    <div v-if="!settingStore.settings.hiddenTopHeader" class="app-header-box" :style="{height:topHeaderHeight}">
-      <AppHeader />
-    </div>
-    <div class="sidebar-box" :style="{paddingTop:topHeaderHeight}">
-      <SidebarMenu :asideMenuOpen="asideMenuOpen"></SidebarMenu>
-    </div>
-    <main class='main-content' :style="{paddingTop:topHeaderHeight,paddingLeft:leftMenuWidth}">
+    <AppHeader/>
+    <SidebarMenu v-if="menuStore.showSidebarMenu"></SidebarMenu>
+    <main 
+      class='main-content'
+      :style="{
+        paddingTop: menuStore.topHeaderHeight,
+        paddingLeft: menuStore.sideMenuWidth,
+      }"
+    >
       <TabBar v-if="settingStore.settings.tabBar" />
+      <!-- TODO：添加keep-alive -->
       <RouterView v-slot="{ Component, route }">
         <component :is="Component" v-if="checkPermission(route.meta.permission ?? [])"/>
         <NotPermission v-else/>
@@ -48,19 +42,6 @@ provide('asideMenuOpen', asideMenuOpen);
   position: relative;
   width: 100%;
   background-color: #F3F2F2;
-  .app-header-box {
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-  }
-  .sidebar-box{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    height: 100%;
-    box-sizing: border-box;
-  }
   .main-content{
     position: relative;
     box-sizing: border-box;
