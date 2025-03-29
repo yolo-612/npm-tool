@@ -35,6 +35,7 @@ declare module 'vue' {
     NotPermission: typeof import('./../components/app/NotPermission.vue')['default']
     Page: typeof import('../components/app/PageMain.vue')['default']
     PageMain: typeof import('./../components/app/PageMain.vue')['default']
+    Permission: typeof import('../components/app/Permission.vue.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SidebarMenu: typeof import('./../components/app/SidebarMenu.vue')['default']
