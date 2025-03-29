@@ -162,7 +162,7 @@
           <span
             >路由模式
             <el-tooltip class="box-item" effect="dark" content="需要修改配置文件，重新构建才能生效" placement="top">
-              <el-icon><SfAssist /></el-icon>
+              <el-icon><QuestionFilled /></el-icon>
             </el-tooltip>
           </span>
 
