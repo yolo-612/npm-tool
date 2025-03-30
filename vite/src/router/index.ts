@@ -5,13 +5,19 @@ import { setRouteEmitter } from '@/utils/route-listener';
 import globalSettings from '@/settings';
 import { constantRoutes, fileSystemRoutes } from './routes';
 import {useMenuStore, useSettingsStore} from "@/stores";
-// TODO: 热更新
-// import { handleHotUpdate } from 'vue-router/auto-routes'
+import { handleHotUpdate } from 'vue-router/auto-routes'
 
 const router = createRouter({
   history: createWebHistory('/'),
   routes: globalSettings.routeBaseOn === 'frontend' ? constantRoutes : fileSystemRoutes,
 })
+
+//【热更新】基于文件系统路由 的插件中，当路由文件变更时，动态更新路由配置，而无需手动刷新页面。
+// TODO：似乎并没有生效
+if (import.meta.hot && globalSettings.routeBaseOn === 'filesystem') {
+  debugger
+  handleHotUpdate(router)
+}
 
 router.beforeEach(async(to, from) => {
   const settingsStore = useSettingsStore();

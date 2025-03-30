@@ -1,3 +1,14 @@
+<route lang="json5">
+{
+  name: "workplace",
+  meta: {
+    title: "工作台",
+    permission: ["*"],
+    order: 100,
+    icon: 'HomeFilled',
+  }
+}
+</route>
 <template>
   <PageMain title='首页' :async-data='asyncData'>
     <p>首页内容</p>

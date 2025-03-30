@@ -21,7 +21,7 @@ declare module 'vue-router/auto-routes' {
     'index': RouteRecordInfo<'index', '/', Record<never, never>, Record<never, never>>,
     'notFound': RouteRecordInfo<'notFound', '/:all(.*)', { all: ParamValue<true> }, { all: ParamValue<false> }>,
     '/about': RouteRecordInfo<'/about', '/about', Record<never, never>, Record<never, never>>,
-    '/dashboard/workplace': RouteRecordInfo<'/dashboard/workplace', '/dashboard/workplace', Record<never, never>, Record<never, never>>,
+    'workplace': RouteRecordInfo<'workplace', '/dashboard/workplace', Record<never, never>, Record<never, never>>,
     '/multilevel_menu_example/page1': RouteRecordInfo<'/multilevel_menu_example/page1', '/multilevel_menu_example/page1', Record<never, never>, Record<never, never>>,
     '/multilevel_menu_example/page2/page2-1': RouteRecordInfo<'/multilevel_menu_example/page2/page2-1', '/multilevel_menu_example/page2/page2-1', Record<never, never>, Record<never, never>>,
     '/multilevel_menu_example/page2/page2-2': RouteRecordInfo<'/multilevel_menu_example/page2/page2-2', '/multilevel_menu_example/page2/page2-2', Record<never, never>, Record<never, never>>,

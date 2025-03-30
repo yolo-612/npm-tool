@@ -89,11 +89,11 @@ const onClickItem = () => {
   </el-dropdown>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
   .TabBarItem {
     display: inline-flex;
     height: 24px;
-    font-size: var(--sdesign-font-size-small);
+    font-size: 13px;
     line-height: 24px;
     border-radius: 2px;
     overflow: hidden;
@@ -105,8 +105,8 @@ const onClickItem = () => {
     cursor: pointer;
 
     &.activated {
-      color: var(--sdesign-color-brand-6);
-      font-weight: var(--sdesign-font-weight-medium);
+      color: #409eff;
+      font-weight: 500;
     }
 
     .title {
