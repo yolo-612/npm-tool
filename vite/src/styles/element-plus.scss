@@ -32,4 +32,41 @@
   }
 }
 
+.header-menu {
+  .el-menu--horizontal.el-menu{
+    --menu-active-color: #409eff;
+    --menu-item-border-radius: 4px;
+    --menu-item-hover-margin: 4px;
+    --el-menu-item-height: 40px;
+    --el-menu-sub-item-height: 40px;
+    --el-menu-base-level-padding: 12px;
+    --el-menu-icon-width: 16px;
+    border-bottom: none;
+    &>.el-menu-item{
+      margin: var(--menu-item-hover-margin);
+      border-radius: var(--menu-item-border-radius);
+      height: var(--el-menu-item-height);
+      line-height: var(--el-menu-item-height)
+    }
+    .el-sub-menu__title{
+      margin: var(--menu-item-hover-margin);
+      border-radius: var(--menu-item-border-radius);
+      height: var(--el-menu-item-height);
+      line-height: var(--el-menu-item-height)
+    }
+   
+    /* 
+      激活状态hover调整
+    */
+    &>.el-menu-item.is-active{
+      background-color: #409eff;
+    }
+    &>.el-menu-item.is-active *{
+      color: #fff
+    }
+  }
+  
+  
+}
+
 

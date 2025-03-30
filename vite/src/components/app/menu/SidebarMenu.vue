@@ -24,7 +24,7 @@ const onCollapseChange = ()=>{
       :style="{ width: menuStore.asideMenuOpen ? menuStore.sideMenuWidthDefault: 'auto' }"
       router
     >
-      <SidebarMenuItem  v-for="item in menuStore.menuTree" :key="item.path" v-bind='item'></SidebarMenuItem>
+      <SidebarMenuItem  v-for="item in menuStore.sideMenus" :key="item.path" v-bind='item'></SidebarMenuItem>
     </el-menu>
 
     <div class='icon-box' @click='onCollapseChange'>

@@ -11,7 +11,9 @@ const defaultSettings: Settings = {
   hiddenTopHeader: false,
   menu: {
     baseOn: 'routes',
+    menuMode: 'side',
   },
+  stretch: false
 };
 
 export default defaultSettings;

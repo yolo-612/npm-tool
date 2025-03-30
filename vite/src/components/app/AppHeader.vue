@@ -1,7 +1,8 @@
 <script setup>
-import { useMenuStore, useUserStore } from '@/stores';
+import { useMenuStore, useSettingsStore, useUserStore } from '@/stores';
 
 const userStore = useUserStore();
+const settingsStore = useSettingsStore();
 const menuStore = useMenuStore();
 
 // 注册退出登录
@@ -20,9 +21,12 @@ const switchRole = (roleCode) => {
 <template>
   <div class='AppHeader' :style="{height:menuStore.topHeaderHeight}">
     <div class="AppHeader-content">
-      <div class='left-header'>
+      <div class='left-header' :style="{minWidth:menuStore.sideMenuWidthDefault}">
         <img class='logo' src='@/assets/images/pi_logo.svg'>
         <span class='logo-title'>YOLO</span>
+      </div>
+      <div class="header-menu">
+        <HeaderMenu v-if="settingsStore.settings.menu.menuMode !== 'side'"/>
       </div>
       <div class='right-header'>
         <!-- 个人账号 -->
@@ -68,7 +72,6 @@ const switchRole = (roleCode) => {
   .AppHeader-content {
     position: relative;
     display: flex;
-    justify-content: space-between;
     height: 100%;
     background-color: #fff;
     border-bottom: 1px solid #e0e0e0;
@@ -91,7 +94,9 @@ const switchRole = (roleCode) => {
         font-weight: 500;
       }
     }
-
+    .header-menu{
+      flex: 1;
+    }
     .right-header {
       display: flex;
       align-items: center;
