@@ -1,4 +1,4 @@
-<route>
+<route lang="json5">
 {
   meta: {
     title: "导航1",
@@ -10,6 +10,7 @@
 
 <template>
   <div>
-    <PageMain title="导航1"></PageMain>
+    <PageMain :title="$route.meta.title">
+    </PageMain>
   </div>
 </template>

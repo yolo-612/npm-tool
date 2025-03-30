@@ -22,10 +22,10 @@ export const INDEX_ROUTE = {
 export const NOT_FOUND_ROUTE = {
   path: '/:pathMatch(.*)*',
   name: 'notFound',
-  component: () => import('@/pages/404.vue'),
-  // TODO: 这种语法通常出现在 文件路由系统 中（如 Nuxt.js / unplugin-vue-router）。
+  // component: () => import('@/pages/404.vue'),
+  //  [...all].vue 这种语法书写文件名通常出现在 文件路由系统 中（如 Nuxt.js / unplugin-vue-router）。
   // [...all].vue 表示匹配所有路径，等同于 Vue Router 的 通配符 /:pathMatch(.*)*。
-  //  component: () => import('@/pages/[...all].vue'), 
+  component: () => import('@/pages/[...all].vue'), 
   meta: {
     title: '404',
     hideInMenu: true,

@@ -1,8 +1,9 @@
-<route>
+<route lang="json5">
 {
+  name: 'index',
   meta: {
-    layout: false,
-    hideInMenu: true
+      layout: false,
+      hideInMenu: true
   }
 }
 </route>

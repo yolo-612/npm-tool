@@ -1,4 +1,4 @@
-<route>
+<route lang="json5">
 {
   meta: {
    title: "导航2-1",

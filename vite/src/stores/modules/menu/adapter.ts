@@ -45,7 +45,7 @@ export const getMenuTreeFromBackend: MenuTreeAdapter = async () => {
 
 export const getMenuTreeAdapter = (baseOn:string):MenuTreeAdapter|null => {
   if (baseOn === 'frontend') {
-    // 前端配置，文件系统路由只支持前端配置菜单
+    // 前端配置，**文件系统路由只支持前端配置菜单**
     return getMenuTreeFromFrontend;
   } else if (baseOn === 'routes') {
     // 根据路由生成

@@ -5,7 +5,7 @@ const defaultSettings: Settings = {
   enablePermission: true,
   tabBar: true,
   breadcrumb: true,
-  routeBaseOn: 'frontend',
+  routeBaseOn: 'filesystem',
   ignoreRouteCache: false,
   hiddenNewCodeTool: false,
   hiddenTopHeader: false,

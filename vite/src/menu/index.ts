@@ -1,10 +1,10 @@
 import type { MenuItem } from '@/stores/modules/menu/types';
 
-export default [
+const menus: MenuItem[] = [
   {
     path: '/dashboard/workplace',
     title: '工作台-frontend',
-    icon: 'Menu',
+    icon: 'HomeFilled',
     order: 100,
     children: [],
   },
@@ -63,15 +63,34 @@ export default [
   {
     path: '/permission_example',
     title: '权限验证',
-    icon: 'Menu',
+    icon: 'Avatar',
     order: 10,
     children: [],
   },
   {
     path: '/about',
     title: '关于',
-    icon: 'Menu',
+    icon: 'HelpFilled',
     order: 0,
     children: [],
   },
-] as MenuItem[];
+  {
+    path: '/link',
+    title: '外链',
+    icon: 'Link',
+    order: 0,
+    children: [
+      {
+        path: 'https://github.com/yolo-612?tab=repositories',
+        title: 'github',
+        isLink: true,
+      },
+      {
+        path: '//yolo612.space.online',
+        title: '在线简历',
+        isLink: true,
+      },
+    ],
+  },
+]
+export default menus;
