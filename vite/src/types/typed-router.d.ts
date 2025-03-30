@@ -27,7 +27,6 @@ declare module 'vue-router/auto-routes' {
     '/multilevel_menu_example/page2/page2-2': RouteRecordInfo<'/multilevel_menu_example/page2/page2-2', '/multilevel_menu_example/page2/page2-2', Record<never, never>, Record<never, never>>,
     '/multilevel_menu_example/page2/page2-3/page2-3-1': RouteRecordInfo<'/multilevel_menu_example/page2/page2-3/page2-3-1', '/multilevel_menu_example/page2/page2-3/page2-3-1', Record<never, never>, Record<never, never>>,
     '/multilevel_menu_example/page2/page2-3/page2-3-2': RouteRecordInfo<'/multilevel_menu_example/page2/page2-3/page2-3-2', '/multilevel_menu_example/page2/page2-3/page2-3-2', Record<never, never>, Record<never, never>>,
-    '/operation/': RouteRecordInfo<'/operation/', '/operation', Record<never, never>, Record<never, never>>,
     '/permission_example/': RouteRecordInfo<'/permission_example/', '/permission_example', Record<never, never>, Record<never, never>>,
     '/permission_example/no_permission': RouteRecordInfo<'/permission_example/no_permission', '/permission_example/no_permission', Record<never, never>, Record<never, never>>,
     '/reload': RouteRecordInfo<'/reload', '/reload', Record<never, never>, Record<never, never>>,

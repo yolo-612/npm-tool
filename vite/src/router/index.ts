@@ -5,6 +5,8 @@ import { setRouteEmitter } from '@/utils/route-listener';
 import globalSettings from '@/settings';
 import { constantRoutes, fileSystemRoutes } from './routes';
 import {useMenuStore, useSettingsStore} from "@/stores";
+// TODO: 热更新
+// import { handleHotUpdate } from 'vue-router/auto-routes'
 
 const router = createRouter({
   history: createWebHistory('/'),
@@ -18,7 +20,7 @@ router.beforeEach(async(to, from) => {
   setRouteEmitter(to);
   NProgress.start();
   if(to && to.meta?.title){
-    document.title = to.meta.title + " - YOLO"
+    document.title = to.meta.title + '-' + import.meta.env.VITE_APP_TITLE;
   }
   // 导航栏如果不是 head-side 模式，则需要根据 path 定位主导航的选中状态
   if(settingsStore.settings.menu.menuMode === 'head-side') {
@@ -29,7 +31,7 @@ router.beforeEach(async(to, from) => {
 
 router.afterEach(async(to, from) => {
   if(to && to.meta?.title){
-    document.title = to.meta.title + " - YOLO"
+    document.title = to.meta.title + '-' + import.meta.env.VITE_APP_TITLE;
   }
   NProgress.done();
   return true

@@ -8,7 +8,7 @@ export default {
   meta: {
     title: '多级菜单',
     icon: 'Menu',
-    permission: ['*'],
+    order: 10,
   },
   children: [
     {
@@ -17,7 +17,6 @@ export default {
       component: ()=>import('@/pages/multilevel_menu_example/page1.vue'),
       meta: {
         title: '导航1',
-        permission: ['*'],
       },
     },
     {
@@ -26,7 +25,6 @@ export default {
       name: '/multilevel_menu_example/page2',
       meta: {
         title: '导航2',
-        permission: ['*'],
       },
       children: [
         {
@@ -35,7 +33,6 @@ export default {
           component: ()=>import('@/pages/multilevel_menu_example/page2/page2-1.vue'),
           meta: {
             title: '导航2-1',
-            permission: ['*'],
           },
         },
         {
@@ -44,7 +41,6 @@ export default {
           component: ()=>import('@/pages/multilevel_menu_example/page2/page2-2.vue'),
           meta: {
             title: '导航2-2',
-            permission: ['*'],
           },
         },
         {
@@ -53,7 +49,6 @@ export default {
           redirect: '/multilevel_menu_example/page2/page2-3/page2-3-1',
           meta: {
             title: '导航2-3',
-            permission: ['*'],
           },
           children: [
             {
@@ -62,7 +57,6 @@ export default {
               component: ()=>import('@/pages/multilevel_menu_example/page2/page2-3/page2-3-1.vue'),
               meta: {
                 title: '导航2-3-1',
-                permission: ['*'],
               },
             },
             {
@@ -71,7 +65,6 @@ export default {
               component: ()=>import('@/pages/multilevel_menu_example/page2/page2-3/page2-3-2.vue'),
               meta: {
                 title: '导航2-3-2',
-                permission: ['*'],
               },
             },
           ]

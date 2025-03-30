@@ -7,9 +7,10 @@ const dashboard: RouteRecordRaw = {
   component: DEFAULT_LAYOUT,
   redirect: '/dashboard/workplace',
   meta: {
-    title: '工作台', // 页面tab显示的名称
-    icon: 'Menu', // 菜单icon
+    title: '工作台-Router', // 页面tab显示的名称
+    icon: 'HomeFilled', // 菜单icon
     permission: ['*'],
+    order: 100,
   },
   children: [
     {
