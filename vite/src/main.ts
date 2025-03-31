@@ -1,13 +1,15 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-import '@/styles/reset.css'
+import '@/assets/styles/reset.css';
 import App from './App.vue'
 import router from './router'
 import { useUserStore } from "@/stores"
 import directive from '@/directive/index'
+import { createPersistedState } from 'pinia-plugin-persistedstate';
 
 const app = createApp(App)
 const pinia = createPinia()
+pinia.use(createPersistedState({
+  key: (id) => `pinia_${id}`,
+}))
 app.use(pinia)
 
 

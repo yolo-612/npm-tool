@@ -1,9 +1,10 @@
 
 // TODO：pinia持久化
 import type { RouteLocationNormalized } from 'vue-router';
-import type { TabProps } from './types';
-
 import { INDEX_ROUTE, NOT_FOUND_ROUTE, RELOAD_ROUTE } from '@/router/base';
+import type { TabProps } from './types';
+import globalSettings from '@/settings';
+
 
 const formatTag = (route: RouteLocationNormalized) : TabProps => {
   const {
@@ -58,6 +59,10 @@ const useTabBarStore = defineStore('tabBar', () => {
     updateTabList,
     deleteTag
   };
+}, {
+  persist: globalSettings.ignoreTabBarPersistent ? false : {
+    storage: sessionStorage,
+  },
 })
 
 export default useTabBarStore
