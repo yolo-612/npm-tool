@@ -16,12 +16,14 @@ const onCollapseChange = ()=>{
 <template>
   <aside
     class="SidebarMenu"
-    :style="{paddingTop:menuStore.topHeaderHeight}">
+    :style="{
+      paddingTop:menuStore.topHeaderHeight,
+      width: menuStore.sideMenuWidth,
+    }">
     <el-menu
       class='SidebarMenu-menu'
       :default-active="defaultActive"
       :collapse="!menuStore.asideMenuOpen"
-      :style="{ width: menuStore.asideMenuOpen ? menuStore.sideMenuWidthDefault: 'auto' }"
       router
     >
       <SidebarMenuItem  v-for="item in menuStore.sideMenus" :key="item.path" v-bind='item'></SidebarMenuItem>
@@ -48,6 +50,7 @@ const onCollapseChange = ()=>{
   z-index: 99;
   box-sizing: border-box;
   transition: padding-top 0.3s cubic-bezier(0.34, 0.69, 0.1, 1);
+  transition: width 0.3s cubic-bezier(0.55, 0, 0.1, 1);
 
   .SidebarMenu-menu{
     flex:1;
