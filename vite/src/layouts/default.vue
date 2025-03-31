@@ -3,9 +3,9 @@
 import usePermission from "@/hook/usePermission";
 import { useMenuStore, useSettingsStore, useTabBarStore } from '@/stores';
 
-const {checkPermission} = usePermission()
+const { checkRoutePermission } = usePermission()
 const tabBarStore = useTabBarStore();
-const settingStore = useSettingsStore();
+const settingsStore = useSettingsStore();
 const menuStore = useMenuStore();
 
 const stretch = computed(() => {
@@ -18,7 +18,7 @@ const getMainWidth = computed(() => {
 
 <template>
   <div class='AdminPage'>
-    <AppHeader/>
+    <AppHeader v-if="!settingsStore.settings.hiddenTopHeader"/>
     <SidebarMenu v-if="menuStore.showSidebarMenu"></SidebarMenu>
     <main 
       class='main-content'
@@ -27,11 +27,28 @@ const getMainWidth = computed(() => {
         paddingLeft: menuStore.sideMenuWidth,
       }"
     >
-      <TabBar v-if="settingStore.settings.tabBar" />
-      <!-- TODO：添加keep-alive -->
+      <TabBar v-if="settingsStore.settings.tabBar" />
       <RouterView v-slot="{ Component, route }">
-        <component :is="Component" v-if="checkPermission(route.meta.permission ?? [])"/>
-        <NotPermission v-else/>
+        <transition name="fade" mode="out-in" appear>
+          <NotPermission v-if="!checkRoutePermission(route.meta)"/>
+          <component 
+            :is="Component" 
+            v-else-if="route.meta.ignoreCache || settingsStore.settings.ignoreRouteCache"
+            :key="route.fullPath"
+          />
+          <!-- :include 是 keep-alive 的白名单，它指定哪些组件应该被缓存。传入具体的router.name即可  -->
+          <keep-alive v-else :include="tabBarStore.getCacheTabList">
+            <div
+              :style="{
+                'max-width': getMainWidth,
+                'margin': '0 auto',
+                'transition': 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
+              }"
+            >
+              <component :is="Component" :key="route.fullPath" />
+            </div>
+          </keep-alive>
+        </transition>         
       </RouterView>
     </main>
   </div>

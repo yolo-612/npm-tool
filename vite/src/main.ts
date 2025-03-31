@@ -1,9 +1,14 @@
 import '@/assets/styles/reset.css';
+import { createPersistedState } from 'pinia-plugin-persistedstate';
+import directive from '@/directive/index'
+import { useUserStore } from "@/stores"
 import App from './App.vue'
 import router from './router'
-import { useUserStore } from "@/stores"
-import directive from '@/directive/index'
-import { createPersistedState } from 'pinia-plugin-persistedstate';
+
+window.console.log(
+  `%c ${__APP_INFO__.pkg.name} ${__APP_INFO__.buildTime}`,
+  'background:#DC1D32; padding:2px 3px; border:1px solid #DC1D32; border-radius:3px 0 0 3px; color:#fff;',
+);
 
 const app = createApp(App)
 const pinia = createPinia()
