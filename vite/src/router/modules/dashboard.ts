@@ -2,10 +2,9 @@ import type { RouteRecordRaw } from 'vue-router';
 import { DEFAULT_LAYOUT } from '@/router/base';
 
 const dashboard: RouteRecordRaw = {
-  path: '/dashboard',
+  path: '/dashboard/workplace',
   name: 'dashboard',
   component: DEFAULT_LAYOUT,
-  redirect: '/dashboard/workplace',
   meta: {
     title: '工作台-Router', // 页面tab显示的名称
     icon: 'HomeFilled', // 菜单icon
@@ -14,7 +13,7 @@ const dashboard: RouteRecordRaw = {
   },
   children: [
     {
-      path: 'workplace',
+      path: '/dashboard/workplace',
       name: 'workplace',
       component: () => import('@/pages/dashboard/workplace.vue'),
       meta: {

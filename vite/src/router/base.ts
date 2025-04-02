@@ -10,7 +10,7 @@ export const DEFAULT_LAYOUT = () => import('@/layouts/default.vue');
 export const INDEX_ROUTE = {
   name: 'index',
   path: '/',
-  redirect: '/dashboard',
+  redirect: '/dashboard/workplace',
   meta: {
     hideInMenu: true,
   },
