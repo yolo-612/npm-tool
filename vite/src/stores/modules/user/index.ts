@@ -1,6 +1,7 @@
 import { createCachePromise } from '@/utils';
 import type { RoleItem, UserInfo } from './types';
-import { mockUserInfo, mockRoleInfo, mockPermissionInfo } from '@/apis/mock'
+import { mockRoleInfo, mockPermissionInfo } from '@/apis/mock'
+import { getUserInfo } from '@/apis/methods/user';
 
 /**
  * **
@@ -62,7 +63,7 @@ const useUserStore = defineStore('user', () => {
    * @private
    */
   const _getUserInfo = async ()=>{
-    const { success,obj } = await Promise.resolve(mockUserInfo)
+    const { success,obj } = await getUserInfo()
     if(success){
       userInfo.empCode = obj.empCode
       userInfo.isLogin = true

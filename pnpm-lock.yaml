@@ -217,6 +217,9 @@ importers:
       '@yolo/storage':
         specifier: workspace:^1.0.0
         version: link:../packages/@yolo/storage
+      axios:
+        specifier: ^1.6.8
+        version: 1.7.9
       dayjs:
         specifier: ^1.11.13
         version: 1.11.13
@@ -278,6 +281,9 @@ importers:
       vite:
         specifier: ^5.2.0
         version: 5.4.14(@types/node@22.13.5)(less@4.2.2)(sass@1.85.1)
+      vite-plugin-fake-server:
+        specifier: ^2.2.0
+        version: 2.2.0
       vite-plugin-vue-layouts:
         specifier: ^0.11.0
         version: 0.11.0(vite@5.4.14(@types/node@22.13.5)(less@4.2.2)(sass@1.85.1))(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))
@@ -1778,6 +1784,9 @@ packages:
   buffer@6.0.3:
     resolution: {integrity: sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==}
 
+  bundle-import@0.0.2:
+    resolution: {integrity: sha512-XB3T6xlgqJHThyr2luo3pNAVhfN/Y2qFEsblrzUO5QZLpJtesget8jmGDImSairScy80ZKBDVcRdFzTzWv3v8A==}
+
   bundle-require@5.1.0:
     resolution: {integrity: sha512-3WrrOuZiyaaZPWiEt4G3+IffISVC9HYlWueJEBWED4ZH4aIAC2PnkdnuRrR94M+w6yGWn4AglWtJtBI8YqvgoA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -2342,6 +2351,12 @@ packages:
   immutable@5.0.3:
     resolution: {integrity: sha512-P8IdPQHq3lA1xVeBRi5VPqUm5HDgKnx0Ru51wZz5mjxHr5n3RWhjIpOFU7ybkUxfB+5IToy+OLaHYDBIWsv+uw==}
 
+  import-from-string@0.0.5:
+    resolution: {integrity: sha512-z59WIHImWhnGVswc0JoyI10Qn4A8xQw7OKrCFRQHvzGZhhEixX13OtXP9ud3Xjpn16CUoYfh5mTu3tnNODiSAw==}
+
+  import-meta-resolve@4.1.0:
+    resolution: {integrity: sha512-I6fiaX09Xivtk+THaMfAwnA3MVA5Big1WHF1Dfx9hFuvNIWpXnorlkzhcQf6ehrqQiiZECRt1poOAkPmer3ruw==}
+
   importx@0.5.1:
     resolution: {integrity: sha512-YrRaigAec1sC2CdIJjf/hCH1Wp9Ii8Cq5ROw4k5nJ19FVl2FcJUHZ5gGIb1vs8+JNYIyOJpc2fcufS2330bxDw==}
 
@@ -2876,6 +2891,10 @@ packages:
     resolution: {integrity: sha512-Xa4Nw17FS9ApQFJ9umLiJS4orGjm7ZzwUrwamcGQuHSzDyth9boKDaycYdDcZDuqYATXw4HFXgaqWTctW/v1HA==}
     engines: {node: '>=16 || 14 >=14.18'}
 
+  path-to-regexp@8.2.0:
+    resolution: {integrity: sha512-TdrF7fW9Rphjq4RjrW0Kp2AW0Ahwu9sRGTkS6bvDi0SCwZlEZYmcfDbEsTz8RVk0EHIS/Vd1bv3JhG+1xZuAyQ==}
+    engines: {node: '>=16'}
+
   path-type@6.0.0:
     resolution: {integrity: sha512-Vj7sf++t5pBD637NSfkxpHSMfWaeig5+DKWLhcqIYx6mWQz5hdJTGDVMQiJcw1ZYkhs7AazKDGpRVji1LJCZUQ==}
     engines: {node: '>=18'}
@@ -3271,10 +3290,6 @@ packages:
   tinyexec@0.3.2:
     resolution: {integrity: sha512-KQQR9yN7R5+OSwaK0XQoj22pwHoTlgYqmUscPYoknOoWCWfj/5/ABTMRi69FrKU5ffPVh5QcFikpWJI/P1ocHA==}
 
-  tinyglobby@0.2.10:
-    resolution: {integrity: sha512-Zc+8eJlFMvgatPZTl6A9L/yht8QqdmUNtURHaKZLmKBE12hNPSrqNkUp2cs3M/UKmNVVAMFQYSjYIVHDjW5zew==}
-    engines: {node: '>=12.0.0'}
-
   tinyglobby@0.2.12:
     resolution: {integrity: sha512-qkf4trmKSIiMTs/E63cxH+ojC2unam7rJ0WrauAzpT3ECNTxGRMlaXxVbfxMUC/w0LaYk6jQ4y/nGR9uBO3tww==}
     engines: {node: '>=12.0.0'}
@@ -3516,6 +3531,9 @@ packages:
   vinyl@3.0.0:
     resolution: {integrity: sha512-rC2VRfAVVCGEgjnxHUnpIVh3AGuk62rP3tqVrn+yab0YH7UULisC085+NYH+mnqf3Wx4SpSi1RQMwudL89N03g==}
     engines: {node: '>=10.13.0'}
+
+  vite-plugin-fake-server@2.2.0:
+    resolution: {integrity: sha512-RP691997Q207nenNMhg7cvYyBXZyjqXwApTBa+a9kHmILgcAU2w4TMRDiAhIU0HPLAAR5MHlWTEpxA9Tbf+v8g==}
 
   vite-plugin-vue-layouts@0.11.0:
     resolution: {integrity: sha512-uh6NW7lt+aOXujK4eHfiNbeo55K9OTuB7fnv+5RVc4OBn/cZull6ThXdYH03JzKanUfgt6QZ37NbbtJ0og59qw==}
@@ -4681,7 +4699,7 @@ snapshots:
       magic-string: 0.30.17
       pathe: 2.0.2
       perfect-debounce: 1.0.0
-      tinyglobby: 0.2.10
+      tinyglobby: 0.2.12
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -4717,7 +4735,7 @@ snapshots:
       '@unocss/rule-utils': 65.4.3
       css-tree: 3.1.0
       postcss: 8.5.1
-      tinyglobby: 0.2.10
+      tinyglobby: 0.2.12
     transitivePeerDependencies:
       - supports-color
 
@@ -4800,7 +4818,7 @@ snapshots:
       '@unocss/inspector': 65.4.3(vue@3.5.13(typescript@5.7.3))
       chokidar: 3.6.0
       magic-string: 0.30.17
-      tinyglobby: 0.2.10
+      tinyglobby: 0.2.12
       vite: 6.1.0(@types/node@22.13.5)(jiti@2.4.2)(less@4.2.2)(sass@1.84.0)(tsx@4.19.2)(yaml@2.7.0)
     transitivePeerDependencies:
       - rollup
@@ -5225,6 +5243,11 @@ snapshots:
     dependencies:
       base64-js: 1.5.1
       ieee754: 1.2.1
+
+  bundle-import@0.0.2:
+    dependencies:
+      get-tsconfig: 4.10.0
+      import-from-string: 0.0.5
 
   bundle-require@5.1.0(esbuild@0.24.2):
     dependencies:
@@ -5892,6 +5915,13 @@ snapshots:
 
   immutable@5.0.3: {}
 
+  import-from-string@0.0.5:
+    dependencies:
+      esbuild: 0.24.2
+      import-meta-resolve: 4.1.0
+
+  import-meta-resolve@4.1.0: {}
+
   importx@0.5.1:
     dependencies:
       bundle-require: 5.1.0(esbuild@0.24.2)
@@ -6545,6 +6575,8 @@ snapshots:
       lru-cache: 10.4.3
       minipass: 7.1.2
 
+  path-to-regexp@8.2.0: {}
+
   path-type@6.0.0: {}
 
   pathe@1.1.2: {}
@@ -6989,11 +7021,6 @@ snapshots:
 
   tinyexec@0.3.2: {}
 
-  tinyglobby@0.2.10:
-    dependencies:
-      fdir: 6.4.3(picomatch@4.0.2)
-      picomatch: 4.0.2
-
   tinyglobby@0.2.12:
     dependencies:
       fdir: 6.4.3(picomatch@4.0.2)
@@ -7341,6 +7368,14 @@ snapshots:
       remove-trailing-separator: 1.1.0
       replace-ext: 2.0.0
       teex: 1.0.1
+
+  vite-plugin-fake-server@2.2.0:
+    dependencies:
+      bundle-import: 0.0.2
+      chokidar: 4.0.3
+      path-to-regexp: 8.2.0
+      picocolors: 1.1.1
+      tinyglobby: 0.2.12
 
   vite-plugin-vue-layouts@0.11.0(vite@5.4.14(@types/node@22.13.5)(less@4.2.2)(sass@1.85.1))(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3)):
     dependencies:

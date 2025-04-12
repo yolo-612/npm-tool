@@ -6,6 +6,7 @@ import createPages from './pages';
 import createLayouts from './layouts';
 import createComponents from './components';
 import createAutoImport from './auto-import';
+import createFakeMock from './fakeMock';
 
 export default function createVitePlugins(viteEnv:object, isBuild = false, mode:string) {
   const vitePlugins: (PluginOption | PluginOption[])[] = [
@@ -16,6 +17,7 @@ export default function createVitePlugins(viteEnv:object, isBuild = false, mode:
     vueJsx(),
     createComponents(),
     createAutoImport(),
+    createFakeMock(viteEnv, isBuild),
   ];
   return vitePlugins;
 }
