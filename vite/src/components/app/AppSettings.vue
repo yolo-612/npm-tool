@@ -63,7 +63,7 @@
 
       <section class="setting-content">
         <el-divider><strong>颜色主题</strong></el-divider>
-        <el-radio-group v-model="settingsStore.settings.theme">
+        <el-radio-group v-model="settingsStore.settings.theme" disabled>
           <el-radio value="red" size="large">红色</el-radio>
           <el-radio value="blue" size="large">蓝色</el-radio>
           <el-radio value="orange" size="large">橘色</el-radio>
@@ -121,10 +121,10 @@
           ></span>
           <el-switch v-model="settingsStore.settings.ignoreTabBarPersistent" />
         </div>
-        <div class="setting-item">
+        <!-- <div class="setting-item">
           <span>是否显示面包屑</span>
           <el-switch v-model="settingsStore.settings.breadcrumb" />
-        </div>
+        </div> -->
         <div class="setting-item">
           <span>是否隐藏顶部header</span>
           <el-switch v-model="settingsStore.settings.hiddenTopHeader" />
@@ -167,8 +167,8 @@
           </span>
 
           <el-select v-model="settingsStore.settings.routeBaseOn" size="large" style="width: 140px">
-            <el-option value="frontend" label="前端路由文件" disabled></el-option>
-            <el-option value="filesystem" label="文件系统路由" disabled></el-option>
+            <el-option value="frontend" label="前端路由文件" ></el-option>
+            <el-option value="filesystem" label="文件系统路由" ></el-option>
           </el-select>
         </div>
       </section>
