@@ -1,7 +1,6 @@
 import { createCachePromise } from '@/utils';
 import type { RoleItem, UserInfo } from './types';
-import { mockRoleInfo, mockPermissionInfo } from '@/apis/mock'
-import { getUserInfo } from '@/apis/methods/user';
+import { getUserInfo, queryRoles, queryPermissionByRole } from '@/apis/methods/user';
 
 /**
  * **
@@ -53,7 +52,7 @@ const useUserStore = defineStore('user', () => {
    * @private
    */
   const _getRolesData = async ():Promise<RoleItem[]>=>{
-    const { success, obj } : any = await Promise.resolve(mockRoleInfo)
+    const { success, obj } : any = await queryRoles()
     if(!success || !obj) return []
     return obj
   }  
@@ -79,8 +78,7 @@ const useUserStore = defineStore('user', () => {
    * @private
    */
   const _getPermissionData = async (roleItem: RoleItem):Promise<string[]>=>{
-    // console.log(roleItem, '根据role的code获取相关的权限')
-    const { success, obj } = await Promise.resolve(mockPermissionInfo);
+    const { success, obj } = await queryPermissionByRole(roleItem.roleId);
     const permissions: string[] = [];
 
     if(!success || !obj) return []
@@ -102,7 +100,7 @@ const useUserStore = defineStore('user', () => {
       return roleData;
     }
 
-    // 根据角色获取百源权限
+    // 根据角色获取权限
     await Promise.all(
       roleData
         .map((roleItem) => {
