@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "test:cross-env": "cross-env APP_NAME=yolo vite build",
+    "visualizer": "cross-env USE_VISUALIZER=true vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -32,11 +32,13 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "cross-env": "^7.0.3",
+    "rollup-plugin-visualizer": "^5.14.0",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-components": "^0.26.0",
     "unplugin-vue-router": "^0.11.2",
     "vite": "^5.2.0",
     "vite-plugin-fake-server": "^2.2.0",
+    "vite-plugin-vue-devtools": "^7.7.2",
     "vite-plugin-vue-layouts": "^0.11.0"
   }
 }

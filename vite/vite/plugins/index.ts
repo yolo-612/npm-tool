@@ -7,6 +7,8 @@ import createLayouts from './layouts';
 import createComponents from './components';
 import createAutoImport from './auto-import';
 import createFakeMock from './fakeMock';
+import createBuildVisualizer from './build-visualizer';
+import createDevTools from './dev-tools';
 
 export default function createVitePlugins(viteEnv:object, isBuild = false, mode:string) {
   const vitePlugins: (PluginOption | PluginOption[])[] = [
@@ -18,6 +20,10 @@ export default function createVitePlugins(viteEnv:object, isBuild = false, mode:
     createComponents(),
     createAutoImport(),
     createFakeMock(viteEnv, isBuild),
+    createDevTools(),
   ];
+  if (process.env.USE_VISUALIZER) {
+    vitePlugins.push(createBuildVisualizer());
+  }
   return vitePlugins;
 }
