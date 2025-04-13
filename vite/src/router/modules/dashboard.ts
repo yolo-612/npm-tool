@@ -3,7 +3,7 @@ import { DEFAULT_LAYOUT } from '@/router/base';
 
 const dashboard: RouteRecordRaw = {
   path: '/dashboard/workplace',
-  name: 'workplace',
+  name: 'dashboard',
   component: DEFAULT_LAYOUT,
   meta: {
     title: '工作台-Router', // 页面tab显示的名称
@@ -14,7 +14,7 @@ const dashboard: RouteRecordRaw = {
   children: [
     {
       path: '',
-      name: 'workplacePage',
+      name: 'workplace',
       component: () => import('@/pages/dashboard/workplace.vue'),
       meta: {
         title: '工作台', // 页面tab显示的名称
