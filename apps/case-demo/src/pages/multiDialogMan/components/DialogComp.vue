@@ -1,8 +1,8 @@
 
 <template>
-  <el-dialog v-model="visible" title="弹窗2" width="300" center>
+  <el-dialog v-model="visible" :title="name" :width="width" center>
     <span>
-      弹窗2内容
+      {{name}}内容
     </span>
     <template #footer>
       <div class="dialog-footer">
@@ -16,7 +16,16 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+const props = defineProps({
+  name: {
+    type: String,
+    default: '弹窗',
+  },
+  width: {
+    type: Number,
+    default: 500,
+  },
+});
 
 const visible = ref(false)
 

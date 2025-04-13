@@ -21,20 +21,38 @@
   <PageMain title='多弹窗互相覆盖现象'>
     <el-button type="primary" @click="handleOpenMul">打开多弹窗</el-button>
   </PageMain>
-  <DialogComp1 ref="DialogComp1Ref"/>
-  <DialogComp2 ref="DialogComp2Ref"/>
+
+  <PageMain title='多弹窗异步控制'>
+    <el-button type="primary" @click="handleOpenAsyncMul">有序打开弹窗</el-button>
+  </PageMain>
+  <DialogComp ref="DialogComp1Ref" :width="500" :name="'弹窗1'"/>
+  <DialogComp ref="DialogComp2Ref" :width="300" :name="'弹窗2'"/>
+  <DialogAsyncComp ref="DialogAsyncComp1Ref" :width="500" :name="'异步改造弹窗1'"/>
+  <DialogAsyncComp ref="DialogAsyncComp2Ref" :width="300" :name="'异步改造弹窗2'"/>
 </template>
 
 <script setup>
-import DialogComp1 from './components/DialogComp1.vue';
-import DialogComp2 from './components/DialogComp2.vue';
+import DialogComp from './components/DialogComp.vue';
+import DialogAsyncComp from './components/DialogAsyncComp.vue';
+
 
 const DialogComp1Ref = ref('')
 const DialogComp2Ref = ref('')
 
+const DialogAsyncComp1Ref = ref('')
+const DialogAsyncComp2Ref = ref('')
+
+
 const handleOpenMul = ()=>{
   DialogComp1Ref.value?.open()
   DialogComp2Ref.value?.open()
+}
+
+// 通过promise链条控制
+const handleOpenAsyncMul = ()=>{
+  DialogAsyncComp1Ref.value?.open().then(()=>{
+    DialogAsyncComp2Ref.value?.open()
+  })
 }
 </script>
 
