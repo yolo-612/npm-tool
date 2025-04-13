@@ -11,21 +11,14 @@
 </route>
 <template>
   <PageMain title='首页' :async-data='asyncData'>
-    <p>首页内容</p>
+    <p>
+      采用统一的web的模板：<br/><br/>
+      具体配置：文件系统路由 + 菜单baseOn：frontend + 菜单侧边：side 
+    </p>
   </PageMain>
 </template>
 
 <script setup>
-import PageMain from '@/components/app/PageMain.vue';
-import { sleep } from '@/utils/index.js';
-
-
-const asyncData = async ()=>{
-  await sleep(1000)
-  // return Promise.reject(new Error('网络错误'))
-  // throw new Error('网络错误11')
-}
-
 </script>
 
 <style lang='scss' scoped>
