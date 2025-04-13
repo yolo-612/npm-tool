@@ -1,0 +1,32 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": [
+    "env.d.ts",
+    "vite-env.d.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    "vite/**/*.ts",
+    "mock/**/*.ts",
+    "plop-tool/**/*.ts",
+    "plop-tool/**/*.js",
+  ],
+  "exclude": ["src/**/__tests__/*"],
+  "compilerOptions": {
+    "composite": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "allowJs": true,
+    //添加 编译时允许有js
+    "allowSyntheticDefaultImports": true,
+    //允许引用没有默认导出的模块
+    "moduleResolution": "Bundler",
+    "outDir": "build",
+    //添加 将输出结构重定向到目录
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": ["unplugin-vue-router/client"]
+  }
+}
