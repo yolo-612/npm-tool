@@ -21,7 +21,8 @@ declare module 'vue-router/auto-routes' {
     'index': RouteRecordInfo<'index', '/', Record<never, never>, Record<never, never>>,
     'notFound': RouteRecordInfo<'notFound', '/:all(.*)', { all: ParamValue<true> }, { all: ParamValue<false> }>,
     'workplace': RouteRecordInfo<'workplace', '/dashboard/workplace', Record<never, never>, Record<never, never>>,
-    'multiDialogMan': RouteRecordInfo<'multiDialogMan', '/multiDialogMan', Record<never, never>, Record<never, never>>,
+    'multiDialogManBackground': RouteRecordInfo<'multiDialogManBackground', '/multiDialogMan/background', Record<never, never>, Record<never, never>>,
+    'multiDialogManSolution': RouteRecordInfo<'multiDialogManSolution', '/multiDialogMan/solution', Record<never, never>, Record<never, never>>,
     '/reload': RouteRecordInfo<'/reload', '/reload', Record<never, never>, Record<never, never>>,
   }
 }

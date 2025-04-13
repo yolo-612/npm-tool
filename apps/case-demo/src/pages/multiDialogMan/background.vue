@@ -1,8 +1,8 @@
 <route lang="json5">
 {
-  name: "multiDialogMan",
+  name: "multiDialogManBackground",
   meta: {
-    title: "多弹窗管理",
+    title: "背景",
     permission: ["*"],
     icon: 'Opportunity',
   }

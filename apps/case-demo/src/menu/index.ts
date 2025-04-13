@@ -27,12 +27,16 @@ const menus: MenuItem[] = [
     title: '多弹窗管理',
     icon: 'Opportunity',
     children: [
-      // {
-      //   path: '/multiDialogMan/index',
-      //   title: '多弹窗项目',
-      //   order: 0,
-      //   children: [],
-      // },
+      {
+        path: '/multiDialogMan/background',
+        title: '背景',
+        children: [],
+      },
+      {
+        path: '/multiDialogMan/solution',
+        title: '解决方案',
+        children: [],
+      },
     ],
   },
 ]
