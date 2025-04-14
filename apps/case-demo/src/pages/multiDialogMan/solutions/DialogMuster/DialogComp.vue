@@ -1,7 +1,7 @@
 <template>
-  <el-dialog v-model="visible" title="标题" center>
+  <el-dialog v-model="visible" :title="name" :width="width" center>
     <span>
-      汤川内容
+      弹窗内容{{JSON.stringify(dialogShowData)}}
     </span>
     <template #footer>
       <div class="dialog-footer">
@@ -15,12 +15,22 @@
 </template>
 
 <script setup lang="ts">
+withDefaults(defineProps<{
+  name?: string
+  width?: number
+}>(), {
+  name: '多弹窗管理',
+  width: 500,
+})
+
 const emit = defineEmits(['close'])
 
 const visible = ref(false)
+const dialogShowData = ref(null)
 
 const show = ({ data } : any) => {
   visible.value = true
+  dialogShowData.value = data
 };
 
 const close = ()=>{

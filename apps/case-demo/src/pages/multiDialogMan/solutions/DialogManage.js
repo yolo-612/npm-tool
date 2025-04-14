@@ -1,5 +1,4 @@
-import Case1Dialog from './Case1Dialog'
-import Case2Dialog from './Case2Dialog'
+import { Case1Dialog, Case2Dialog } from './DialogMuster'
 
 class DialogManager {
   taskList = []
@@ -38,6 +37,10 @@ class DialogManager {
           })
         }
         return promise
+      }).catch(() => {
+        // 弹窗被阻断，或者代码报错
+      }).finally(() => {
+        this.showIng = false
       })
   }
 }

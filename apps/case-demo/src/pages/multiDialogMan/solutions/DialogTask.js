@@ -7,6 +7,7 @@ export default class DialogTask {
   level = 0; // 层级
 
   compOptions = null; // 对应组件
+  compProps = {}; // 组件参数
   compVm = null; // 组件实例
   parentElement = null;
 
@@ -31,12 +32,13 @@ export default class DialogTask {
   showDialogPromise = null; // 弹窗promise
   asyncDataPromise = null; // 获取数据promise
 
-  constructor ({ key, name, type, level, compOptions, asyncData, parentElement } = {}) {
+  constructor ({ key, name, type, level, compOptions, compProps, asyncData, parentElement } = {}) {
     this.key = key
     this.name = name
     this.type = type
     this.level = level
     this.compOptions = compOptions
+    this.compProps = compProps
     this.parentElement = parentElement || dialogParentElement
     this.asyncData = asyncData
   }
@@ -68,6 +70,7 @@ export default class DialogTask {
 
       // 显示，挂载组件
       this.compVm = createApp(this.compOptions,  {
+        ...this.compProps,
         onClose: (payload) => {
           this.close(payload.type, payload.action);
         }
@@ -90,9 +93,6 @@ export default class DialogTask {
     if (this.compVm) {
       // 销毁组件
       this.compVm.unmount()
-      // if (this.parentElement.contains(this.compVm.$el)) {
-      //   this.parentElement.removeChild(this.compVm.$el)
-      // }
       this.compVm = null
     }
     // 加一点延迟，下一个弹窗体验更好
