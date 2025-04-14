@@ -24,12 +24,16 @@
   </PageMain>
 
   <PageMain title='实现效果'>
-    
+    <el-button type="primary" @click="handleOpenAsyncMul">演示效果</el-button>
   </PageMain>
 </template>
 
 <script setup>
+import DialogManage from './solutions/DialogManage'
 
+const handleOpenAsyncMul = ()=>{
+  DialogManage.startTask()
+}
 </script>
 
 <style lang='scss' scoped>
