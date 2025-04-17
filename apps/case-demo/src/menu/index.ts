@@ -8,20 +8,6 @@ const menus: MenuItem[] = [
     order: 100,
     children: [],
   },
-  // {
-  //   path: '/multilevel_menu_example',
-  //   title: '多级导航',
-  //   icon: 'Menu',
-  //   order: 10,
-  //   children: [
-  //     {
-  //       path: '/multilevel_menu_example/page1',
-  //       title: '导航1',
-  //       order: 0,
-  //       children: [],
-  //     },
-  //   ],
-  // },
   {
     path: '/multiDialogMan',
     title: '多弹窗管理',
@@ -35,6 +21,11 @@ const menus: MenuItem[] = [
       {
         path: '/multiDialogMan/solution',
         title: '解决方案',
+        children: [],
+      },
+      {
+        path: '/multiDialogMan/config',
+        title: '弹窗项配置',
         children: [],
       },
     ],
