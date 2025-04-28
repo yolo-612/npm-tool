@@ -9,13 +9,15 @@ npm install
 ```
 
 - 构建css文件
+注：/src/styles/main.sass文件中验证sass声明的变量是否生效
 
 ```bash
 npm run build:css
 ```
 
 - 构建js文件
-
+注： /src/scripts/module1/testSupEs2020.js 文件中有验证es2020的demo
+注： /src/scripts/main.js 文件中验证模块化导入
 ```bash
 npm run build:js
 ```
@@ -45,7 +47,7 @@ npm run start
 ```
 
 - 格式化和检查代码
-
+注：有在配置文件.eslintrc.json中配置规则 `no-unused-vars` 验证
 ```bash
 npm run lint
 ```
