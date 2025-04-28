@@ -8,6 +8,24 @@
 npm install
 ```
 
+- 构建css文件
+
+```bash
+npm run build:css
+```
+
+- 构建js文件
+
+```bash
+npm run build:js
+```
+
+- 构建html文件
+
+```bash
+npm run build:html
+```
+
 - 开发模式
 
 ```bash
@@ -41,12 +59,12 @@ npm run clean
 
 ## 技术栈
 
-- SCSS（Sass）
-- ESBuild (支持 ES2020)
-- ESLint
-- Prettier
-- BrowserSync
-- Node.js 自定义脚本
+- **Sass**：用于写样式，支持 SCSS 语法。
+- **ESBuild**：用于构建 JavaScript，支持 ES2020 语法。
+- **ESLint**：用于检查 JavaScript 代码的质量和规范，确保代码一致性。
+- **Prettier**：用于格式化代码，确保代码风格一致。
+- **Browser-Sync**：用于启动本地开发服务器，并提供热更新和自动刷新功能。
+- **Chokidar**：用于监控文件变化并触发构建命令，支持增量构建
 
 ## 自定义脚本说明
 
