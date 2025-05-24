@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "lib": ["esnext", "dom"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "types": [
+      "unplugin-vue-define-options/macros-global",
+      "vite/client", // 解决使用import.meta.glob时报错 Property 'glob' does not exist on type 'ImportMeta'
+      "element-plus/global"
+    ],
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    // 解决vite-plugin-dts打包类型文件部分组件(SaspTable、SaspSelect)类型文件生产失败的问题
+    // https://github.com/qmhc/vite-plugin-dts/issues/155#issuecomment-1340535300
+    "paths": { "*": ["node_modules/*"], "@/*": ["./*"] }
+  }
+}
