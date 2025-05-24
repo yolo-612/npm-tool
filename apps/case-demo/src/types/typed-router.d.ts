@@ -20,6 +20,7 @@ declare module 'vue-router/auto-routes' {
   export interface RouteNamedMap {
     'index': RouteRecordInfo<'index', '/', Record<never, never>, Record<never, never>>,
     'notFound': RouteRecordInfo<'notFound', '/:all(.*)', { all: ParamValue<true> }, { all: ParamValue<false> }>,
+    'configCompFormExample': RouteRecordInfo<'configCompFormExample', '/configComp/formExample', Record<never, never>, Record<never, never>>,
     'workplace': RouteRecordInfo<'workplace', '/dashboard/workplace', Record<never, never>, Record<never, never>>,
     'multiDialogManBackground': RouteRecordInfo<'multiDialogManBackground', '/multiDialogMan/background', Record<never, never>, Record<never, never>>,
     'multiDialogManConfig': RouteRecordInfo<'multiDialogManConfig', '/multiDialogMan/config', Record<never, never>, Record<never, never>>,

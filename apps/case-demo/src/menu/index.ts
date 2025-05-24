@@ -30,5 +30,17 @@ const menus: MenuItem[] = [
       },
     ],
   },
+  {
+    path: '/configComp',
+    title: '配置化组件',
+    icon: 'Opportunity',
+    children: [
+      {
+        path: '/configComp/formExample',
+        title: '表单案例',
+        children: [],
+      },
+    ],
+  },
 ]
 export default menus;

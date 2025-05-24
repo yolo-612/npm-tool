@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
+    "@yolo/config-comp": "workspace:^",
     "@yolo/http": "workspace:^1.0.0",
     "@yolo/storage": "workspace:^1.0.0",
     "axios": "^1.6.8",
