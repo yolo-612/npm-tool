@@ -1,0 +1,144 @@
+import type {
+  ElCol,
+  FormItemRule,
+  FormProps as ElFormProps,
+  FormItemProps as ElFormItemProps,
+  RowProps as ElRowProps,
+} from 'element-plus';
+import type { TFieldProps, ICustomComponent } from '../fields';
+
+
+
+type ElColProps = InstanceType<typeof ElCol>['$props'];
+
+/* 表单域的渲染类型 */
+export enum FormItemType {
+  /* 按钮 */
+  Button = 'Button',
+  /* 按钮 */
+  Cascader = 'Cascader',
+  /** 多选框 */
+  Checkbox = 'Checkbox',
+  /** 日期选择器 */
+  DatePicker = 'DatePicker',
+  /** 输入框 */
+  Input = 'Input',
+  /** 数字输入框 */
+  InputNumber = 'InputNumber',
+  /** 数字范围输入框 */
+  InputNumberRange = 'InputNumberRange',
+  /** label */
+  Label = 'Label',
+  /** 链接 */
+  Link = 'Link',
+  /** 单选框 */
+  Radio = 'Radio',
+  /** 下拉框 */
+  Select = 'Select',
+  /** 开关 */
+  Switch = 'Switch',
+  /** 时间选择器 */
+  TimePicker = 'TimePicker',
+  /** 树形选择器 */
+  TreeSelect = 'TreeSelect',
+  /* 文件上传 */
+  Upload = 'Upload',
+  /* 图标 */
+  Table = 'Table',
+  /* 自定义 */
+  Custom = 'Custom',
+}
+
+/**
+ * 表单配置类型
+ */
+export interface IFormConfig {
+  /** 子表单列表 */
+  subFormList: ISubForm[];
+  /** el-form表单属性 */
+  formProps?: ElFormProps;
+  /** el-row 统一 属性 */
+  rowProps?: ElRowProps;
+  /** el-col 统一属性 */
+  colProps?: ElColProps;
+  /** form类型 不同类型样式稍微有差别 */
+  type?: 'edit' | 'detail';
+}
+
+/**
+ * 子表配置类型
+ */
+export interface ISubForm {
+  /** 展示类型，默认是form，部分页面需要table的方式 */
+  // showType?: 'form' | 'table';
+  /** 是否隐藏 */
+  hidden?: boolean;
+  /** 子表头 */
+  header?: IFormHeader;
+  /** 子表中 el-row 属性 */
+  rowProps?: ElRowProps;
+  /** 子表中 el-col 属性 */
+  colProps?: ElColProps;
+  /** 子表项 */
+  formItemList?: IFormItem[];
+  /** 自定义表头 */
+  customHeader?: ICustomComponent;
+  /** 自定义子表内容  */
+  customContent?: ICustomComponent;
+  /** 自定义footer */
+  customFooter?: ICustomComponent;
+}
+
+/**
+ * 表头
+ */
+export interface IFormHeader {
+  /** 标题 */
+  title: string;
+  /** 副标题 */
+  subTitle?: string;
+  /** 收起状态 */
+  isActive?: boolean;
+  /** 是否可折叠 */
+  foldEnable?: boolean;
+  /** 简介，有则显示叹号图标 */
+  intro?: string;
+}
+
+/**
+ * FormItem 配置属性
+ */
+export interface IFormItem {
+  /** 类型 */
+  type: FormItemType;
+  /** 类型 */
+  renderType?: FormItemType;
+  /** name对应formData中的key */
+  name: string;
+  /** 表单域标签 */
+  label?: string;
+  /** label 简介，有则显示叹号图标 */
+  labelIntro?: string;
+  /** 自定义label */
+  customLabel?: ICustomComponent;
+  /** 是否隐藏 */
+  hidden?: boolean;
+  /** el-form 中 el-form-item 的属性 */
+  elFormItemProps?: Partial<ElFormItemProps & { [key: string]: any }>;
+  /** 默认值 */
+  defaultValue?: any;
+  /** 占位符 */
+  placeholder?: string;
+  /** lable位置 默认top */
+  labelPosition?: 'top' | 'left';
+  /** 校验规则 */
+  rules?: FormItemRule | FormItemRule[];
+  /** 自定义组件 */
+  customComponent?: ICustomComponent;
+  /** 自定义组件 */
+  render?: ICustomComponent;
+  /** FormItem的属性 */
+  fieldProps?: TFieldProps;
+  /** 子表中 el-col 单独属性, 会覆盖表单、子表中的colProps */
+  colProps?: ElColProps;
+}

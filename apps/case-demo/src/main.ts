@@ -6,6 +6,7 @@ import { useUserStore } from "@/stores"
 import App from './App.vue'
 import router from './router'
 import ElementPlus from 'element-plus'
+import '@yolo/config-comp/dist/index.css';
 
 
 window.console.log(
