@@ -10,70 +10,65 @@
 </route>
 <template>
   <PageMain title='表单案例'>
-    <IntroButton></IntroButton>
-    <ConfigForm :formConfig="step1Form"></ConfigForm>
+    <ConfigForm :formConfig="formConfig" :formData="formData"/>
   </PageMain>
 </template>
 
 <script setup lang='ts'>
-import { FormItemType } from '@yolo/config-comp'
-import { IntroButton, ConfigForm } from  '@yolo/config-comp'
-const colProps = { span: 8 };
+import { reactive } from 'vue'
+import ConfigForm from '@/components/config-comp/form/ConfigForm.vue'
 
-const testOpt = [
-  {
-    key: '123',
-    label: 'android',
-    value: '123',
+const formConfig = [{
+  colProps: { span: 8 },
+  type: 'el-input',
+  fieldProps: {
+    placeholder: '请填写姓名'
   },
-  {
-    key: '234',
-    label: 'ios',
-    value: '234',
+  name: 'name',
+  label: '姓名',
+  rules: [{
+    required: true,
+    message: '请填写姓名',
+  }]
+},{
+  colProps: { span: 8 },
+  type: 'el-input',
+  fieldProps: {
+    placeholder: '请填写学校'
   },
-];
+  name: 'school',
+  label: '学校',
+  rules: [{
+    required: true,
+    message: '请填写学校',
+  }]
+},{
+  colProps: { span: 8 },
+  type: 'FieldSelect',
+  fieldProps: {
+    placeholder: '请填写性别',
+    options: [{
+      label: '男',
+      value: 1,
+    }, {
+      label: '女',
+      value: 0,
+    }]
+  },
+  name: 'sex',
+  label: '性别',
+  rules: [{
+    required: true,
+    message: '请填写性别',
+  }]
+}]
 
-const step1Form = {
-  subFormList: [
-    {
-      header: {
-        title: '表头Title1',
-        subTitle: '表头subTitle',
-        isActive: true,
-        foldEnable: true,
-        intro: 'intro',
-      },
-      formItemList: [
-        {
-          colProps,
-          type: FormItemType.Select,
-          name: 'select',
-          label: '下拉选择',
-          fieldProps: {
-            // name: 'contract_type',
-            placeholder: '这是placeholder',
-            // noDataText: '这是没有数据',
-            options: testOpt,
-            slots: {
-              header: 'header',
-              footer: 'footer',
-              prefix: 'prefix',
-            },
-          },
-          rules: {
-            required: true,
-            message: '请选择合同类型',
-          },
-        },
-      ],
-    },
-  ],
-}
-
-
-
+const formData = reactive({
+  name: '122',
+  school: '1222',
+  sex: undefined,
+})
 </script>
 
 <style lang='scss' scoped>
-
 </style>
