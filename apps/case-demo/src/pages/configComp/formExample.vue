@@ -32,10 +32,17 @@ const formConfig: IFormConfig = {
     hidden: false,
     formItemList: [{
       colProps: { span: 12 },
-      type: 'el-input',
+      type: 'FieldInput',
       hidden: false,
       fieldProps: {
-        placeholder: '请填写姓名'
+        placeholder: '请填写姓名',
+        slots: {
+          'prepend': {
+            component: h('div', { width: '50px', height: '20px', background: 'red' }),
+            props: { data: [1,2,3] }
+          },
+          'append': '12222'
+        }
       },
       name: 'name',
       label: '姓名示例',
@@ -45,8 +52,8 @@ const formConfig: IFormConfig = {
       }]
     },{
       colProps: { span: 12 },
-      type: 'el-input',
-      hidden: true,
+      type: 'FieldInput',
+      hidden: false,
       fieldProps: {
         placeholder: '请填写学校'
       },
@@ -81,7 +88,7 @@ const formConfig: IFormConfig = {
 }
 
 const formData = reactive({
-  name: '122',
+  name: '',
   school: '1222',
   sex: undefined,
 })

@@ -15,7 +15,8 @@
 <script setup lang='ts'>
 import type { IFormItem } from '@/components/config-comp/form/types'
 
-import FieldSelect from '../../fields/components/FieldSelect.vue'
+import FieldSelect from '@/components/config-comp/fields/FieldSelect.vue'
+import FieldInput from '@/components/config-comp/fields/FieldInput.vue'
 
 interface ISubFormItemProps extends IFormItem{
   /** 表单数据 */
@@ -30,6 +31,9 @@ const props = defineProps<ISubFormItemProps>();
 const dynamicComponent = (type)=>{
   if(type === 'FieldSelect'){
     return FieldSelect
+  }
+  if(type === 'FieldInput'){
+    return FieldInput
   }
   return type
 }
