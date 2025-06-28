@@ -19,19 +19,21 @@ import { reactive } from 'vue'
 import ConfigForm from '@/components/config-comp/form/ConfigForm.vue'
 
 const formConfig = [{
-  colProps: { span: 8 },
+  rowProps: {},
+  colProps: { span: 12 },
   type: 'el-input',
   fieldProps: {
     placeholder: '请填写姓名'
   },
   name: 'name',
-  label: '姓名',
+  label: '姓名示例',
   rules: [{
     required: true,
     message: '请填写姓名',
   }]
 },{
-  colProps: { span: 8 },
+  rowProps: {},
+  colProps: { span: 12 },
   type: 'el-input',
   fieldProps: {
     placeholder: '请填写学校'
@@ -43,6 +45,7 @@ const formConfig = [{
     message: '请填写学校',
   }]
 },{
+  rowProps: {},
   colProps: { span: 8 },
   type: 'FieldSelect',
   fieldProps: {

@@ -1,18 +1,28 @@
 <template>
   <el-form class="config-form-box" :model="formData">
-    <template v-for="(formItem, index) in formConfig" :key="index">
-      <el-form-item
-        :label="formItem.label" 
-        :rules="formItem.rules"
-        :prop="formItem.name"
-      >
-        <component 
-          :is="dynamicComponent(formItem.type)"
-          v-bind="formItem.fieldProps"
-          v-model="formData[formItem.name]"
-        ></component>
-      </el-form-item>
-    </template>
+    <el-row
+      :gutter="22"
+      v-bind="formConfig.rowProps"
+    >
+      <template v-for="(formItem, index) in formConfig" :key="index">
+        <el-col
+          :span="8"
+          v-bind="formConfig.colProps"
+        >
+          <el-form-item
+            :label="formItem.label" 
+            :rules="formItem.rules"
+            :prop="formItem.name"
+          >
+            <component 
+              :is="dynamicComponent(formItem.type)"
+              v-bind="formItem.fieldProps"
+              v-model="formData[formItem.name]"
+            ></component>
+          </el-form-item>
+        </el-col>
+      </template>
+    </el-row>
   </el-form>
 </template>
 
