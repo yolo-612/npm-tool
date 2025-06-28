@@ -14,9 +14,10 @@
 
 <script setup lang='ts'>
 import type { IFormItem } from '@/components/config-comp/form/types'
+import { FormItemType } from '@/components/config-comp/form/types'
 
-import FieldSelect from '@/components/config-comp/fields/FieldSelect.vue'
-import FieldInput from '@/components/config-comp/fields/FieldInput.vue'
+import FieldSelect from '@/components/config-comp/fields/components/FieldSelect.vue'
+import FieldInput from '@/components/config-comp/fields/components/FieldInput.vue'
 
 interface ISubFormItemProps extends IFormItem{
   /** 表单数据 */
@@ -29,10 +30,10 @@ const props = defineProps<ISubFormItemProps>();
 
 // 动态组件逻辑
 const dynamicComponent = (type)=>{
-  if(type === 'FieldSelect'){
+  if(type === FormItemType.Select){
     return FieldSelect
   }
-  if(type === 'FieldInput'){
+  if(type === FormItemType.Input){
     return FieldInput
   }
   return type

@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang='ts'>
-import SubFormBody from './components/SubFormBody.vue'
+import SubFormBody from '@/components/config-comp/form/components/SubFormBody.vue'
 
 const props = defineProps({
   formConfig: {

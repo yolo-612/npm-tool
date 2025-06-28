@@ -16,6 +16,7 @@
 
 <script setup lang='ts'>
 import type { IFormConfig } from '@/components/config-comp/form/types'
+import { FormItemType } from '@/components/config-comp/form/types'
 import { reactive } from 'vue'
 import ConfigForm from '@/components/config-comp/form/ConfigForm.vue'
 
@@ -32,7 +33,7 @@ const formConfig: IFormConfig = {
     hidden: false,
     formItemList: [{
       colProps: { span: 12 },
-      type: 'FieldInput',
+      type: FormItemType.Input,
       hidden: false,
       fieldProps: {
         placeholder: '请填写姓名',
@@ -52,7 +53,7 @@ const formConfig: IFormConfig = {
       }]
     },{
       colProps: { span: 12 },
-      type: 'FieldInput',
+      type: FormItemType.Input,
       hidden: false,
       fieldProps: {
         placeholder: '请填写学校'
@@ -65,7 +66,7 @@ const formConfig: IFormConfig = {
       }]
     },{
       colProps: { span: 8 },
-      type: 'FieldSelect',
+      type: FormItemType.Select,
       hidden: false,
       fieldProps: {
         placeholder: '请填写性别',

@@ -8,7 +8,7 @@
 
 <script setup lang='ts'>
 import type { ICustomComponent } from '@/components/config-comp/fields/types'
-import CustomSlot from '@/components/config-comp/fields/CustomSlot.vue'
+import CustomSlot from '@/components/config-comp/fields/components/CustomSlot.vue'
 
 type TInputSlotType = 'suffix' | 'prefix' | 'prepend' | 'append';
 

@@ -58,12 +58,22 @@ export interface ISubForm {
   // colProps?: ElColProps;
 }
 
+/* field表单的类型 */
+export enum FormItemType {
+  /** 输入框 */
+  Input = 'Input',
+  /** 下拉框 */
+  Select = 'Select',
+}
+
 /**
  * FormItem 配置属性
  */
 export interface IFormItem {
   /** 类型 */
-  type: string;
+  type: FormItemType;
+  /** 类型 */
+  renderType?: FormItemType;
   /** name对应formData中的key */
   name: string;
   /** 表单域标签 */

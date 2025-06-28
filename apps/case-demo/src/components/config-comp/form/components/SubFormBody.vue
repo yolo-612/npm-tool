@@ -26,7 +26,7 @@
 
 <script setup lang='ts'>
 import type { IFormConfig, ISubForm } from '@/components/config-comp/form/types'
-import SubFormItem from './SubFormItem.vue'
+import SubFormItem from '@/components/config-comp/form/components/SubFormItem.vue'
 
 interface ISubFormRowProps {
   /** 表单配置 */
