@@ -1,28 +1,47 @@
 <template>
-  <el-form class="config-form-box" :model="formData">
-    <el-row
-      :gutter="22"
-      v-bind="formConfig.rowProps"
+  <el-form 
+    class="config-form-box" 
+    :model="formData"
+    v-bind="formConfig.formProps"
+  >
+    <div 
+      v-for="(subForm, index) in formConfig.subFormList"
+      :key="index"
     >
-      <template v-for="(formItem, index) in formConfig" :key="index">
-        <el-col
-          :span="8"
-          v-bind="formConfig.colProps"
+      <template v-if="!subForm.hidden">
+        <el-row
+          :gutter="22"
+          v-bind="{
+            ...formConfig.rowProps,
+            ...subForm.rowProps,
+          }"
         >
-          <el-form-item
-            :label="formItem.label" 
-            :rules="formItem.rules"
-            :prop="formItem.name"
-          >
-            <component 
-              :is="dynamicComponent(formItem.type)"
-              v-bind="formItem.fieldProps"
-              v-model="formData[formItem.name]"
-            ></component>
-          </el-form-item>
-        </el-col>
+          <template v-for="(formItem, index) in subForm.formItemList" :key="index">
+            <el-col
+              v-if="!formItem.hidden"
+              :span="8"
+              v-bind="{
+                ...formConfig.colProps,
+                ...subForm.colProps,
+                ...formItem.colProps,
+              }"
+            >
+              <el-form-item
+                :label="formItem.label" 
+                :rules="formItem.rules"
+                :prop="formItem.name"
+              >
+                <component 
+                  :is="dynamicComponent(formItem.type)"
+                  v-bind="formItem.fieldProps"
+                  v-model="formData[formItem.name]"
+                ></component>
+              </el-form-item>
+            </el-col>
+          </template>
+        </el-row>
       </template>
-    </el-row>
+    </div>
   </el-form>
 </template>
 
