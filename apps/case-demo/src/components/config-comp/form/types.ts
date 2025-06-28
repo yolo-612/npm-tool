@@ -2,6 +2,7 @@ import type {
   FormProps as ElFormProps,
   RowProps as ElRowProps,
   ColProps as ElColProps,
+  FormItemRule as ElFormItemRule
 } from 'element-plus';
 /**
  * 表单配置类型
@@ -55,4 +56,24 @@ export interface ISubForm {
   // fieldProps?: TFieldProps;
   // /** 子表中 el-col 单独属性, 会覆盖表单、子表中的colProps */
   // colProps?: ElColProps;
+}
+
+/**
+ * FormItem 配置属性
+ */
+export interface IFormItem {
+  /** 类型 */
+  type: string;
+  /** name对应formData中的key */
+  name: string;
+  /** 表单域标签 */
+  label?: string;
+  /** 是否隐藏 */
+  hidden?: boolean;
+  /** 校验规则 */
+  rules?: ElFormItemRule | ElFormItemRule[];
+  /** FormItem的属性 */
+  fieldProps?: any;
+  /** 子表中 el-col 单独属性, 会覆盖表单、子表中的colProps */
+  colProps?: ElColProps;
 }

@@ -38,6 +38,7 @@ declare module 'vue' {
     ElTag: typeof import('element-plus/es')['ElTag']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     FieldSelect: typeof import('./../components/config-comp/fields/components/FieldSelect.vue')['default']
+    FormBody: typeof import('./../components/config-comp/form/components/formBody.vue')['default']
     HeaderMenu: typeof import('./../components/app/menu/HeaderMenu.vue')['default']
     NotPermission: typeof import('./../components/app/NotPermission.vue')['default']
     PageMain: typeof import('./../components/app/PageMain.vue')['default']
@@ -46,6 +47,9 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     SidebarMenu: typeof import('./../components/app/menu/SidebarMenu.vue')['default']
     SidebarMenuItem: typeof import('./../components/app/menu/SidebarMenuItem.vue')['default']
+    SubFormBody: typeof import('./../components/config-comp/form/components/SubFormBody.vue')['default']
+    SubFormHeader: typeof import('./../components/config-comp/form/components/SubFormHeader.vue')['default']
+    SubFormItem: typeof import('./../components/config-comp/form/components/SubFormItem.vue')['default']
     TabBar: typeof import('./../components/app/TabBar/TabBar.vue')['default']
     TabBarItem: typeof import('./../components/app/TabBar/TabBarItem.vue')['default']
   }
