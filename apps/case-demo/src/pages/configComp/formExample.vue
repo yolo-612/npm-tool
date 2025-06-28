@@ -19,11 +19,13 @@ import type { IFormConfig } from '@/components/config-comp/form/types'
 import { FormItemType } from '@/components/config-comp/form/types'
 import { reactive } from 'vue'
 import ConfigForm from '@/components/config-comp/form/ConfigForm.vue'
+import CustomFormItem from '@/components/config-comp/CustomFormItem.vue'
+import DemoSlot from '@/components/config-comp/DemoSlot.vue'
 
 const formConfig: IFormConfig = {
   type: 'edit',
   formProps: {
-    labelWidth: '80',
+    labelWidth: '120',
   },
   rowProps: {},
   colProps: {},
@@ -65,7 +67,7 @@ const formConfig: IFormConfig = {
         message: '请填写学校',
       }]
     },{
-      colProps: { span: 8 },
+      colProps: { span: 12 },
       type: FormItemType.Select,
       hidden: false,
       fieldProps: {
@@ -84,6 +86,22 @@ const formConfig: IFormConfig = {
         required: true,
         message: '请填写性别',
       }]
+    },{
+      colProps: { span: 12 },
+      type: FormItemType.Custom,
+      label: "活动",
+      customLabel: {
+        component: DemoSlot,
+        props: {
+          testName: '活动'
+        }
+      },
+      customComponent: {
+        component: CustomFormItem,
+        props: {
+          subfixTxt: 'activity',
+        },
+      },
     }]
   }]
 }

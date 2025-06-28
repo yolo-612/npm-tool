@@ -4,6 +4,8 @@ import type {
   ColProps as ElColProps,
   FormItemRule as ElFormItemRule
 } from 'element-plus';
+import type { ICustomComponent } from '@/components/config-comp/fields/types'
+
 /**
  * 表单配置类型
  */
@@ -64,6 +66,8 @@ export enum FormItemType {
   Input = 'Input',
   /** 下拉框 */
   Select = 'Select',
+  /* 自定义 */
+  Custom = 'Custom',
 }
 
 /**
@@ -78,10 +82,16 @@ export interface IFormItem {
   name: string;
   /** 表单域标签 */
   label?: string;
+  /** 自定义label */
+  customLabel?: ICustomComponent;
   /** 是否隐藏 */
   hidden?: boolean;
   /** 校验规则 */
   rules?: ElFormItemRule | ElFormItemRule[];
+  /** 自定义组件 */
+  customComponent?: ICustomComponent;
+  /** 自定义组件 */
+  render?: ICustomComponent;
   /** FormItem的属性 */
   fieldProps?: any;
   /** 子表中 el-col 单独属性, 会覆盖表单、子表中的colProps */
