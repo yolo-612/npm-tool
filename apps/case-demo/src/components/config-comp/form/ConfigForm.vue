@@ -7,7 +7,7 @@
         :prop="formItem.name"
       >
         <component 
-          :is="formItem.type === 'FieldSelect' ? FieldSelect : `${formItem.type}`"
+          :is="dynamicComponent(formItem.type)"
           v-bind="formItem.fieldProps"
           v-model="formData[formItem.name]"
         ></component>
@@ -17,7 +17,8 @@
 </template>
 
 <script setup lang='ts'>
-import FieldSelect from './components/FieldSelect.vue'
+import { computed } from 'vue'
+import FieldSelect from '../fields/components/FieldSelect.vue'
 const props = defineProps({
   formConfig: {
     type: Array,
@@ -29,6 +30,13 @@ const props = defineProps({
   }
 })
 
+// 动态组件逻辑
+const dynamicComponent = (type)=>{
+  if(type === 'FieldSelect'){
+    return FieldSelect
+  }
+  return type
+}
 </script>
 
 <style lang='scss' scoped>

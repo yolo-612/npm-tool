@@ -35,7 +35,7 @@ declare module 'vue' {
     ElSwitch: typeof import('element-plus/es')['ElSwitch']
     ElTag: typeof import('element-plus/es')['ElTag']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
-    FieldSelect: typeof import('./../components/config-comp/form/components/FieldSelect.vue')['default']
+    FieldSelect: typeof import('./../components/config-comp/fields/components/FieldSelect.vue')['default']
     HeaderMenu: typeof import('./../components/app/menu/HeaderMenu.vue')['default']
     NotPermission: typeof import('./../components/app/NotPermission.vue')['default']
     PageMain: typeof import('./../components/app/PageMain.vue')['default']
