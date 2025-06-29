@@ -6,6 +6,8 @@ interface ICustomSlots {
 }
 const props = defineProps<ICustomSlots>();
 
+const attrs = useAttrs();
+
 </script>
 
 <template>

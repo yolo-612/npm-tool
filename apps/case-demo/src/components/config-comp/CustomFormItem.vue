@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
-const type = reactive('')
+const type = reactive([])
 
 const props = defineProps({
   subfixTxt: {

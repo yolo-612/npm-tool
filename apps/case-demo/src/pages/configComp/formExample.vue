@@ -104,6 +104,7 @@ const formConfig: IFormConfig = {
       colProps: { span: 12 },
       type: FormItemType.Custom,
       label: "活动",
+      name: 'activity',
       customLabel: {
         component: DemoSlot,
         props: {

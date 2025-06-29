@@ -52,20 +52,20 @@
 </template>
 
 <script setup lang='ts'>
+import type { IFormConfig } from '@/components/config-comp/form/types'
+
 import { getCurrentInstance } from 'vue'
 import SubFormHeader from '@/components/config-comp/form/components/SubFormHeader.vue'
 import SubFormBody from '@/components/config-comp/form/components/SubFormBody.vue'
 
-const props = defineProps({
-  formConfig: {
-    type: Array,
-    default: ()=> []
-  },
-  formData: {
-    type: Object,
-    default: ()=> {}
-  }
-})
+
+export interface IFormProps {
+  /** 数据 */
+  formData: Record<string, any>;
+  /** 表单配置 */
+  formConfig: IFormConfig;
+}
+const props = defineProps<IFormProps>()
 
 /**
  * 以下实现参考 “远方os” 的视频实现

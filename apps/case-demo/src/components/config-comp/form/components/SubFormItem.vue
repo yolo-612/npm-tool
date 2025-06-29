@@ -1,3 +1,7 @@
+<!-- 
+  disabled 是希望可以批量disabled的效果， 
+  用props.fieldProps 需要对每一项进行配置disabled
+-->
 <template>
   <el-form-item
     :label="props.label" 
@@ -12,6 +16,7 @@
     <CustomSlot
       v-if="renderType === FormItemType.Custom"
       :content="props.customComponent! || props.render!"
+      :disabled="disabled ?? false"
     />
     <!-- 内置组件 -->
     <component 
@@ -19,6 +24,7 @@
       :is="dynamicComponent(renderType)"
       v-bind="props.fieldProps"
       v-model="formData[props.name]"
+      :disabled="disabled ?? false"
     ></component>
   </el-form-item>
 </template>
@@ -35,7 +41,7 @@ interface ISubFormItemProps extends IFormItem{
   /** 表单数据 */
   formData: Record<string, any>;
   /* 是否可用 */
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 const props = defineProps<ISubFormItemProps>();

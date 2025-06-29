@@ -17,7 +17,7 @@
             ...formItem.colProps,
           }"
         >
-          <SubFormItem v-bind="formItem" :formData="formData"/>
+          <SubFormItem v-bind="formItem" :formData="formData" :disabled="formConfig.type === 'detail'"/>
         </el-col>
       </template>
     </el-row>
