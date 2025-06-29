@@ -117,6 +117,24 @@ const formConfig: IFormConfig = {
         },
       },
     }]
+  },{
+    rowProps: {},
+    colProps: {},
+    hidden: false,
+    customHeader: {
+      component: h('div', { class: 'custom-header' }, '测试自定义表头'),
+      props: {},
+    },
+    customContent: {
+      component: CustomFormItem,
+      props: {
+        subfixTxt: '表单列表自定义组件',
+      },
+    },
+    customFooter: {
+      component: h('div', { class: 'custom-footer' }, '测试自定义表底部'),
+      props: {},
+    },
   }]
 }
 

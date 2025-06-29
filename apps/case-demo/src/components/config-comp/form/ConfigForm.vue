@@ -10,14 +10,42 @@
       :key="index"
     >
       <template v-if="!subForm.hidden">
-        <SubFormHeader 
-          :headerData="subForm.header"
-        /> 
+        <!------------------ 子表表头 start ------------------>
+        <div>
+          <!-- 自定义表头 -->
+          <component
+            v-if="subForm.customHeader?.component"
+            :is="subForm.customHeader.component!"
+            v-bind="subForm.customHeader.props || {}" />
+          <!-- 默认表头 -->
+          <SubFormHeader 
+            v-else-if="subForm.header"
+            :headerData="subForm.header"
+          />
+        </div>
+        <!------------------ 子表表头 end ------------------>
+
+        <!------------------ 子表表单 start ------------------>
+        <component
+          v-if="subForm.customContent?.component"
+          :is="subForm.customContent.component"
+          v-bind="subForm.customContent.props || {}" 
+        />
         <SubFormBody 
+          v-else
           :formConfig="formConfig"
           :subForm="subForm"
           :formData="formData"
         />
+        <!------------------ 子表表单 end ------------------>
+
+        <!------------------ 子表footer start ------------------>
+        <component
+          v-if="subForm.customFooter?.component"
+          :is="subForm.customFooter.component!"
+          v-bind="subForm.customFooter.props || {}"
+        />
+        <!------------------ 子表footer end ------------------>
       </template>
     </div>
   </el-form>
