@@ -15,10 +15,10 @@ defineOptions({
   <div class="sub-form-header sub-form-header-detail">
     <span class="sub-form-header-vertical-line"></span>
     <span class="sub-form-header-title">
-      {{ headerData?.title }}
+      {{ props.headerData?.title }}
     </span>
-    <span v-if="headerData?.subTitle" class="sub-form-header-sub-title">
-      {{ headerData.subTitle }}
+    <span v-if="props.headerData?.subTitle" class="sub-form-header-sub-title">
+      {{ props.headerData.subTitle }}
     </span>
     <!-- <AcspIntroButton v-if="headerData?.intro" type="tooltip" :size="14" :content="headerData?.intro" /> -->
   </div>

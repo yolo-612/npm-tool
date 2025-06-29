@@ -16,7 +16,7 @@
     <CustomSlot
       v-if="renderType === FormItemType.Custom"
       :content="props.customComponent! || props.render!"
-      :disabled="disabled ?? false"
+      :disabled="props.disabled ?? false"
     />
     <!-- 内置组件 -->
     <component 
@@ -24,7 +24,7 @@
       :is="dynamicComponent(renderType)"
       v-bind="props.fieldProps"
       v-model="formData[props.name]"
-      :disabled="disabled ?? false"
+      :disabled="props.disabled ?? false"
     ></component>
   </el-form-item>
 </template>
@@ -46,10 +46,10 @@ interface ISubFormItemProps extends IFormItem{
 
 const props = defineProps<ISubFormItemProps>();
 
-const renderType = computed(() => props.renderType || props.type);
+const renderType = computed<FormItemType>(() => props.renderType || props.type);
 
 // 动态组件逻辑
-const dynamicComponent = (type)=>{
+const dynamicComponent = (type: FormItemType)=>{
   if(type === FormItemType.Select){
     return FieldSelect
   }
@@ -58,6 +58,10 @@ const dynamicComponent = (type)=>{
   }
   return type
 }
+
+defineOptions({
+  name: 'SubFormItem',
+});
 </script>
 
 <style lang='scss' scoped>

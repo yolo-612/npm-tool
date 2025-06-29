@@ -1,6 +1,6 @@
 <template>
   <ElInput v-bind="$attrs">
-    <template v-for="(slot, slotName) in slots" #[slotName]>
+    <template v-for="(slot, slotName) in props.slots" #[slotName]>
       <CustomSlot :content="slot" :key="slotName"/>
     </template>
   </ElInput>
@@ -19,7 +19,7 @@ export interface IFieldInputProps {
   };
 }
 
-defineProps<IFieldInputProps>();
+const props = defineProps<IFieldInputProps>();
 
 </script>
 

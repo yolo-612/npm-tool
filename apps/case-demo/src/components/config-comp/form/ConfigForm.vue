@@ -3,10 +3,10 @@
     class="config-form-box"
     :ref="configFormRef" 
     :model="formData"
-    v-bind="formConfig.formProps"
+    v-bind="props.formConfig.formProps"
   >
     <div 
-      v-for="(subForm, index) in formConfig.subFormList"
+      v-for="(subForm, index) in props.formConfig.subFormList"
       :key="index"
     >
       <template v-if="!subForm.hidden">
@@ -33,7 +33,7 @@
         />
         <SubFormBody 
           v-else
-          :formConfig="formConfig"
+          :formConfig="props.formConfig"
           :subForm="subForm"
           :formData="formData"
         />

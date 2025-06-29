@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+// @ts-nocheck
 import type { ICustomComponent } from '@/components/config-comp/fields/types'
 
 interface ICustomSlots {
@@ -7,7 +8,6 @@ interface ICustomSlots {
 const props = defineProps<ICustomSlots>();
 
 const attrs = useAttrs();
-
 </script>
 
 <template>

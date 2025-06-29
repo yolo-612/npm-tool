@@ -3,21 +3,25 @@
     <el-row
       :gutter="22"
       v-bind="{
-        ...formConfig.rowProps,
-        ...subForm.rowProps,
+        ...props.formConfig.rowProps,
+        ...props.subForm.rowProps,
       }"
     >
-      <template v-for="(formItem, index) in subForm.formItemList" :key="index">
+      <template v-for="(formItem, index) in props.subForm.formItemList" :key="index">
         <el-col
           v-if="!formItem.hidden"
           :span="8"
           v-bind="{
-            ...formConfig.colProps,
-            ...subForm.colProps,
-            ...formItem.colProps,
+            ...props.formConfig.colProps,
+            ...props.subForm.colProps,
+            ...props.formItem.colProps,
           }"
         >
-          <SubFormItem v-bind="formItem" :formData="formData" :disabled="formConfig.type === 'detail'"/>
+          <SubFormItem 
+            v-bind="formItem" 
+            :formData="props.formData" 
+            :disabled="props.formConfig.type === 'detail'"
+          />
         </el-col>
       </template>
     </el-row>
@@ -38,6 +42,10 @@ interface ISubFormRowProps {
 }
 
 const props = defineProps<ISubFormRowProps>()
+
+defineOptions({
+  name: 'SubFormBody',
+});
 </script>
 
 <style lang='scss' scoped>
