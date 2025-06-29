@@ -10,6 +10,9 @@
       :key="index"
     >
       <template v-if="!subForm.hidden">
+        <SubFormHeader 
+          :headerData="subForm.header"
+        /> 
         <SubFormBody 
           :formConfig="formConfig"
           :subForm="subForm"
@@ -22,6 +25,7 @@
 
 <script setup lang='ts'>
 import { getCurrentInstance } from 'vue'
+import SubFormHeader from '@/components/config-comp/form/components/SubFormHeader.vue'
 import SubFormBody from '@/components/config-comp/form/components/SubFormBody.vue'
 
 const props = defineProps({

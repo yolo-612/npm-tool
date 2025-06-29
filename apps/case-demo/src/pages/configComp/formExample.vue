@@ -43,6 +43,10 @@ const formConfig: IFormConfig = {
     rowProps: {},
     colProps: {},
     hidden: false,
+    header: {
+      title: '用户信息',
+      subTitle: '基本信息'
+    },
     formItemList: [{
       colProps: { span: 12 },
       type: FormItemType.Input,
