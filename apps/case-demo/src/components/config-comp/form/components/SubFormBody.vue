@@ -14,7 +14,7 @@
           v-bind="{
             ...props.formConfig.colProps,
             ...props.subForm.colProps,
-            ...props.formItem.colProps,
+            ...formItem.colProps,
           }"
         >
           <SubFormItem 
