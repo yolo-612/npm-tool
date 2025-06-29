@@ -12,8 +12,8 @@
   <PageMain title='表单案例'>
     <ConfigForm 
       ref="configFormRef"
+      v-model="formData"
       :formConfig="formConfig" 
-      :formData="formData"
     />
     <el-button @click="handleEmitFormRule">触发表单校验</el-button>
   </PageMain>
@@ -29,6 +29,7 @@ import DemoSlot from '@/components/config-comp/DemoSlot.vue'
 
 const configFormRef = ref()
 const handleEmitFormRule = ()=>{
+  console.log(formData, 'formData===>')
   configFormRef.value?.validate()
 }
 
