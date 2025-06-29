@@ -46,10 +46,36 @@ export interface ISubForm {
 
 /* field表单的类型 */
 export enum FormItemType {
+  /* 按钮 */
+  Cascader = 'Cascader',
+  /** 多选框 */
+  Checkbox = 'Checkbox',
+  /** 日期选择器 */
+  DatePicker = 'DatePicker',
   /** 输入框 */
   Input = 'Input',
+  /** 数字输入框 */
+  InputNumber = 'InputNumber',
+  /** 数字范围输入框 */
+  InputNumberRange = 'InputNumberRange',
+  /** label */
+  Label = 'Label',
+  /** 链接 */
+  Link = 'Link',
+  /** 单选框 */
+  Radio = 'Radio',
   /** 下拉框 */
   Select = 'Select',
+  /** 开关 */
+  Switch = 'Switch',
+  /** 时间选择器 */
+  TimePicker = 'TimePicker',
+  /** 树形选择器 */
+  TreeSelect = 'TreeSelect',
+  /* 文件上传 */
+  Upload = 'Upload',
+  /* 图标 */
+  Table = 'Table',
   /* 自定义 */
   Custom = 'Custom',
 }

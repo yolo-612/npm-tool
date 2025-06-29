@@ -103,6 +103,106 @@ const formConfig: IFormConfig = {
       }]
     },{
       colProps: { span: 12 },
+      type: FormItemType.Cascader,
+      hidden: false,
+      fieldProps: {
+        options: [{
+          label: '寄付月结',
+          value: 1,
+          children: [{
+            label: '7558116666',
+            value: '7558116666',
+          }, {
+            label: '7558110000',
+            value: '7558110000',
+          }]
+        },{
+          label: '寄付现结',
+          value: 2,
+          children: []
+        },{
+          label: '第三方付',
+          value: 3,
+          children: [{
+            label: '7558116666',
+            value: '7558116666',
+          }, {
+            label: '7558110000',
+            value: '7558110000',
+          }]
+        }]
+      },
+      name: 'payWayMonthCard',
+      label: '寄件方式',
+      rules: [{
+        required: true,
+        message: '请填写寄件方式',
+      }]
+    },{
+      colProps: { span: 12 },
+      type: FormItemType.Checkbox,
+      hidden: false,
+      fieldProps: {
+        outOptions: [{
+          label: '香蕉',
+          value: 1,
+        },{
+          label: '苹果',
+          value: 0,
+        }]
+      },
+      name: 'fruit',
+      label: '水果种类',
+    },{
+      colProps: { span: 12 },
+      type: FormItemType.DatePicker,
+      hidden: false,
+      fieldProps: {
+        placeholder: '请选择日期',
+        clearable: true,
+      },
+      name: 'date',
+      label: '选择日期',
+    },{
+      colProps: { span: 12 },
+      type: FormItemType.InputNumber,
+      hidden: false,
+      fieldProps: {
+        min: 1,
+        max: 100,
+      },
+      name: 'price',
+      label: '价格',
+    },{
+      colProps: { span: 12 },
+      type: FormItemType.InputNumberRange,
+      hidden: false,
+      fieldProps: {
+        placeholder: ['最低价格', '最高价格']
+      },
+      name: 'priceRange',
+      label: '价格范围',
+    },{
+      colProps: { span: 12 },
+      type: FormItemType.Label,
+      hidden: false,
+      fieldProps: {
+        thousandsSeparator: true,
+      },
+      name: 'numScale',
+      label: '数量级',
+    },{
+      colProps: { span: 12 },
+      type: FormItemType.Link,
+      hidden: false,
+      fieldProps: {
+        label: 'www.yolo.com',
+        action: ()=> {console.log('跳转链接')}
+      },
+      name: 'numScale',
+      label: '购买链接',
+    },{
+      colProps: { span: 12 },
       type: FormItemType.Custom,
       label: "活动",
       name: 'activity',
@@ -144,6 +244,10 @@ const formData = reactive({
   name: '',
   school: '1222',
   sex: undefined,
+  payWayMonthCard: [],
+  price: 1,
+  priceRange: [],
+  numScale: 10000000,
 })
 </script>
 

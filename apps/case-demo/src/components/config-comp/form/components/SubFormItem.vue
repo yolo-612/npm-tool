@@ -33,8 +33,15 @@
 import type { IFormItem } from '@/components/config-comp/form/types'
 import { FormItemType } from '@/components/config-comp/form/types'
 
-import FieldSelect from '@/components/config-comp/fields/components/FieldSelect.vue'
+import FieldCascader from '@/components/config-comp/fields/components/FieldCascader.vue'
+import FieldCheckbox from '@/components/config-comp/fields/components/FieldCheckbox.vue'
+import FieldDatePicker from '@/components/config-comp/fields/components/FieldDatePicker.vue'
 import FieldInput from '@/components/config-comp/fields/components/FieldInput.vue'
+import FieldInputNumber from '@/components/config-comp/fields/components/FieldInputNumber.vue'
+import FieldInputNumberRange from '@/components/config-comp/fields/components/FieldInputNumberRange.vue'
+import FieldLabel from '@/components/config-comp/fields/components/FieldLabel.vue'
+import FieldLink from '@/components/config-comp/fields/components/FieldLink.vue'
+import FieldSelect from '@/components/config-comp/fields/components/FieldSelect.vue'
 import CustomSlot from '@/components/config-comp/fields/components/CustomSlot.vue'
 
 interface ISubFormItemProps extends IFormItem{
@@ -50,11 +57,32 @@ const renderType = computed<FormItemType>(() => props.renderType || props.type);
 
 // 动态组件逻辑
 const dynamicComponent = (type: FormItemType)=>{
-  if(type === FormItemType.Select){
-    return FieldSelect
+  if(type === FormItemType.Cascader){
+    return FieldCascader
+  }
+  if(type === FormItemType.Checkbox){
+    return FieldCheckbox
+  }
+  if(type === FormItemType.DatePicker){
+    return FieldDatePicker
   }
   if(type === FormItemType.Input){
     return FieldInput
+  }
+  if(type === FormItemType.InputNumber){
+    return FieldInputNumber
+  }
+  if(type === FormItemType.InputNumberRange){
+    return FieldInputNumberRange
+  }
+  if(type === FormItemType.Label){
+    return FieldLabel
+  }
+  if(type === FormItemType.Link){
+    return FieldLink
+  }
+  if(type === FormItemType.Select){
+    return FieldSelect
   }
   return type
 }

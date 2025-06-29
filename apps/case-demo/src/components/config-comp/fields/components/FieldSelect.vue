@@ -9,7 +9,7 @@
   -->
   <ElSelect v-bind="$attrs">
     <el-option
-      v-for="item in options"
+      v-for="item in props.options"
       :key="item.value"
       :label="item.label"
       :value="item.value"
