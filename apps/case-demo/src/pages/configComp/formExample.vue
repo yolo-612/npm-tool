@@ -10,17 +10,27 @@
 </route>
 <template>
   <PageMain title='表单案例'>
-    <ConfigForm :formConfig="formConfig" :formData="formData"/>
+    <ConfigForm 
+      ref="configFormRef"
+      :formConfig="formConfig" 
+      :formData="formData"
+    />
+    <el-button @click="handleEmitFormRule">触发表单校验</el-button>
   </PageMain>
 </template>
 
 <script setup lang='ts'>
 import type { IFormConfig } from '@/components/config-comp/form/types'
 import { FormItemType } from '@/components/config-comp/form/types'
-import { reactive } from 'vue'
+import { ref, reactive } from 'vue'
 import ConfigForm from '@/components/config-comp/form/ConfigForm.vue'
 import CustomFormItem from '@/components/config-comp/CustomFormItem.vue'
 import DemoSlot from '@/components/config-comp/DemoSlot.vue'
+
+const configFormRef = ref()
+const handleEmitFormRule = ()=>{
+  configFormRef.value?.validate()
+}
 
 const formConfig: IFormConfig = {
   type: 'edit',

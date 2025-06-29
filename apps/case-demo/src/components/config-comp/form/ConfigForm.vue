@@ -1,6 +1,7 @@
 <template>
   <el-form 
-    class="config-form-box" 
+    class="config-form-box"
+    :ref="configFormRef" 
     :model="formData"
     v-bind="formConfig.formProps"
   >
@@ -20,6 +21,7 @@
 </template>
 
 <script setup lang='ts'>
+import { getCurrentInstance } from 'vue'
 import SubFormBody from '@/components/config-comp/form/components/SubFormBody.vue'
 
 const props = defineProps({
@@ -32,6 +34,19 @@ const props = defineProps({
     default: ()=> {}
   }
 })
+
+/**
+ * 以下实现参考 “远方os” 的视频实现
+ *  */ 
+/** 获取到组件当前的示例 */
+const vm = getCurrentInstance();
+/** ref也可以传入 函数，内部的形参是 绑定 ref的 组件实例，这里是指 ElForm*/ 
+const configFormRef = (configFormInstance) => {
+  // 当form组件被v-if指令命中设置为false后，configFormInstance为null， 
+  // 所以返回空对象避免外部调用直接报错
+  vm.exposed = configFormInstance || {}
+  vm.exposeProxy = configFormInstance || {}
+} 
 </script>
 
 <style lang='scss' scoped>
