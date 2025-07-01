@@ -203,6 +203,21 @@ const formConfig: IFormConfig = {
       label: '购买链接',
     },{
       colProps: { span: 12 },
+      type: FormItemType.Radio,
+      hidden: false,
+      fieldProps: {
+        options: [{
+          label: "买",
+          value: '1'
+        },{
+          label: "不买",
+          value: '0'
+        }]
+      },
+      name: 'isBuy',
+      label: '是否购买',
+    }, {
+      colProps: { span: 12 },
       type: FormItemType.Custom,
       label: "活动",
       name: 'activity',
@@ -248,6 +263,7 @@ const formData = reactive({
   price: 1,
   priceRange: [],
   numScale: 10000000,
+  isBuy: undefined,
 })
 </script>
 

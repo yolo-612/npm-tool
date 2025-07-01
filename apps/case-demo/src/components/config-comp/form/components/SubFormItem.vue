@@ -41,7 +41,11 @@ import FieldInputNumber from '@/components/config-comp/fields/components/FieldIn
 import FieldInputNumberRange from '@/components/config-comp/fields/components/FieldInputNumberRange.vue'
 import FieldLabel from '@/components/config-comp/fields/components/FieldLabel.vue'
 import FieldLink from '@/components/config-comp/fields/components/FieldLink.vue'
+import FieldRadio from '@/components/config-comp/fields/components/FieldRadio.vue'
 import FieldSelect from '@/components/config-comp/fields/components/FieldSelect.vue'
+import FieldSwitch from '@/components/config-comp/fields/components/FieldSwitch.vue'
+import FieldTimePicker from '@/components/config-comp/fields/components/FieldTimePicker.vue'
+import FieldTreeSelect from '@/components/config-comp/fields/components/FieldTreeSelect.vue'
 import CustomSlot from '@/components/config-comp/fields/components/CustomSlot.vue'
 
 interface ISubFormItemProps extends IFormItem{
@@ -81,8 +85,20 @@ const dynamicComponent = (type: FormItemType)=>{
   if(type === FormItemType.Link){
     return FieldLink
   }
+  if(type === FormItemType.Radio) {
+    return FieldRadio
+  }
   if(type === FormItemType.Select){
     return FieldSelect
+  }
+  if(type === FormItemType.Switch){
+    return FieldSwitch
+  }
+  if(type === FormItemType.TimePicker){
+    return FieldTimePicker
+  }
+  if(type === FormItemType.TreeSelect){
+    return FieldTreeSelect
   }
   return type
 }
