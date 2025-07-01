@@ -190,6 +190,36 @@ const baseFormConfig = {
       required: true,
       message: '请填写性别',
     }]
+  },{
+    colProps: { span: 12 },
+    type: FormItemType.Switch,
+    hidden: false,
+    fieldProps: {
+    },
+    name: 'switch',
+    label: '开关',
+  },{
+    colProps: { span: 12 },
+    type: FormItemType.TimePicker,
+    hidden: false,
+    fieldProps: {
+      isRange: true,
+      arrowControl: true,
+      rangeSeparator: "到",
+      startPlaceholder: "开始时间",
+      endPlaceholder: "结束时间",
+    },
+    name: 'timeRange',
+    label: '时间跨度',
+  },{
+    colProps: { span: 12 },
+    type: FormItemType.TreeSelect,
+    hidden: false,
+    fieldProps: {
+      placeholder: '树没怎么用过'
+    },
+    name: 'tree',
+    label: '树形结构',
   }]
 }
 
@@ -285,6 +315,9 @@ const baseFormData = {
   buyLink: '',
   isBuy: undefined,
   sex: undefined,
+  switch: true,
+  timeRange: [],
+  tree: undefined
 }
 
 const customFormData = {
