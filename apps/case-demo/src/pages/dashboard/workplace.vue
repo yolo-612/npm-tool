@@ -15,10 +15,12 @@
       采用统一的web的模板：<br/><br/>
       具体配置：文件系统路由 + 菜单baseOn：frontend + 菜单侧边：side 
     </p>
+    <TestVue />
   </PageMain>
 </template>
 
 <script setup>
+import { TestVue } from '@yolo/ele-config-comp'
 </script>
 
 <style lang='scss' scoped>
