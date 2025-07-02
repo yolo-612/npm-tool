@@ -1,0 +1,18 @@
+{
+  "name": "@yolo/ele-config-comp",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./dist/ele-config-comp.umd.js",
+  "module": "./dist/ele-config-comp.es.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vite": "^7.0.0"
+  }
+}

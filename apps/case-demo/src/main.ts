@@ -7,7 +7,9 @@ import App from './App.vue'
 import router from './router'
 import ElementPlus from 'element-plus'
 import '@yolo/config-comp/dist/index.css';
+import add from '@yolo/ele-config-comp'
 
+console.log(add, '===》')
 
 window.console.log(
   `%c ${__APP_INFO__.pkg.name} ${__APP_INFO__.buildTime}`,
