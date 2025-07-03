@@ -1,17 +1,14 @@
-import type { App, Plugin } from 'vue'
-import TestVue from "./src/TestVue.vue"
+import type { App } from 'vue';
+import * as components from './src/index';
 
-const TestVueInstall : Plugin  = {
-  install(app: App){
-    app.component('test-vue', TestVue)
-  }
-}
+export * from './src/index';
+export * from './utils/index';
 
-export {
-  TestVue,
-  TestVueInstall,
-}
-
-export default function add(num: string, num2: string){
-  return num + num2
-}
+export default {
+  install: (app: App) => {
+    /* 注册组件 */
+    Object.values(components).forEach((comp: any) => {
+      comp.install && app.use(comp);
+    });
+  },
+};

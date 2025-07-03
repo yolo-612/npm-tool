@@ -1,9 +1,15 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
 import path from 'path';
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': __dirname,
+    },
+  },
   build: {
     // 构建库就需要这个配置
     lib: {
@@ -22,5 +28,11 @@ export default defineConfig({
       }
     }
   },
-  plugins: [vue()]
+  plugins: [
+    vue(),
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(process.cwd(), './assets/icons')],
+      symbolId: 'configComp-icon-[name]',
+    }),
+  ]
 })

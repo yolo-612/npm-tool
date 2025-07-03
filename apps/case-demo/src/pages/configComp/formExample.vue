@@ -10,6 +10,7 @@
 </route>
 <template>
   <PageMain title='表单案例'>
+    <IntroButton content="Top Left prompts info"></IntroButton>
     <ConfigForm 
       ref="configFormRef"
       v-model="formData"
@@ -26,6 +27,7 @@ import { ref, reactive } from 'vue'
 import ConfigForm from '@/components/config-comp/form/ConfigForm.vue'
 import CustomFormItem from '@/components/config-comp/CustomFormItem.vue'
 import DemoSlot from '@/components/config-comp/DemoSlot.vue'
+import { IntroButton } from '@yolo/ele-config-comp'
 
 const configFormRef = ref()
 const handleEmitFormRule = ()=>{
