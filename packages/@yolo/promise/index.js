@@ -51,6 +51,15 @@ class MyPromise {
         })
       })
     }
+    // 下面这两段分支还是需要的，为了防止以下现象：
+    // then方法在resolve状态结束后再执行(**)
+    // const p = new MyPromise((resolve, reject) => {
+    //   resolve('OK')
+    // });
+
+    // setTimeout(() => {
+    //   p.then(res => console.log('结果:', res));
+    // }, 1000);
     if(this.PromiseState === MyPromise.FULFILLED){
       setTimeout(()=>{
         onFulfilled(this.PromiseResult)
