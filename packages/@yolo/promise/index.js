@@ -5,6 +5,8 @@ class MyPromise {
   constructor(fn){
     this.PromiseState = MyPromise.PENDING
     this.PromiseResult = null
+    this.onFulfilledCallbacks = []
+    this.onRejectedCallbacks = []
     try{
       fn(this.resolve.bind(this), this.reject.bind(this))
     } catch(error){
@@ -16,6 +18,9 @@ class MyPromise {
     if(this.PromiseState === MyPromise.PENDING){
       this.PromiseState = MyPromise.FULFILLED
       this.PromiseResult = result
+      this.onFulfilledCallbacks.forEach((callback)=>{
+        callback(this.PromiseResult)
+      })
     }
   }
 
@@ -23,6 +28,9 @@ class MyPromise {
     if(this.PromiseState === MyPromise.PENDING){
       this.PromiseState = MyPromise.REJECTED
       this.PromiseResult = reason
+      this.onRejectedCallbacks.forEach((callback)=>{
+        callback(this.PromiseResult)
+      })
     }
   }
 
@@ -31,11 +39,27 @@ class MyPromise {
     onRejected = typeof onRejected === 'function' ? onRejected : (reason)=> {
       throw reason
     }
+    if(this.PromiseState === MyPromise.PENDING){
+      this.onFulfilledCallbacks.push(()=>{
+        setTimeout(()=>{
+          onFulfilled(this.PromiseResult);
+        })
+      })
+      this.onRejectedCallbacks.push(()=>{
+        setTimeout(()=>{
+          onRejected(this.PromiseResult);
+        })
+      })
+    }
     if(this.PromiseState === MyPromise.FULFILLED){
-      onFulfilled(this.PromiseResult)
+      setTimeout(()=>{
+        onFulfilled(this.PromiseResult)
+      })
     }
     if(this.PromiseState === MyPromise.REJECTED){
-      onRejected(this.PromiseResult)
+      setTimeout(()=>{
+        onRejected(this.PromiseResult)
+      })
     }
   }
 }
