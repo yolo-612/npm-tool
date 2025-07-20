@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import SvgIcon from '@/src/svg-icon';
+import SvgIcon from '@/svg-icon';
 
 export interface IntroButtonProps {
   /** 标题 */

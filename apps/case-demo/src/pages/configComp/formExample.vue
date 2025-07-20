@@ -21,13 +21,13 @@
 </template>
 
 <script setup lang='ts'>
-import type { IFormConfig } from '@/components/config-comp/form/types'
-import { FormItemType } from '@/components/config-comp/form/types'
 import { ref, reactive } from 'vue'
-import ConfigForm from '@/components/config-comp/form/ConfigForm.vue'
+
+import type { IFormConfig } from '@yolo/ele-config-comp'
+import { FormItemType } from '@yolo/ele-config-comp'
+import { ConfigForm, IntroButton } from '@yolo/ele-config-comp'
 import CustomFormItem from '@/components/config-comp/CustomFormItem.vue'
 import DemoSlot from '@/components/config-comp/DemoSlot.vue'
-import { IntroButton } from '@yolo/ele-config-comp'
 
 const configFormRef = ref()
 const handleEmitFormRule = ()=>{
