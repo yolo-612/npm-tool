@@ -40,6 +40,11 @@ const menus: MenuItem[] = [
         title: '表单案例',
         children: [],
       },
+      {
+        path: '/configComp/formExampleNpm',
+        title: '表单案例-NPM',
+        children: [],
+      },
     ],
   },
 ]

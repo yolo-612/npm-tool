@@ -1,15 +1,20 @@
 <route lang="json5">
 {
-  name: "configCompFormExample",
+  name: "configCompFormExampleNpm",
   meta: {
-    title: "表单案例-项目内",
+    title: "表单案例-NPM包",
     permission: ["*"],
     icon: 'Opportunity',
   }
 }
 </route>
 <template>
-  <PageMain title='表单案例'>
+  <PageMain title='存在问题'>
+    <p class="background-desc">
+      1. 直接访问改页面，相关element-plus的样式会无法加载到
+    </p>
+  </PageMain>
+  <PageMain title='表单案例-NPM包'>
     <IntroButton content="Top Left prompts info"></IntroButton>
     <ConfigForm 
       ref="configFormRef"
@@ -23,9 +28,9 @@
 <script setup lang='ts'>
 import { ref, reactive } from 'vue'
 
-import type { IFormConfig } from '@/components/config-comp/form/types'
-import { FormItemType } from '@/components/config-comp/form/types'
-import ConfigForm from '@/components/config-comp/form/ConfigForm.vue'
+import type { IFormConfig } from '@yolo/ele-config-comp'
+import { FormItemType } from '@yolo/ele-config-comp'
+import { ConfigForm, IntroButton } from '@yolo/ele-config-comp'
 import CustomFormItem from '@/components/config-comp/CustomFormItem.vue'
 import DemoSlot from '@/components/config-comp/DemoSlot.vue'
 

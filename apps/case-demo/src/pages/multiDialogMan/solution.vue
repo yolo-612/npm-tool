@@ -49,13 +49,4 @@ const handleOpenAsyncMul = ()=>{
 </script>
 
 <style lang='scss' scoped>
-.background-desc{
-  background-color: #ffd6dc;
-  padding: 10px;
-  border-radius: 4px;
-  line-height: 22px;
-  &.blue{
-    background-color: #c5f7d8;
-  }
-}
 </style>

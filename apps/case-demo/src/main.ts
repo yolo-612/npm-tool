@@ -1,5 +1,6 @@
 import '@/assets/styles/reset.css';
 import '@/assets/styles/anim/index.css';
+import '@/assets/styles/self-custom.css';
 import { createPersistedState } from 'pinia-plugin-persistedstate';
 import directive from '@/directive/index'
 import { useUserStore } from "@/stores"
