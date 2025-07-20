@@ -6,8 +6,6 @@ import directive from '@/directive/index'
 import { useUserStore } from "@/stores"
 import App from './App.vue'
 import router from './router'
-import ElementPlus from 'element-plus'
-import '@yolo/ele-config-comp/dist/ele-config-comp.css'
 
 window.console.log(
   `%c ${__APP_INFO__.pkg.name} ${__APP_INFO__.buildTime}`,
@@ -37,10 +35,6 @@ const render = async ()=>{
   app.use(router)
   app.mount('#app')
   app.use(directive)
-  // 引入配置化组件库 @yolo/config-comp，
-  // 解决 组件库中的el-tooltips标签引入具体的系统中去的时候 还是el-xxx，没有编译
-  // 全量注册 ✅
-  app.use(ElementPlus)
 }
 
 render().catch(err=>{

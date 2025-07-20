@@ -9,11 +9,6 @@
 }
 </route>
 <template>
-  <PageMain title='存在问题'>
-    <p class="background-desc">
-      1. 直接访问改页面，相关element-plus的样式会无法加载到
-    </p>
-  </PageMain>
   <PageMain title='表单案例-NPM包'>
     <IntroButton content="Top Left prompts info"></IntroButton>
     <ConfigForm 
