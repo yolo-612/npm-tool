@@ -68,7 +68,36 @@ const columns : ITableColumnItem[] = [{
     label: '自定义列-未传参render',
     width: '180'
   },
-}, {
+}, 
+// 场景2：配置化支持内置表单域组件 + fieldProps 配置表单参数 【也可以传入函数】
+{
+  renderType: TableColumnType.Input,
+  columnProps: {
+    prop: 'name',
+    label: '内置表单-输入框',
+    width: '180'
+  },
+  fieldProps: {
+    placeholder: '请输入姓名',
+    clearable: true,
+  }
+},
+{
+  renderType: TableColumnType.Input,
+  columnProps: {
+    prop: 'name',
+    label: '内置表单-输入框',
+    width: '180'
+  },
+  fieldProps: (scope: any)=>{
+    return {
+      placeholder: '请输入姓名',
+      clearable: scope.row.name === 'yolo',
+    }
+  }
+},
+// TODO：场景3：支持表格操作列按钮
+{
   renderType: TableColumnType.Custom,
   columnProps: {
     prop: 'action',
