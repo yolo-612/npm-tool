@@ -21,7 +21,7 @@
 <script setup lang="ts">
 import ConfigTable from '@/components/config-comp/table/ConfigTable.vue';
 import { type ITableColumnItem, TableColumnType } from '@/components/config-comp/table/types';
-
+import DemoTableCustomColumn from '@/components/config-comp/DemoTableCustomColumn.vue'; 
 
 const columns : ITableColumnItem[] = [{
   renderType: TableColumnType.ElColumn,
@@ -43,6 +43,42 @@ const columns : ITableColumnItem[] = [{
     prop: 'address',
     label: 'Address'
   }
+}, 
+// 场景1：配置化 组合 表格列的数据 【分为h函数的场景 + 自定义组件传入的场景】
+{
+  renderType: TableColumnType.Custom,
+  columnProps: {
+    prop: 'customColumn-h-render',
+    label: '自定义列-render',
+    width: '180'
+  },
+  render: (text, scope)=> h('div', {}, 1212+scope.row.address)
+}, {
+  renderType: TableColumnType.Custom,
+  columnProps: {
+    prop: 'customColumn-component',
+    label: '自定义列-component',
+    width: '180'
+  },
+  render: DemoTableCustomColumn
+},{
+  renderType: TableColumnType.Custom,
+  columnProps: {
+    prop: 'customColumn-no-params',
+    label: '自定义列-未传参render',
+    width: '180'
+  },
+}, {
+  renderType: TableColumnType.Custom,
+  columnProps: {
+    prop: 'action',
+    label: '操作',
+    width: '180'
+  },
+  render: ()=> h('div', {}, [
+    h('el-button', { type: 'primary' }, '编辑'),
+    h('el-button', { type: 'danger' }, '删除')
+  ])
 }]
 
 const tableData = [

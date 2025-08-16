@@ -18,6 +18,7 @@ declare module 'vue' {
     CustonSlot: typeof import('./../components/config-comp/fields/components/CustonSlot.vue')['default']
     Default: typeof import('./../layouts/default.vue')['default']
     DemoSlot: typeof import('./../components/config-comp/DemoSlot.vue')['default']
+    DemoTableCustomColumn: typeof import('./../components/config-comp/DemoTableCustomColumn.vue')['default']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCascader: typeof import('element-plus/es')['ElCascader']
