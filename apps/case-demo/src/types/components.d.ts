@@ -11,6 +11,7 @@ declare module 'vue' {
     AppSettings: typeof import('./../components/app/AppSettings.vue')['default']
     ConfigForm: typeof import('./../components/config-comp/form/ConfigForm.vue')['default']
     ConfigTable: typeof import('./../components/config-comp/table/ConfigTable.vue')['default']
+    ConfigTableColum: typeof import('./../components/config-comp/table/components/ConfigTableColum.vue')['default']
     ConfirmForm: typeof import('./../components/config-comp/form/ConfirmForm.vue')['default']
     CustomFormItem: typeof import('./../components/config-comp/CustomFormItem.vue')['default']
     CustomSlot: typeof import('./../components/config-comp/fields/components/CustomSlot.vue')['default']

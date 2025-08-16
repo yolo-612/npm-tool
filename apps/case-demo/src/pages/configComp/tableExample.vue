@@ -10,29 +10,40 @@
 }
 </route>
 <template>
-  <PageMain title='表格案例' :async-data='asyncData'>
+  <PageMain title='表格案例'>
     <ConfigTable 
-      :tableData="tableData" 
-      :tableConfig="tableConfig" 
+      :data="tableData" 
+      :columns="columns" 
     />
   </PageMain>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ConfigTable from '@/components/config-comp/table/ConfigTable.vue';
+import { type ITableColumnItem, TableColumnType } from '@/components/config-comp/table/types';
 
-const tableConfig = {
-  columns: [{
+
+const columns : ITableColumnItem[] = [{
+  renderType: TableColumnType.ElColumn,
+  columnProps: {
     prop: 'date',
-    columnConfig: { label: 'Date', width: '180' }
-  }, {
+    label: 'Date',
+    width: '180'
+  }
+}, {
+  renderType: TableColumnType.ElColumn,
+  columnProps: {
     prop: 'name',
-    columnConfig: { label: 'Name', width: '180' }
-  }, {
+    label: 'Name',
+    width: '180'
+  }
+}, {
+  renderType: TableColumnType.ElColumn,
+  columnProps: {
     prop: 'address',
-    columnConfig: { label: 'Address' }
-  }]
-}
+    label: 'Address'
+  }
+}]
 
 const tableData = [
   {
