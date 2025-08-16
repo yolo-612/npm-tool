@@ -45,6 +45,11 @@ const menus: MenuItem[] = [
         title: '表单案例-NPM',
         children: [],
       },
+      {
+        path: '/configComp/tableExample',
+        title: '表格案例',
+        children: [],
+      },
     ],
   },
 ]
