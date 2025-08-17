@@ -22,6 +22,7 @@ declare module 'vue-router/auto-routes' {
     'notFound': RouteRecordInfo<'notFound', '/:all(.*)', { all: ParamValue<true> }, { all: ParamValue<false> }>,
     'configCompFormExample': RouteRecordInfo<'configCompFormExample', '/configComp/formExample', Record<never, never>, Record<never, never>>,
     'configCompFormExampleNpm': RouteRecordInfo<'configCompFormExampleNpm', '/configComp/formExampleNpm', Record<never, never>, Record<never, never>>,
+    'configCompSearchTableExample': RouteRecordInfo<'configCompSearchTableExample', '/configComp/searchTableExample', Record<never, never>, Record<never, never>>,
     'configCompTableExample': RouteRecordInfo<'configCompTableExample', '/configComp/tableExample', Record<never, never>, Record<never, never>>,
     'workplace': RouteRecordInfo<'workplace', '/dashboard/workplace', Record<never, never>, Record<never, never>>,
     'multiDialogManBackground': RouteRecordInfo<'multiDialogManBackground', '/multiDialogMan/background', Record<never, never>, Record<never, never>>,

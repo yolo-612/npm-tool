@@ -79,6 +79,7 @@ declare module 'vue' {
     Permission: typeof import('./../components/app/Permission.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SearchTable: typeof import('./../components/config-comp/table/SearchTable.vue')['default']
     SidebarMenu: typeof import('./../components/app/menu/SidebarMenu.vue')['default']
     SidebarMenuItem: typeof import('./../components/app/menu/SidebarMenuItem.vue')['default']
     SubFormBody: typeof import('./../components/config-comp/form/components/SubFormBody.vue')['default']

@@ -50,6 +50,11 @@ const menus: MenuItem[] = [
         title: '表格案例',
         children: [],
       },
+      {
+        path: '/configComp/searchTableExample',
+        title: '组合搜索表格案例',
+        children: [],
+      },
     ],
   },
 ]
