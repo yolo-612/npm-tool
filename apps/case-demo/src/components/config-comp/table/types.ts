@@ -50,8 +50,16 @@ export interface ITableColumnItem {
   renderType: TableColumnType;
   // element 原生的cols属性
   columnProps: ElTableColumnProps;
-  // 渲染的内容会直接占用默认插槽 类似于map映射(custom) 也可以动态渲染组件 传递了参数
-  render?: TRenderFunc | TCustomSlots;
   // 表单渲染需要的参数
   fieldProps?: TFieldPropsFunc | object;
+  // 渲染的内容会直接占用默认插槽 类似于map映射(custom) 也可以动态渲染组件 传递了参数
+  render?: TRenderFunc | TCustomSlots;
+  // 给出slots 自定义clos的slots
+  slots?: {
+    [key: string]: TCustomSlots;
+  };
+  // 是否展示
+  hidden?: boolean;
+  // 多级表头
+  // subColumns?: IPureTableColumnItem[];
 }
