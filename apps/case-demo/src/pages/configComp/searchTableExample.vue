@@ -17,6 +17,7 @@
       :searchData="formData"
       :columns="columns"
       :searchAction="searchAction"
+      :pagination="pagination"
     />
   </PageMain>
 </template>
@@ -41,7 +42,7 @@ export interface IPageParams {
 const queryTableList = (params: any) => {
   return Promise.resolve({
     obj: {
-      totalSize: 100,
+      totalSize: 60,
       list: Array.from({ length: params.pageSize }, (_, index) => ({
         customerName: `顾客${params.pageNum * index + 1}`,
         customerMobile: `1380000000${index}`,
@@ -218,6 +219,13 @@ const columns : ITableColumnItem[] = [{
     }
   }
 }];
+
+const pagination = {
+  hidden: false,
+  background: true,
+  defaultPageSize: 20, 
+  pageSizes: [10, 20, 50] 
+}
 </script>
 
 <style lang='scss' scoped>
