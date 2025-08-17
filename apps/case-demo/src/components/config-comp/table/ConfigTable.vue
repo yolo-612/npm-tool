@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 import { type ITableColumnItem, TableColumnType } from '@/components/config-comp/table/types';
-import Fields from '@/components/config-comp/fields/index';
+import Fields from '@/components/config-comp/table/components/table-column/columnFields';
 
 
 defineProps<{

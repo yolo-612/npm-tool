@@ -96,18 +96,53 @@ const columns : ITableColumnItem[] = [{
     }
   }
 },
-// TODO：场景3：支持表格操作列按钮
+// 场景3：支持表格操作列按钮
 {
-  renderType: TableColumnType.Custom,
+  renderType: TableColumnType.Buttons,
   columnProps: {
     prop: 'action',
     label: '操作',
-    width: '180'
+    fixed: 'right',
+    minWidth: '180'
   },
-  render: ()=> h('div', {}, [
-    h('el-button', { type: 'primary' }, '编辑'),
-    h('el-button', { type: 'danger' }, '删除')
-  ])
+  fieldProps: {
+    list: [{
+      label: '开始',
+      props: {
+        link: true,
+        type: 'primary',
+        size: 'small',
+        debounce: 1000,
+        onClick: ()=> {
+          console.log('开始操作');
+        }
+      },
+    }]
+  }
+},{
+  renderType: TableColumnType.Buttons,
+  columnProps: {
+    prop: 'action-data',
+    label: '操作-数据',
+    fixed: 'right',
+    minWidth: '180'
+  },
+  fieldProps: (scope)=> {
+    return {
+      list: [{
+        label: '操作数据',
+        props: {
+          link: true,
+          type: 'primary',
+          size: 'small',
+          debounce: 1000,
+          onClick: ()=> {
+            console.log('开始操作', scope.row);
+          }
+        },
+      }]
+    }
+  }
 }]
 
 const tableData = [
