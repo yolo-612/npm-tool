@@ -1,7 +1,7 @@
 <template>
   <div>
     table Column Custom
-    <div>{{ scope.name || 'yolo' }}</div> 
+    <div>{{ scope.name || defaultName }}</div> 
     {{ scope.row.address }}
   </div>
 </template>
@@ -11,6 +11,10 @@ const props = defineProps({
   scope: {
     type: Object,
     default: () => ({})
+  },
+  defaultName: {
+    type: String,
+    required: true,
   }
 })
 </script>

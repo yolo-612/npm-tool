@@ -63,7 +63,12 @@ const columns : ITableColumnItem[] = [{
     label: '自定义列-render',
     width: '180'
   },
-  render: (text, scope)=> h('div', {}, 1212+scope.row.address)
+  render: (text, scope)=> {
+    return {
+      component: h('div', {}, 1212+scope.row.address),
+      props: { style: { color: 'red' } }
+    }
+  }
 }, {
   renderType: TableColumnType.Custom,
   columnProps: {
@@ -71,7 +76,12 @@ const columns : ITableColumnItem[] = [{
     label: '自定义列-component',
     width: '180'
   },
-  render: DemoTableCustomColumn
+  render: () => {
+    return {
+      component: DemoTableCustomColumn,
+      props: { defaultName: 'yolo612' }
+    }
+  }
 },{
   renderType: TableColumnType.Custom,
   columnProps: {

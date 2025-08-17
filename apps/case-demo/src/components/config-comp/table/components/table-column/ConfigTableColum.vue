@@ -9,11 +9,23 @@
     <!-- 这样套一层插槽就可以将数据传递给自定义列表了 -->
     <template v-if="props.renderType !== TableColumnType.ElColumn" #default="scope">
       <!-- 支持自定义组件 -->
-      <component 
+      <!-- <component 
         v-if="props.renderType === TableColumnType.Custom"
         :is="getRender(scope.row[scope.column.property], scope)" 
         :scope="scope"
+      /> -->
+      <!-- 
+        ***
+        升级成CustomSlot，内部也是component组件封装而成
+        CustomSlot[内部做的兼容处理，传参形式统一 { component: xxx, props: xxx}] 
+        ***
+      -->
+      <Fields.CustomSlot 
+        v-if="props.renderType === TableColumnType.Custom" 
+        :content="getRender(scope.row[scope.column.property], scope)" 
+        :scope="scope" 
       />
+
       <!-- 支持内部表单域组件 -->
       <component
         v-else
@@ -44,7 +56,7 @@ const getRender = (text: any, scope: any)=> {
     return props.render(text, scope);
   }
   // 应对组件传入的情况
-  return props.render || h('div', {}, '未传值');
+  return props.render || { component: h('div', {}, '未传值') };
 }
 
 const getFieldProps = (scope: any) => {
