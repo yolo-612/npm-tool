@@ -1,6 +1,6 @@
 <template>
   <!-- TODO: 表格的高度如何配置化 -->
-  <el-table v-bind="$attrs" style="width: 100%">
+  <el-table v-bind="$attrs" ref="configTableRef" style="width: 100%">
     <!-- TODO: 单选加上勾选的标识 [我在权益的项目中有实现]-->
     <template v-for="item in columns" :key="item.columnProps.prop">
       <ConfigTableColum v-bind="item" v-if="!item.hidden"/>
@@ -19,6 +19,12 @@ import CommonEmpty from '@/components/config-comp/empty/CommonEmpty.vue';
 defineProps<{
   columns: ITableColumnItem[];
 }>();
+
+const configTableRef = ref();
+
+defineExpose({
+  configTableRef,
+});
 </script>
 
 <style lang='scss' scoped>

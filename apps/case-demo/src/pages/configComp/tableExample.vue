@@ -38,14 +38,24 @@ const columns : ITableColumnItem[] = [{
     label: 'Name',
     width: '180'
   }
-}, {
+}, 
+// 场景1：自定义插槽的场景
+{
   renderType: TableColumnType.ElColumn,
   columnProps: {
     prop: 'address',
     label: 'Address'
+  },
+  // 内部使用的 CustomSlot 组件来渲染 所以使用
+  // { component: xxx, props: xxx } 结构的形式
+  slots: {
+    header: {
+      component: h('div', {}, '自定义插槽控制表头'),
+    },
   }
 }, 
-// 场景1：配置化 组合 表格列的数据 【分为h函数的场景 + 自定义组件传入的场景】
+// 场景1：配置化 组合 表格列的数据 
+// 【分为h函数的场景 + 自定义组件传入+ 自定义插槽的场景】
 {
   renderType: TableColumnType.Custom,
   columnProps: {

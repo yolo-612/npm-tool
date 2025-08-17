@@ -23,6 +23,11 @@
         :scope="scope" 
       />
     </template>
+
+    <!-- 支持列的自定义插槽 -->
+    <template v-for="(slot, slotName) in props.slots" #[slotName]="scope">
+      <Fields.CustomSlot :key="slotName" :content="slot" :scope="scope" />
+    </template>
   </el-table-column>
 </template>
 
