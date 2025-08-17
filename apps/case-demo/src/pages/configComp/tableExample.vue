@@ -13,6 +13,7 @@
   <PageMain title='表格案例'>
     <ConfigTable 
       :data="tableData" 
+      :style="{height: '600px'}"
       :columns="columns" 
     />
   </PageMain>

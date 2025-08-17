@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppHeader: typeof import('./../components/app/AppHeader.vue')['default']
     AppSettings: typeof import('./../components/app/AppSettings.vue')['default']
+    CommonEmpty: typeof import('./../components/config-comp/empty/CommonEmpty.vue')['default']
     ConfigForm: typeof import('./../components/config-comp/form/ConfigForm.vue')['default']
     ConfigTable: typeof import('./../components/config-comp/table/ConfigTable.vue')['default']
     ConfigTableColum: typeof import('./../components/config-comp/table/components/table-column/ConfigTableColum.vue')['default']
