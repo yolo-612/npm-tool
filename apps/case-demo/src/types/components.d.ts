@@ -87,6 +87,8 @@ declare module 'vue' {
     SubFormItem: typeof import('./../components/config-comp/form/components/SubFormItem.vue')['default']
     TabBar: typeof import('./../components/app/TabBar/TabBar.vue')['default']
     TabBarItem: typeof import('./../components/app/TabBar/TabBarItem.vue')['default']
+    TableSearchContent: typeof import('./../components/config-comp/table/components/search-header/TableSearchContent.vue')['default']
+    TableSearchHeader: typeof import('./../components/config-comp/table/components/search-header/TableSearchHeader.vue')['default']
   }
   export interface ComponentCustomProperties {
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']

@@ -1,5 +1,6 @@
 import type { ElTableColumn } from 'element-plus'
 import type { ICustomComponent } from '@/components/config-comp/fields/types'
+import type { IFormItem } from '@/components/config-comp/form/types';
 
 export enum TableColumnType {
   /* 按钮 */
@@ -62,4 +63,19 @@ export interface ITableColumnItem {
   hidden?: boolean;
   // 多级表头
   // subColumns?: IPureTableColumnItem[];
+}
+
+export interface ISearchTableHeader {
+  /** 筛选项 */
+  searchItemList: IFormItem[];
+  /** 是否显示查询 */
+  showSearchBtn?: boolean;
+  /* 是否展示重置按钮 */
+  showResetBtn?: boolean;
+  /** 是否隐藏 */
+  hidden?: boolean;
+  /** 搜索按钮文本 */
+  searchBtnTxt?: string;
+  /** 重置按钮文本 */
+  resetBtnTxt?: string;
 }
