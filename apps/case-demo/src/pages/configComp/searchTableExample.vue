@@ -11,7 +11,11 @@
 </route>
 <template>
   <PageMain title='搜索表格案例'>
-    <SearchTable :searchHeader="formConfig" :searchData="formData"/>
+    <SearchTable 
+      :searchHeader="formConfig" 
+      :searchData="formData"
+      :columns="columns"
+    />
   </PageMain>
 </template>
 
@@ -20,6 +24,7 @@ import { ref } from 'vue';
 import SearchTable from '@/components/config-comp/table/SearchTable.vue';
 import { FormItemType } from '@/components/config-comp/form/types'
 import type { ISearchTableHeader } from '@/components/config-comp/table/types';
+import { type ITableColumnItem, TableColumnType } from '@/components/config-comp/table/types';
 
 const formData = ref({
   customerName: '',
@@ -106,6 +111,78 @@ const formConfig: ISearchTableHeader = {
     },
   ]
 };
+
+const columns : ITableColumnItem[] = [{
+  renderType: TableColumnType.ElColumn,
+  columnProps: {
+    prop: 'customerName',
+    label: '顾客姓名',
+    width: '180'
+  }
+}, {
+  renderType: TableColumnType.ElColumn,
+  columnProps: {
+    prop: 'customerMobile',
+    label: '顾客手机号',
+    width: '180'
+  }
+}, {
+  renderType: TableColumnType.ElColumn,
+  columnProps: {
+    prop: 'foodType',
+    label: '餐品类型',
+    width: '180'
+  }
+}, {
+  renderType: TableColumnType.ElColumn,
+  columnProps: {
+    prop: 'appointmentTime',
+    label: '预约时间',
+    width: '180'
+  }
+}, {
+  renderType: TableColumnType.ElColumn,
+  columnProps: {
+    prop: 'address',
+    label: '地址',
+    width: '180'
+  }
+}, {
+  renderType: TableColumnType.Buttons,
+  columnProps: {
+    prop: 'action',
+    label: '操作',
+    fixed: 'right',
+    minWidth: '180'
+  },
+  fieldProps: (scope)=> {
+    return {
+      list: [{
+        label: '编辑',
+        props: {
+          link: true,
+          type: 'primary',
+          size: 'small',
+          debounce: 1000,
+          onClick: ()=> {
+            console.log('开始操作', scope.row);
+          }
+        },
+      }, {
+        label: '删除',
+        props: {
+          link: true,
+          type: 'danger',
+          size: 'small',
+          debounce: 1000,
+          onClick: ()=> {
+            console.log('删除操作', scope.row);
+          }
+        },
+      }]
+    }
+  }
+}];
 </script>
 
 <style lang='scss' scoped>
