@@ -1,4 +1,4 @@
-import type { ElTableColumn } from 'element-plus'
+import type { ElTableColumn, ElPagination } from 'element-plus'
 import type { ICustomComponent } from '@/components/config-comp/fields/types'
 import type { IFormItem } from '@/components/config-comp/form/types';
 
@@ -79,3 +79,13 @@ export interface ISearchTableHeader {
   /** 重置按钮文本 */
   resetBtnTxt?: string;
 }
+
+
+/* 分页参数类型New */
+export interface IPageInfo {
+  pageSize: number;
+  pageNum: number;
+  total: number;
+}
+
+export type ElPaginationProps = InstanceType<typeof ElPagination>['$props'];

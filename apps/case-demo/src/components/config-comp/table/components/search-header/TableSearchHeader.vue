@@ -48,9 +48,11 @@ const formConfig = computed<IFormConfig>(() => {
                 ...attrs,
                 slots,
                 onSearch: () => {
+                  // 传了 searchData.value, 但是外面没用这个
                   emits('search', searchData.value);
                 },
                 onReset: () => {
+                  // 传了 searchData.value, 但是外面没用这个
                   emits('reset', searchData.value);
                 },
               }

@@ -12,19 +12,74 @@
 <template>
   <PageMain title='搜索表格案例'>
     <SearchTable 
+      ref="searchTableRefInstance"
       :searchHeader="formConfig" 
       :searchData="formData"
       :columns="columns"
+      :searchAction="searchAction"
     />
   </PageMain>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 import SearchTable from '@/components/config-comp/table/SearchTable.vue';
 import { FormItemType } from '@/components/config-comp/form/types'
 import type { ISearchTableHeader } from '@/components/config-comp/table/types';
 import { type ITableColumnItem, TableColumnType } from '@/components/config-comp/table/types';
+
+import { ElMessage } from 'element-plus';
+
+/* 分页参数 */
+export interface IPageParams {
+  /* 当前页码 */
+  pageNum: number;
+  /* 每页条数 */
+  pageSize: number;
+}
+
+const queryTableList = (params: any) => {
+  return Promise.resolve({
+    obj: {
+      totalSize: 100,
+      list: Array.from({ length: params.pageSize }, (_, index) => ({
+        customerName: `顾客${params.pageNum * index + 1}`,
+        customerMobile: `1380000000${index}`,
+        foodType: params.foodType === 1 ? '鸽子汤' : '黑鱼汤',
+        appointmentTime: new Date().toISOString(),
+        address: `地址${index + 1}`,
+      }))
+    }
+  })
+}
+
+/* 查询列表数据 */
+const searchAction = async (pageInfo: IPageParams) => {
+  const { pageSize, pageNum } = pageInfo;
+  try {
+    const { obj } = await queryTableList({
+      pageNum,
+      pageSize,
+      ...formData,
+    });
+    if (!obj || !obj.list) {
+      return { totalSize: 0, list: [] };
+    }
+    return obj;
+  } catch (error) {
+    ElMessage.error('查询失败');
+    return { totalSize: 0, list: [] };
+  }
+};
+
+const searchTableRefInstance = ref<any>(null);
+
+onMounted(() => {
+  // 默认加载第一页数据
+  nextTick(() => {
+    searchTableRefInstance.value?.fetchData();
+  });
+})
 
 const formData = ref({
   customerName: '',
@@ -45,10 +100,6 @@ const formConfig: ISearchTableHeader = {
       },
       name: 'customerName',
       label: '姓名',
-      rules: [{
-        required: true,
-        message: '请填写姓名',
-      }]
     },
     {
       type: FormItemType.Input,
@@ -58,10 +109,6 @@ const formConfig: ISearchTableHeader = {
       },
       name: 'customerMobile',
       label: '联系方式',
-      rules: [{
-        required: true,
-        message: '请填写联系方式',
-      }]
     },
     {
       type: FormItemType.Select,
@@ -77,10 +124,6 @@ const formConfig: ISearchTableHeader = {
       },
       name: 'foodType',
       label: '菜类型',
-      rules: [{
-        required: true,
-        message: '请填写菜类型',
-      }]
     },
     {
       type: FormItemType.DatePicker,
@@ -91,10 +134,6 @@ const formConfig: ISearchTableHeader = {
       },
       name: 'appointmentTime',
       label: '预约时间',
-      rules: [{
-        required: true,
-        message: '请选择预约时间',
-      }]
     },
     {
       type: FormItemType.Input,
@@ -104,10 +143,6 @@ const formConfig: ISearchTableHeader = {
       },
       name: 'address',
       label: '地址',
-      rules: [{
-        required: true,
-        message: '请填写地址',
-      }]
     },
   ]
 };
