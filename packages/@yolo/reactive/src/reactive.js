@@ -40,11 +40,11 @@ export function observer(obj){
   new Observer(obj)
 }
 
-let testReactive = {name: 'yolo', age: 18, info: {address: 'beijing'}} 
-observer(testReactive)
+// let testReactive = {name: 'yolo', age: 18, info: {address: 'beijing'}} 
+// observer(testReactive)
 
-console.log(testReactive.name, 'testReactive=====>');
-console.log(testReactive.info.address, 'testReactive=====>');
-testReactive.name = 'hello'
-testReactive.info.address = 'shanghai'
+// console.log(testReactive.name, 'testReactive=====>');
+// console.log(testReactive.info.address, 'testReactive=====>');
+// testReactive.name = 'hello'
+// testReactive.info.address = 'shanghai'
 

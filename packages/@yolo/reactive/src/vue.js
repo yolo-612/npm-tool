@@ -1,4 +1,5 @@
 import { observer } from './reactive.js'
+import { Compile } from './compile.js'
 
 function proxy(vm){
   Object.keys(vm.$data).forEach(key=>{
@@ -29,5 +30,8 @@ export class MyVue {
 
     // 代理数据到实例
     proxy(this)
+
+    // 编译模板
+    new Compile(options.el, this)
   }
 }

@@ -6,7 +6,16 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app">122</div>
+  <div id="app">
+    <p>{{counter}}</p>
+    <p>{{counter}}</p>
+    <p>{{counter}}</p>
+    <p my-text='counter'></p>
+    <p my-html='desc'></p>
+    <button @click='add'>点击增加</button>
+    <p>{{name}}</p>
+    <input type="text" my-model='name'>
+  </div>
   <script type="module" src="./main.js"></script>
 </body>
 </html>

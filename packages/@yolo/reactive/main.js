@@ -3,7 +3,12 @@ const vm = new MyVue({
   el: '#app',
   data: {
     name: 'yolo',
-    age: 18
+    age: 18,
+    counter: 0,
+    desc: 'my vue is show',
+    add: ()=>{
+
+    }
   }
 })
 
