@@ -1,3 +1,5 @@
+import { Watcher } from './watcher.js'
+
 // 解析模板语法
 // 1.处理插值表达式{{}}
 // 2.处理指令和事件
@@ -50,27 +52,55 @@ export class Compile {
     })
   }
 
+  textUpdater(node, value){
+    node.textContent = value
+  }
+
+  htmlUpdater(node, value) {
+    // 这个指令用来修改节点的文本,这个指令长这样子 my-html = 'key'
+    // 把 this.$vm[key] 赋值给innerHTML 即可
+    node.innerHTML = value
+  }
+
+  /**
+   * 根据指令的类型操作 dom 节点
+   * @param {*} node dom节点
+   * @param {*} exp 表达式 this.$vm[key]
+   * @param {*} dir 指令
+   */
+  update(node, exp, dir){
+    // 1.初始化 获取到指令对应的实操函数
+    const fn = this[dir + 'Updater']
+    //  如果函数存在就执行
+    fn && fn(node, this.$vm[exp])
+    // 2.更新 再次调用指令对应的实操函数 值由外面传入
+    new Watcher(this.$vm, exp, function(val) {
+      fn && fn(node, val)
+    })
+
+  }
+
   // 编译文本
   compileText(node) {
     // **RegExp.$1 表示最近一次正则匹配中第一个捕获分组的内容 **
     // 可以通过 RegExp.$1 来获取到 插值表达式中间的内容 {{key}}
     // this.$vm[RegExp.$1] 等价于 this.$vm[key]
     // 然后把这个 this.$vm[key] 的值 赋值给文本 就完成了 文本的初始化
-    node.textContent = this.$vm[RegExp.$1]
+    this.update(node, RegExp.$1, 'text')
   }
 
   // my-text 指令对应的方法
   text(node, exp) {
     // 这个指令用来修改节点的文本,这个指令长这样子 my-text = 'key'
     // 把 this.$vm[key] 赋值给文本 即可
-    node.textContent = this.$vm[exp]
+    this.update(node, exp, 'text')
   }
 
   // my-html 指令对应的方法
   html(node, exp) {
     // 这个指令用来修改节点的文本,这个指令长这样子 my-html = 'key'
     // 把 this.$vm[key] 赋值给innerHTML 即可
-    node.innerHTML = this.$vm[exp]
+    this.update(node, exp, 'html')
   }
 
   // 是否是插值表达式{{}}

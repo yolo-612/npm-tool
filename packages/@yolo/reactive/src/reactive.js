@@ -1,3 +1,5 @@
+import { Dep } from './dep.js'
+
 class Observer{
   constructor(value){
     this.value = value;
@@ -15,9 +17,13 @@ function defineReactive(obj, key, value){
   if(typeof value === 'object' && value !== null){
     observer(value)
   }
+  // 创建 Dep 实例 , 与 key 一一对应
+  const dep = new Dep()
   Object.defineProperty(obj, key, {
     get: function(){
       console.log('你访问了'+ key)
+      // 依赖收集 Dep.target 就是 一个Watcher
+      Dep.target && dep.addDep(Dep.target)
       return value
     },
     set: function(newVal){
@@ -28,6 +34,8 @@ function defineReactive(obj, key, value){
         }
         console.log('你设置了'+ key +', 新值为'+ newVal)
       }
+      // 通知更新
+      dep.notify()
     }
   })
   
