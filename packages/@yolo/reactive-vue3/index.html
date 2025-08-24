@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    当前响应式demo：
+      1. 目前只支持对象形式的响应形式变量，【不支持数组、set、map【例如：数组的方法不会触发响应式更新】】
+      2. effect的嵌套执行问题：
+        effect(() => {
+          console.log('外层 effect 执行');
+          effect(() => {
+            console.log('内层 effect 执行', state.bar);
+          });
+          console.log('外层读取 foo:', state.foo);
+        });
+
+        state.foo = 100; // 触发外层 effect
+        state.bar = 200; 
+      3. 没有调度器，不是批量更新的
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
