@@ -1,9 +1,20 @@
 import React from './core/React.js'
 
-const App = <div>hi- react jsx</div>
+function Counter(){
+  return <div>counter</div>
+}
 
-// function App() {
-//   return <div>hi-mini-react</div>;
-// }
+function CounterContainer(){
+  return <Counter></Counter>
+}
+
+function App(){
+  return (<div id="app">
+    hi- react jsx
+    {/* 嵌套function component */}
+    {/* <CounterContainer></CounterContainer> */}
+    <Counter></Counter>
+  </div>)
+}
 
 export default App
