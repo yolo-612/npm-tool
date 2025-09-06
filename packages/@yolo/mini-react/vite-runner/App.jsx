@@ -1,7 +1,13 @@
 import React from './core/React.js'
 
 function Counter({ num }){
-  return <div>counter { num }</div>
+  function handleClick(){
+    console.log('click===>')
+  }
+  return <div>
+    counter { num } 
+    <button onClick={handleClick}>click</button>
+  </div>
 }
 
 function CounterContainer(){
@@ -14,7 +20,6 @@ function App(){
     {/* 嵌套function component */}
     {/* <CounterContainer></CounterContainer> */}
     <Counter num={20}></Counter>
-    <Counter num={60}></Counter>
   </div>)
 }
 
