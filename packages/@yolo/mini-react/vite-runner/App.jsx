@@ -1,7 +1,7 @@
 import React from './core/React.js'
 
-function Counter(){
-  return <div>counter</div>
+function Counter({ num }){
+  return <div>counter { num }</div>
 }
 
 function CounterContainer(){
@@ -13,7 +13,8 @@ function App(){
     hi- react jsx
     {/* 嵌套function component */}
     {/* <CounterContainer></CounterContainer> */}
-    <Counter></Counter>
+    <Counter num={20}></Counter>
+    <Counter num={60}></Counter>
   </div>)
 }
 

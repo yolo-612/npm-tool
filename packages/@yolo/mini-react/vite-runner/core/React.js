@@ -1,4 +1,4 @@
-const createTextNode = (text)=> {
+function createTextNode (text) {
   return {
     type: 'TEXT_ELEMENT',
     props: {
@@ -8,20 +8,21 @@ const createTextNode = (text)=> {
   }
 }
 
-const createElement = (type, props, ...children) => {
+function createElement (type, props, ...children) {
   return {
     type,
     props: {
       ...props,
       children: children.map((child)=>{
-        return typeof child === 'string' ? createTextNode(child) : child
+        const isTextNode = typeof child === 'string' || typeof child === 'number'
+        return isTextNode ? createTextNode(child) : child
       }) 
     }
   }
 }
 
 let root = null
-const render = (el, container) =>{
+function render (el, container) {
   nextWorkOfUnit = {
     dom: container,
     props: {
@@ -99,21 +100,38 @@ function initChildren(fiber, children){
   })
 }
 
-const performWorkOfUnit = (fiber) => {
-  const isFunctionComponent = typeof fiber.type === 'function'
-  if(!isFunctionComponent){
-    if(!fiber.dom){
-      const dom = (fiber.dom = createDom(fiber.type));
-      updateProps(dom, fiber.props);
-    }  
-  }
-  
-  const children = isFunctionComponent ? [fiber.type()] : fiber.props.children
+function updateHostComponent(fiber){
+  if(!fiber.dom){
+    const dom = (fiber.dom = createDom(fiber.type));
+    updateProps(dom, fiber.props);
+  }  
+
+  const children = fiber.props.children
   initChildren(fiber, children)
+}
+
+function updateFunctionComponent(fiber){
+  const children = [fiber.type(fiber.props)]
+  initChildren(fiber, children)
+}
+
+function performWorkOfUnit (fiber) {
+  const isFunctionComponent = typeof fiber.type === 'function'
+
+  if(isFunctionComponent){
+    //  console.log(fiber.type(fiber.props), 'fiber.type()===>')
+    updateFunctionComponent(fiber)
+  }else{
+    updateHostComponent(fiber)
+  }
 
   if(fiber.child) return fiber.child
-  if(fiber.sibling) return fiber.sibling
-  return fiber.parent?.sibling
+
+  let nextFiber = fiber
+  while(nextFiber){
+    if(nextFiber.sibling) return nextFiber.sibling
+    nextFiber = nextFiber.parent
+  }
 }
 
 requestIdleCallback(workLoop)
