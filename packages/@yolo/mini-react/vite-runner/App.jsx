@@ -35,9 +35,17 @@ function CounterContainer(){
   return <Counter></Counter>
 }
 
+// const App = (<div id="app">
+//     hi- react jsx {count}
+//     {/* 嵌套function component */}
+//     {/* <CounterContainer></CounterContainer> */}
+//     <Counter num={20}></Counter>
+//     {/* 多个并行的function component */}
+//     {/* <Counter num={60}></Counter> */}
+//   </div>)
 function App(){
   return (<div id="app">
-    hi- react jsx
+    hi- react jsx {count}
     {/* 嵌套function component */}
     {/* <CounterContainer></CounterContainer> */}
     <Counter num={20}></Counter>
