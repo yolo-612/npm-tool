@@ -23,6 +23,7 @@ function createElement (type, props, ...children) {
 
 let wipRoot = null
 let currentRoot = null;
+let deletions = [];
 function render (el, container) {
   wipRoot = {
     dom: container,
@@ -49,9 +50,25 @@ function workLoop(deadline){
 }
 
 function commitRoot(){
+  deletions.forEach(commitDeletion)
   commitWork(wipRoot.child)
   currentRoot = wipRoot
   wipRoot = null
+  deletions = []
+}
+
+function commitDeletion(fiber){
+  if(fiber.dom){
+    // 针对function component 需要不断向上找
+    let fiberParent = fiber.parent
+    while(!fiberParent.dom){
+      fiberParent = fiberParent.parent
+    }
+    fiberParent.dom.removeChild(fiber.dom)
+  }else{
+    // function component 无dom，需要删除它的子节点
+    commitDeletion(fiber.child)
+  }
 }
 
 function commitWork(fiber){
@@ -131,6 +148,7 @@ function reconcileChildren(fiber, children){
         dom: null,
         effectTag: 'placement',
       }
+      if(oldChildFiber) deletions.push(oldChildFiber)
     }
     
     if(oldChildFiber){
