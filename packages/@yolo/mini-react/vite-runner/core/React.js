@@ -154,7 +154,6 @@ function reconcileChildren(fiber, children){
     if(oldChildFiber){
       oldChildFiber = oldChildFiber.sibling
     }
-
     if(index === 0){
       fiber.child = newFiber
     }else{
@@ -162,6 +161,11 @@ function reconcileChildren(fiber, children){
     }
     prevChild = newFiber
   })
+
+  while(oldChildFiber){
+    deletions.push(oldChildFiber)
+    oldChildFiber = oldChildFiber.sibling
+  }
 }
 
 function updateHostComponent(fiber){
