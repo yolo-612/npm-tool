@@ -56,6 +56,24 @@ function Counter2() {
   );
 }
 
+function Counter3() {
+  const bar = <div>bar</div>;
+
+  function handleShowBar() {
+    showBar = !showBar;
+    React.update();
+  }
+
+  return (
+    <div>
+      Counter
+      {showBar && bar}
+      <button onClick={handleShowBar}>showBar</button>
+      {/* {showBar && bar} */}
+    </div>
+  );
+}
+
 function CounterContainer(){
   return <Counter></Counter>
 }
@@ -75,10 +93,13 @@ function App(){
     {/* <CounterContainer></CounterContainer> */}
     {/* 多个并行的function component */}
     {/* <Counter num={60}></Counter> */}
+
     {/* 5.1: dom节点类型不一样，需要支持新增和删除 【同时也需要支持function component】 */}
     {/* <Counter num={20}></Counter> */}
     {/* 5.2: 新dom节点比旧dom节点短的时候，删除旧的中多余的节点 【同时支持删除多个同级节点】 */}
-    <Counter2 num={20}></Counter2>
+    {/* <Counter2 num={20}></Counter2> */}
+    {/* 5.3: 解决{isShow && <Foo>} 边缘case的语法【注意其位置，最后一个子节点、中间一个子节点】 */}
+    <Counter3 num={20}></Counter3>
   </div>)
 }
 
