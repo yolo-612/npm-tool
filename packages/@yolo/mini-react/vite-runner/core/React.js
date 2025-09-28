@@ -24,6 +24,7 @@ function createElement (type, props, ...children) {
 let wipRoot = null
 let currentRoot = null;
 let deletions = [];
+let wipFiber = null;
 function render (el, container) {
   wipRoot = {
     dom: container,
@@ -40,6 +41,10 @@ function workLoop(deadline){
   let shouldYield = false
   while(!shouldYield && nextWorkOfUnit){
     nextWorkOfUnit = performWorkOfUnit(nextWorkOfUnit)
+
+    if(wipRoot?.sibling?.type === nextWorkOfUnit?.type){
+      nextWorkOfUnit = undefined
+    }
 
     shouldYield = deadline.timeRemaining() < 1
   }
@@ -181,6 +186,7 @@ function updateHostComponent(fiber){
 }
 
 function updateFunctionComponent(fiber){
+  wipFiber = fiber
   // ** update方法为什么拿到的是最新的props数据 **
   // children 每次能拿到最新的props 是因为走了function component的执行，这里会更新最新值
   // 验证，把APP换成非function component的结构，添加{count}变量 不会更新
@@ -211,12 +217,16 @@ function performWorkOfUnit (fiber) {
 requestIdleCallback(workLoop)
 
 function update(){
-  wipRoot = {
-    dom: currentRoot.dom,
-    props: currentRoot.props,
-    alternate: currentRoot
+  // 调整成闭包的结构后，update在初始化的时候就已经开始执行了
+  // 【相当于执行第一次render的时候记录下wipFiber ，并通过currentFiber 缓存】
+  const currentFiber = wipFiber
+  return ()=>{
+    wipRoot = {
+      ...currentFiber,
+      alternate: currentFiber
+    }
+    nextWorkOfUnit = wipRoot
   }
-  nextWorkOfUnit = wipRoot
 }
 
 const React = {
