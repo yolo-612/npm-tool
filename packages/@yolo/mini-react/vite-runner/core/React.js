@@ -186,6 +186,10 @@ function updateHostComponent(fiber){
 }
 
 function updateFunctionComponent(fiber){
+  // useState实现需要更新
+  stateHooks = []
+  stateHookIndex = 0
+  // 实现闭包需要更新
   wipFiber = fiber
   // ** update方法为什么拿到的是最新的props数据 **
   // children 每次能拿到最新的props 是因为走了function component的执行，这里会更新最新值
@@ -229,14 +233,18 @@ function update(){
   }
 }
 
+let stateHooks
+let stateHookIndex
 function useState(initial){
   const currentFiber = wipFiber
-  const oldHook = currentFiber?.alternate?.stateHook
+  const oldHook = currentFiber?.alternate?.stateHooks[stateHookIndex]
   const stateHook = {
     state: oldHook ? oldHook.state : initial
   }
 
-  currentFiber.stateHook = stateHook
+  stateHookIndex++
+  stateHooks.push(stateHook)
+  currentFiber.stateHooks = stateHooks
 
   function setState(actions){
     stateHook.state = actions(stateHook.state)
