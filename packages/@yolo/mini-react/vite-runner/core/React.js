@@ -57,9 +57,30 @@ function workLoop(deadline){
 function commitRoot(){
   deletions.forEach(commitDeletion)
   commitWork(wipRoot.child)
+  commitEffectHook()
   currentRoot = wipRoot
   wipRoot = null
   deletions = []
+}
+
+function commitEffectHook(){
+  function run(fiber){
+    if(!fiber) return
+    if(!fiber.alternate){
+      fiber?.effectHook?.callback?.()
+    }else{
+      const oldEffectHook = fiber.alternate?.effectHook
+      const needUpdate = oldEffectHook?.deps.some((oldDep, index)=>{
+        return oldDep !== fiber?.effectHook.deps[index]
+      })
+
+      needUpdate && fiber?.effectHook?.callback?.()
+    }
+    run(fiber.child)
+    run(fiber.sibling)
+  }
+
+  run(wipRoot)
 }
 
 function commitDeletion(fiber){
@@ -258,7 +279,7 @@ function useState(initial){
     const eagerState = typeof action === "function" ? action(stateHook.state) : action
 
     if(eagerState === stateHook.state) return
-    
+
     stateHook.queue.push(typeof action === "function" ? action : () => action);
     wipRoot = {
       ...currentFiber,
@@ -270,10 +291,19 @@ function useState(initial){
   return [stateHook.state, setState]
 }
 
+function useEffect(callback, deps){
+  const effectHook = {
+    callback,
+    deps
+  }
+  wipFiber.effectHook = effectHook
+}
+
 const React = {
   update,
   render,
   useState,
+  useEffect,
   createElement,
 };
 
