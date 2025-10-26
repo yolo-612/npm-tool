@@ -14,6 +14,8 @@ const stretch = computed(() => {
 const getMainWidth = computed(() => {
   return typeof stretch.value === 'number' ? stretch.value + 'px' : stretch.value ? '1440px' : '100%';
 });
+
+const route = useRoute()
 </script>
 
 <template>
@@ -28,7 +30,10 @@ const getMainWidth = computed(() => {
       }"
     >
       <TabBar v-if="settingsStore.settings.tabBar" />
-      <RouterView v-slot="{ Component, route }">
+      <template v-if="['app1'].includes(route.name)">
+        <div id="container"></div>
+      </template>
+      <RouterView v-slot="{ Component, route }" v-else>
         <transition name="fade" mode="out-in" appear>
           <NotPermission v-if="!checkRoutePermission(route.meta)"/>
           <component 

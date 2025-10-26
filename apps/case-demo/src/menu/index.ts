@@ -57,5 +57,11 @@ const menus: MenuItem[] = [
       },
     ],
   },
+  {
+    path: '/app1',
+    title: '微应用vite-demo',
+    icon: 'Opportunity',
+    children: [],
+  },
 ]
 export default menus;
