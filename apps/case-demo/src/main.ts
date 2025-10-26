@@ -6,6 +6,7 @@ import directive from '@/directive/index'
 import { useUserStore } from "@/stores"
 import App from './App.vue'
 import router from './router'
+import { registerMicroApps, start } from 'qiankun';
 
 window.console.log(
   `%c ${__APP_INFO__.pkg.name} ${__APP_INFO__.buildTime}`,
@@ -40,3 +41,14 @@ const render = async ()=>{
 render().catch(err=>{
   console.error(err)
 })
+
+registerMicroApps([
+  {
+    name: 'app1',
+    entry: '//localhost:5174',
+    container: '#container',
+    activeRule: '/app1',
+  },
+]);
+// 启动 qiankun
+start();

@@ -23,6 +23,7 @@
     "nprogress": "^0.2.0",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^4.2.0",
+    "qiankun": "^2.10.16",
     "sass": "^1.85.1",
     "vue": "^3.4.21",
     "vue-draggable-plus": "^0.6.0",

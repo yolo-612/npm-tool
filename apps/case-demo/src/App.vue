@@ -5,6 +5,7 @@
   <div id='app'>
     <RouterView></RouterView>
     <AppSettings/>
+    <div id="container"></div>
   </div>
 </template>
 
