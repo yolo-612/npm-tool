@@ -1,0 +1,45 @@
+/*fade-standard*/
+.fade-standard-enter-from,
+.fade-standard-appear-from {
+  opacity: 0;
+}
+.fade-standard-enter-to,
+.fade-standard-appear-to {
+  opacity: 1;
+}
+.fade-standard-enter-active,
+.fade-standard-appear-active {
+  transition: opacity 0.3s cubic-bezier(0.34, 0.69, 0.1, 1);
+}
+.fade-standard-leave-from {
+  opacity: 1;
+}
+.fade-standard-leave-to {
+  opacity: 0;
+}
+.fade-standard-leave-active {
+  transition: opacity 0.3s cubic-bezier(0.34, 0.69, 0.1, 1);
+}
+
+/*fade*/
+.fade-enter-from,
+.fade-appear-from {
+  opacity: 0;
+}
+.fade-enter-to,
+.fade-appear-to {
+  opacity: 1;
+}
+.fade-enter-active,
+.fade-appear-active {
+  transition: opacity 0.1s cubic-bezier(0, 0, 1, 1);
+}
+.fade-leave-from {
+  opacity: 1;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-leave-active {
+  transition: opacity 0.1s cubic-bezier(0, 0, 1, 1);
+}
