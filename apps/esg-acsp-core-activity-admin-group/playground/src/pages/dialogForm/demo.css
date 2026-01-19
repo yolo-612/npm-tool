@@ -1,0 +1,6 @@
+.demo{
+  background-color: var(--color-primary);
+  background-image: var(--bg-home);
+  background-size: contain;
+  /* background-repeat: no-repeat; */
+}

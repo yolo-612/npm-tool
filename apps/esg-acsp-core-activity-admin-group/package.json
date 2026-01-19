@@ -1,0 +1,45 @@
+{
+  "name": "sf-design-pro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "pnpm --filter activity-admin dev",
+    "clear": "find . -name 'node_modules' -type d | xargs rm -rf",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.vue ./packages",
+    "eslint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx,.vue ./packages",
+    "prepare": "husky install",
+    "preinstall": "npx only-allow pnpm",
+    "build:pro": "cd sf-design-pro-vite && npm run build-only"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^3.0.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^6.2.0",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "6.4.0",
+    "eslint": "^8.24.0",
+    "eslint-config-fpkg": "^5.1.5",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx": "^0.1.0",
+    "eslint-plugin-vue": "^9.28.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "vue-eslint-parser": "9.4.3"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,vue}": [
+      "eslint --fix"
+    ]
+  }
+}

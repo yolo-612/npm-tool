@@ -1,0 +1,24 @@
+{{#if isFilesystem}}
+<route lang="json5">
+{
+  meta: {
+    title: "{{routeTitle}}",
+  }
+}
+</route>
+
+{{/if}}
+<script setup lang="ts">
+
+</script>
+
+<template>
+  <div>
+    <!-- 布局 -->
+    <PageHeader :title="$route.meta.title"></PageHeader>
+    <PageMain title="模块标题"></PageMain>
+  </div>
+</template>
+
+<style scoped>
+</style>

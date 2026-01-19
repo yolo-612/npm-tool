@@ -1,0 +1,12 @@
+html[data-theme='orange'] {
+  --sdesign-color-brand-1: #fff4e8;
+  --sdesign-color-brand-2: #fddebf;
+  --sdesign-color-brand-3: #fac697;
+  --sdesign-color-brand-4: #f8ab70;
+  --sdesign-color-brand-5: #f58e4a;
+  --sdesign-color-brand-6: #f37024;
+  --sdesign-color-brand-7: #c95216;
+  --sdesign-color-brand-8: #a0380c;
+  --sdesign-color-brand-9: #762304;
+  --sdesign-color-brand-10: #4d1200;
+}

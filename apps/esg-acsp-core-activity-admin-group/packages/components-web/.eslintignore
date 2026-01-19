@@ -1,0 +1,6 @@
+dist
+/src/assets/font/
+node_modules/*
+stats.config.js
+auto-import.d.ts
+components.d.ts

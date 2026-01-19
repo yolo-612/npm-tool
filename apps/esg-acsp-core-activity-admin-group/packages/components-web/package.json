@@ -1,0 +1,47 @@
+{
+  "name": "@fpkg/components-web",
+  "version": "1.6.0",
+  "license": "MIT",
+  "main": "dist/lib/index.js",
+  "module": "dist/es/index.mjs",
+  "scripts": {
+    "build": "vite build",
+    "preview": "vite preview",
+    "release": "release-it"
+  },
+  "files": [
+    "dist/es",
+    "dist/lib",
+    "global.d.ts"
+  ],
+  "keywords": [
+    "@fpkg/components-web",
+    "vue3",
+    "element-plus"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "publishConfig": {
+    "registry": "https://artifactory.sf-express.com/artifactory/api/npm/npm-sf-local/"
+  },
+  "types": "dist/es/index.d.ts",
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^8.0.1",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "element-plus": "^2.7.8",
+    "release-it": "^15.11.0",
+    "typescript": "^5.5.3",
+    "unplugin-auto-import": "^0.15.1",
+    "unplugin-vue-components": "^0.24.1",
+    "unplugin-vue-define-options": "^1.2.3",
+    "vite": "^5.4.0",
+    "vite-plugin-dts": "^4.4.0",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vue-tsc": "^2.0.29"
+  },
+  "peerDependencies": {
+    "element-plus": ">=2.5.0",
+    "vue": ">=3.2.0"
+  }
+}

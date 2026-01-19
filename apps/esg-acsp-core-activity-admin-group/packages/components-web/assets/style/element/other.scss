@@ -1,0 +1,12 @@
+.el-button {
+  border: 1px solid var(--el-border-color);
+}
+
+.sasp-tooltip-popper {
+  max-width: 400px;
+}
+
+// 限制 SaspTable 中的 tooltip 过宽
+.sasp-table-column-tooltip {
+  max-width: 50%;
+}
